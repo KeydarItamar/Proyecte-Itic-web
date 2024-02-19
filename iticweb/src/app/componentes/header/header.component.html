@@ -1,0 +1,12 @@
+<nav class="titulos">
+  <!-- Iteramos sobre cada opción del menú -->
+  <ul class="nombre-titulos" *ngFor="let opcion of Menu.opciones">
+    <!-- Mostramos el título de la opción -->
+    <li>{{ opcion.titulo }}</li>
+    <!-- Verificamos si hay subtitulos -->
+    <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0">
+      <!-- Iteramos sobre cada subtitulo de la opción -->
+      <li *ngFor="let subtitulo of opcion.subtitulos" routerLink="{{opcion.titulo}}/{{subtitulo}}">{{ subtitulo }}</li>
+    </ul>
+  </ul>
+</nav>
