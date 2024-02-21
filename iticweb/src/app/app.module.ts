@@ -13,7 +13,22 @@ import { PerfilDelcontractanComponent } from './componentes/main/institut/instit
 import { MainComponent } from './componentes/main/main.component';
 import { MainRoutingModule } from './componentes/main/main-routes';
 import { OnSomComponent } from './componentes/main/institut/institut-children/on-som/on-som.component';
-
+import { GestioDadesComponent } from './componentes/main/proyecte-educatiu/gestio-dades/gestio-dades.component';
+import { CiclesFormatiusComponent } from './componentes/main/estudis/cicles-formatius/cicles-formatius.component';
+import { CiclesFormatiusGrauMitjaComponent } from './componentes/main/estudis/cicles-formatius-grau-mitja/cicles-formatius-grau-mitja.component';
+import { CiclesFormatiusGrauSuperiorComponent } from './componentes/main/estudis/cicles-formatius-grau-superior/cicles-formatius-grau-superior.component';
+import { ErasmusPolicyComponent } from './componentes/main/ServeiErasmus/erasmus-policy/erasmus-policy.component';
+import { MobilitatAlumnatComponent } from './componentes/main/ServeiErasmus/mobilitat-alumnat/mobilitat-alumnat.component';
+import { MobilitatProfessoratComponent } from './componentes/main/ServeiErasmus/mobilitat-professorat/mobilitat-professorat.component';
+import { IticBcnErasmusDataSheetComponent } from './componentes/main/ServeiErasmus/itic-bcn-erasmus-data-sheet/itic-bcn-erasmus-data-sheet.component';
+import { ServeisComponent } from './componentes/main/serveis/serveis.component';
+import { SecretariaComponent } from './componentes/main/secretaria/secretaria.component';
+import { ChatboxComponent } from './componentes/main/chatbox/chatbox.component';
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +41,26 @@ import { OnSomComponent } from './componentes/main/institut/institut-children/on
     PerfilDelcontractanComponent,
     MainComponent,
     OnSomComponent,
+    GestioDadesComponent,
+    CiclesFormatiusComponent,
+    CiclesFormatiusGrauMitjaComponent,
+    CiclesFormatiusGrauSuperiorComponent,
+    ErasmusPolicyComponent,
+    MobilitatAlumnatComponent,
+    MobilitatProfessoratComponent,
+    IticBcnErasmusDataSheetComponent,
+    ServeisComponent,
+    SecretariaComponent,
+    ChatboxComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MainRoutingModule,
+    FormsModule,
+    CommonModule,
+    RouterModule,
     
   ],
   providers: [],

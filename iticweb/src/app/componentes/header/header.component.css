@@ -1,0 +1,21 @@
+.titulos{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+}
+ul, li{
+    list-style: none;
+}
+.nombre-subtitulos{
+    display: none;
+}
+
+.nombre-titulos:hover{
+    .nombre-subtitulos{
+        display: block;
+    }
+}
+.icono-itic{
+height: 50px;
+width: 50px;
+}

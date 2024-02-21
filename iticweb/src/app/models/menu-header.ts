@@ -40,6 +40,18 @@ export const Menu = {
           "Mobilitat de professorat",
           "ITICBCN Erasmus data sheet"
         ]
+      },
+      {
+        titulo: "Serveis",
+        subtitulos: [
+       
+        ]
+      },
+      {
+        titulo: "Secretaria",
+        subtitulos: [
+       
+        ]
       }
     ]
   };
