@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+main {
+    width: 100%;
+    height: 90vh;
+    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+}
+
+.icono-Itic {
+    height: 200px;
+    width: 200px;
+    margin-right: 40%;
+}
+
+.chatbox-container {
+    border: 1px solid orangered;
+    display: flex;
+    flex-direction: column; /* Para que los elementos se apilen verticalmente */
+    flex: 1; /* Para que ocupe todo el espacio disponible */
+}
+
+.response-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid greenyellow;
+    max-height: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    
+}
+
+input[type="text"] {
+    height: 3rem;
+    width: 50%;
+}

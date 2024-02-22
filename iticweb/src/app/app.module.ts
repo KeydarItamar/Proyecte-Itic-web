@@ -27,8 +27,11 @@ import { ChatboxComponent } from './componentes/main/chatbox/chatbox.component';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +64,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     CommonModule,
     RouterModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],

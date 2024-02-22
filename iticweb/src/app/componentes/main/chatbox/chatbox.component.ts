@@ -10,16 +10,19 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./chatbox.component.css']
 })
 export class ChatboxComponent implements OnInit {
-  query: string= '';
-
+  query= '';
+  listaQuerys: string[]= []
+  respuestas: string[]=[]
   constructor() { }
 
   ngOnInit(): void {
   }
 
 
-  iaChat(){
-
+  iaChat(valor: string){
+    this.listaQuerys.push(valor);
+    this.respuestas.push('yes')
+    
   }
 
 }
