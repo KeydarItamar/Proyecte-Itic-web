@@ -20,6 +20,7 @@ main {
 }
 
 .chatbox-container {
+    margin-right: 5%;
     border: 1px solid orangered;
     display: flex;
     flex-direction: column; /* Para que los elementos se apilen verticalmente */
@@ -27,6 +28,7 @@ main {
 }
 
 .response-container {
+    height: 60vh;
     display: flex;
     flex-direction: column;
     border: 1px solid greenyellow;
@@ -34,8 +36,8 @@ main {
     overflow-x: auto;
     white-space: nowrap;
     max-width: 100%;
-    
 }
+
 
 input[type="text"] {
     height: 3rem;
