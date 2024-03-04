@@ -23,15 +23,15 @@ main {
     margin-right: 5%;
     border: 1px solid orangered;
     display: flex;
-    flex-direction: column; /* Para que los elementos se apilen verticalmente */
-    flex: 1; /* Para que ocupe todo el espacio disponible */
+    flex-direction: column; 
+    flex: 1; 
 }
 
 .response-container {
     height: 60vh;
     display: flex;
     flex-direction: column;
-    border: 1px solid greenyellow;
+    background-color:  greenyellow;
     max-height: 100%;
     overflow-x: auto;
     white-space: nowrap;
@@ -42,4 +42,6 @@ main {
 input[type="text"] {
     height: 3rem;
     width: 50%;
+    background-color: rgb(214, 214, 214);
+    border-radius: 12px;
 }

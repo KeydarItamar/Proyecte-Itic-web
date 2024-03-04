@@ -14,7 +14,7 @@ apiUrl= 'http://localhost:3000'
   enviarDatosAlBackend(query: string): Observable<any> {
     return this.http.post<string>(
       `${this.apiUrl}/enviar-datos`,
-      { query },
+        {query} ,
       { responseType: 'text' as 'json' } 
     );
   

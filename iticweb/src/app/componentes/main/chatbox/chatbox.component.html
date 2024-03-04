@@ -3,12 +3,12 @@
     <div class="icono-Itic" ><img class="icono-Itic" src="../../../../assets/iconos/fi-rr-arrow-alt-square-up.svg" alt=""></div>
     <div class="chatbox-container">
         <div class="response-container">
-            <ul *ngFor="let respuesta of respuestas let i= index " >
+            <ul *ngFor="let query of listaQuerys let i= index " >
                 <li *ngIf=respuestas>
                     <h4>User promtp</h4>
                     <p>{{listaQuerys[i]}}</p>
                     <h4>Ia response</h4>
-                    <p>{{respuestas[i]}} {{i}}</p>
+                 <div class="query" [innerHTML]="respuestas[i]" style="white-space: pre-line"></div>
                 </li>
             </ul>
         </div>

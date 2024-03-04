@@ -23,6 +23,7 @@ export class ChatboxComponent implements OnInit {
 
   
   iaChat(query: string): void {
+    this.listaQuerys.push(query)
     this.chatService.enviarDatosAlBackend(query)
       .subscribe({
          next: response => {

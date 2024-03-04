@@ -1,18 +1,18 @@
 
- 
-<nav class="titulos">
+<nav class="titulos" (mouseenter)="mostrarSubtitulos()" (mouseleave)="ocultarSubtitulos()">
   <div class="icono-itic"><img class="icono-itic" routerLink="home" src="../../../assets/iconos/fi-rr-arrow-alt-square-up.svg" alt=""></div>
   <!-- Iteramos sobre cada opción del menú -->
-  <ul class="nombre-titulos" *ngFor="let opcion of Menu.opciones">
+  <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of Menu.opciones">
     <!-- Mostramos el título de la opción -->
-    <li [routerLink]="opcion.titulo">{{ opcion.titulo }}</li>
+    <li class="principales" [routerLink]="opcion.titulo">{{ opcion.titulo }}</li>
     <!-- Verificamos si hay subtitulos -->
-    <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0">
+    <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
       <!-- Iteramos sobre cada subtitulo de la opción -->
-      <li *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
+      <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
     </ul>
   </ul>
 </nav>
+
 
 
 

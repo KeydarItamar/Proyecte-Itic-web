@@ -5,9 +5,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.chat_models import ChatCohere
-from langchain.document_loaders import DirectoryLoader
-from langchain.document_loaders import UnstructuredWordDocumentLoader
-
+from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import UnstructuredWordDocumentLoader
 
 import json
 import sys
@@ -18,11 +17,13 @@ COHERE_API_KEY = '0Luj5pPG0qr5smcMdNravruypYYGwjs45LvQmJCo'
 os.environ["COHERE_API_KEY"] = COHERE_API_KEY
 
 
-query= 'hello! what is the main idea of the document?'
+texto = sys.argv[1]
+datos = json.loads(texto)
+query = datos['query']
 
 
 #Cargamos los documentos del directorio  word or Pdf
-loaders = DirectoryLoader("./data",glob="*.docx", loader_cls=UnstructuredWordDocumentLoader)
+loaders = UnstructuredWordDocumentLoader("C:/Users/Itamar/Desktop/Itic docker/Proyecte-Itic-web/backend/python/texto.docx")
 content = loaders.load()
 
 #Separamos en trozos los documentos 
