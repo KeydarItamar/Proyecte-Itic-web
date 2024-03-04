@@ -31,7 +31,7 @@ main {
     height: 60vh;
     display: flex;
     flex-direction: column;
-    border: 1px solid greenyellow;
+    background-color:  greenyellow;
     max-height: 100%;
     overflow-x: auto;
     white-space: nowrap;
@@ -42,4 +42,6 @@ main {
 input[type="text"] {
     height: 3rem;
     width: 50%;
+    background-color: rgb(214, 214, 214);
+    border-radius: 12px;
 }

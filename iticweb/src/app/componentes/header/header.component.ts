@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu-header';
 import { RouterModule } from '@angular/router';
 
@@ -9,14 +9,21 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-Menu = Menu
-
+  Menu = Menu
+  mostrarSubtitulosFlag: boolean = false;
   constructor() {
-    
- }
+
+  }
 
   ngOnInit(): void {
   }
-  
+
+  mostrarSubtitulos() {
+    this.mostrarSubtitulosFlag = true;
+  }
+
+  ocultarSubtitulos() {
+    this.mostrarSubtitulosFlag = false;
+  }
 
 }
