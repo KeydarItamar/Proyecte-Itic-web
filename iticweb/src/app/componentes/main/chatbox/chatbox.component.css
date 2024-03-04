@@ -23,8 +23,8 @@ main {
     margin-right: 5%;
     border: 1px solid orangered;
     display: flex;
-    flex-direction: column; /* Para que los elementos se apilen verticalmente */
-    flex: 1; /* Para que ocupe todo el espacio disponible */
+    flex-direction: column; 
+    flex: 1; 
 }
 
 .response-container {
