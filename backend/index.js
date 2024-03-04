@@ -1,4 +1,6 @@
 //Archivo principal de node.js
+const connection = require('./bbdd/connection');
+const inserts = require ('./bbdd/inserts');
 const { exec } = require('child_process');
 const express = require('express');
 const cors = require('cors');
@@ -15,6 +17,17 @@ app.listen(3000, () => {
 
 //tirar la query al modelo
 app.use(express.json({limit: '10mb', extended: true, charset: 'utf-8'}));
+
+// Conexión a la base de datos y creación de las tablas
+app.get('/home', (req, res) => { 
+    connection.createTables();
+})
+
+// Creación de un usuario
+app.get('/usuario', (req, res) => { inserts.createUser(); })
+
+// Creación de una noticia
+app.get('/noticia', (req, res) => { inserts.createNoticia(); })
 
 app.post('/enviar-datos', (req, res) => {
     const datos = req.body;
