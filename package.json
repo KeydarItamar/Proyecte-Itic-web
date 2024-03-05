@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@angular/cdk": "^17.2.0",
-    "@angular/material": "^17.2.0"
+    "@angular/material": "^17.2.0",
+    "mysql": "^2.18.1"
   }
 }
