@@ -2,7 +2,7 @@
 .titulos {
     display: flex;
     background-color: rgb(31, 31, 31);
-    width: 100%;
+    width: 100vw;
     position: fixed;
 }
 
