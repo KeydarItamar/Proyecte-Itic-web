@@ -33,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NoticiasComponent } from './componentes/noticias/noticias.component';
-import { FooterComponent } from './componentes/footer/footer.component'; 
+import { FooterComponent } from './componentes/footer/footer.component';
+import { LoginComponent } from './componentes/main/login/login.component'; 
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     ChatboxComponent,
     NoticiasComponent,
     FooterComponent,
+    LoginComponent,
  
   ],
   imports: [

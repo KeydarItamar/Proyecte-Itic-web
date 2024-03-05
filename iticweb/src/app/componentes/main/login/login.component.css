@@ -1,0 +1,9 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-itic {
+    width: 50%;
+    height: 50%;
+}
