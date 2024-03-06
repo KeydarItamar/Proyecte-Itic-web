@@ -1,35 +1,35 @@
-nav{
-    width: 100%;
-    height: 4rem;
-    padding-top: 5px;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(58, 58, 58);
-    
-}
-
-.icono-footer {
-    padding-left: 5px;
-    padding-right: 10px;
-    height: 60px;
-    width: 160px;
-}
-
-.sponsor {
+nav {
+    background-color: rgb(66, 66, 66);
     display: flex;
-    padding-left: 5px;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center; /* Centra verticalmente los elementos */
+  }
+  
+  .redes {
+    order: 1; /* Cambia el orden para que aparezca primero */
+  }
+
+  .icono-redes {
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  
+  .sponsor {
+    order: 2; /* Cambia el orden para que aparezca después de redes */
+  }
+
+  .icono-sponsor {
+    padding-left: 10px;
+  }
+  
+  .logo-footer {
+    margin-right: 40px;
+    order: 3; /* Cambia el orden para que aparezca en el medio */
+  }
+  
+  .contacte {
+    color: white;
+    order: 4; /* Cambia el orden para que aparezca al final */
     padding-right: 10px;
-    height: 60px;
-    width: 160px;
 }
-
-.icono-sponsor {
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.icono-redes {
-    padding-left: 5px;
-    padding-right: 5px;
-}
+  
