@@ -1,5 +1,5 @@
 
-<nav class="titulos" (mouseenter)="mostrarSubtitulos()" (mouseleave)="ocultarSubtitulos()">
+<header class="titulos" (mouseenter)="mostrarSubtitulos()" (mouseleave)="ocultarSubtitulos()">
   <div class="icono-itic"><img class="icono-itic" routerLink="home" src="../../../assets/iconos/Opera_Snapshot_2024-03-05_144830_www.figma.com-removebg-preview.png" alt=""></div>
   <!-- Iteramos sobre cada opción del menú -->
   <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of Menu.opciones">
@@ -11,7 +11,7 @@
       <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
     </ul>
   </ul>
-</nav>
+</header>
 
 
 

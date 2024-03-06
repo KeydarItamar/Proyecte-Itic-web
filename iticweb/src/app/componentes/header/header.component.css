@@ -1,9 +1,8 @@
 /* Estilo para el contenedor de los títulos */
 .titulos {
     display: flex;
-    background-color: rgb(31, 31, 31);
-    width: 100vw;
-    position: fixed;
+    background-color: rgba(31, 31, 31, 0.841);
+    width: 100%;
 }
 
 ul {
@@ -48,7 +47,7 @@ ul {
     display: none;
     position: absolute;
     /* Sacamos los subtitulos del flujo normal del documento */
-    background-color: rgb(36, 36, 36);
+    background-color: rgba(36, 36, 36, 0.744);
     /* Ajustamos el fondo para que sea visible */
     padding: 10px;
     /* Agregamos un poco de espacio entre los subtitulos */
@@ -58,8 +57,12 @@ ul {
     color: white;
 }
 
+li:active {
+    color: rgba(0, 255, 255, 0.85);
+}
+
 .nombre-titulos:hover {
-    background-color: rgb(72, 72, 72);
+    background-color: rgb(112, 112, 112);
 }
 
 /* Estilo para mostrar los subtitulos cuando se pasa el ratón sobre el título */
@@ -72,7 +75,7 @@ ul {
 .nombre-subtitulos li:hover {
     cursor: pointer;
     /* Cambia el cursor al pasar sobre los subtitulos */
-    background-color: rgb(72, 72, 72);
+    background-color: rgb(102, 102, 102);
     border-radius: 25px;
 }
 
@@ -80,6 +83,6 @@ ul {
 .icono-itic {
     padding-left: 5px;
     padding-right: 10px;
-    height: 70px;
+    height: 65px;
     width: 60px;
 }
