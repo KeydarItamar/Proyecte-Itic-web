@@ -4,22 +4,15 @@
     </div>
 
     <div class="right">
-        <h2>Iniciar Sessió</h2>
-
-        <form>
+        <h2>Iniciar Sesión</h2>
+        <form (ngSubmit)="onSubmit()">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email">
-
+            <input type="text" name="email" id="email" required>
             <br><br>
-
-            <label for="password">Contrasenya</label>
-            <input type="password" name="password" id="password">
-
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" required>
             <br><br>
-
-            <input type="submit" name="submit" onclick="login()">
-
+            <input type="submit" name="submit" value="Iniciar Sesión">
         </form>
-
     </div>
 </main>

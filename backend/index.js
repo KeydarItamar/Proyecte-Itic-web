@@ -1,10 +1,13 @@
 //Archivo principal de node.js
 const connection = require('./bbdd/connection');
 const inserts = require ('./bbdd/inserts');
+const userLogin = require('./bbdd/login')
 const { exec } = require('child_process');
 const express = require('express');
 const cors = require('cors');
 const app = express();
+app.use(express.json({ limit: '10mb', extended: true }));
+
 
 app.use(cors());
 //le decimos a python que responda en utf-8
@@ -28,6 +31,18 @@ app.get('/usuario', (req, res) => { inserts.createUser(); })
 
 // Creación de una noticia
 app.get('/noticia', (req, res) => { inserts.createNoticia(); })
+
+app.post('/login/userLogin', async (req, res) => { 
+    try {
+        const email = req.body.email;    
+        const password = req.body.password;
+        const result = userLogin.login(email, password);
+        res.json({ success: result });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error en el servidor' });
+    }
+});
 
 app.post('/enviar-datos', (req, res) => {
     const datos = req.body;
