@@ -1,8 +1,6 @@
 function login(email, password) {
     var mysql = require('mysql');
 
-    console.log("hola login")
-
     // Variable con las credenciales de conexión de la base de datos
     var conn = mysql.createConnection({
         host: "localhost",
@@ -22,7 +20,9 @@ function login(email, password) {
     // Ejecutamos la query
     conn.query(sql_login, function(err, result) {
         if (err) throw err;
-        console.log("Sesión iniciada!")
+
+        if (result.length > 0 ) console.log(`Sesión iniciada! (${email})`)
+        else console.log("Credenciales inválidas!")
     })
 }
 module.exports = {
