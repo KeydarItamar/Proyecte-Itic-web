@@ -36,13 +36,24 @@ app.post('/login/userLogin', async (req, res) => {
     try {
         const email = req.body.email;    
         const password = req.body.password;
-        const result = userLogin.login(email, password);
-        res.json({ success: result });
+
+        userLogin.login(email, password)
+            .then((isLoggedIn) => {
+                console.log('Usuario autenticado (index.js):', isLoggedIn);
+                // Enviar la respuesta solo después de que la promesa se haya resuelto
+                res.json({ success: isLoggedIn });
+            })
+            .catch((error) => {
+                console.error('Error en la autenticación:', error);
+                // Manejo de errores aquí
+                res.status(500).json({ error: 'Error en la autenticación' });
+            });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error en el servidor' });
     }
 });
+
 
 app.post('/enviar-datos', (req, res) => {
     const datos = req.body;

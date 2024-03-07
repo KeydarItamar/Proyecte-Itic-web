@@ -29,3 +29,7 @@ main {
     flex-direction: column; 
     flex: 1; 
 }
+
+.auth_error {
+    color:red;
+}

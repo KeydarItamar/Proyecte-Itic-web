@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  isAuthenticated: boolean = true;
 
   ngOnInit(): void {
   }
@@ -21,9 +22,6 @@ export class LoginComponent implements OnInit {
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const password = (document.getElementById('password') as HTMLInputElement).value;
     
-    // Ahora puedes hacer lo que quieras con email y password
-    console.log('Email:', email);
-    console.log('Contraseña:', password);
     this.enviarBackend();
   }
 
@@ -36,12 +34,17 @@ export class LoginComponent implements OnInit {
 
     // Realiza una solicitud HTTP POST al backend
     this.http.post('http://localhost:3000/login/userLogin', data)
-      .subscribe((response) => {
-        // Maneja la respuesta del backend
-        console.log('Respuesta del backend:', response);
+      .subscribe((response: any) => {
+        // Intenta obtener la propiedad 'success' de la respuesta
+        this.isAuthenticated = response && response.success == true;
 
-        // Redirige a la ruta /home
-        this.router.navigate(['/home']);
+        // Redirige a la ruta /home solo si el usuario está autenticado
+        if (this.isAuthenticated) {
+          this.router.navigate(['/home']);
+        } else {
+          // Manejar el caso en el que la autenticación falla, por ejemplo, mostrar un mensaje de error.
+          console.error('Autenticación fallida');
+        }
       });
   }
 }
