@@ -1,15 +1,37 @@
 .main-container{
-    background-image: url('/assets/fondos/fondo1.jpg'); 
+    background-image:linear-gradient(rgba(0, 0, 0, 0.043), rgba(0, 0, 0, 0.8)),url(/assets/fondos/fondo1.jpg);
     background-size: cover; 
     background-position: center;
     width: 100%;
     height: 100vh;
-    background-color: rgb(44, 44, 233);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     color: aliceblue;
 }
-img{
-    height: 60vh;
+.mapa{
+    height: 60vh;border-radius: 60px;
+
+}
+
+.texto {
+    background-color: rgba(0, 0, 0, 0.41);
+    width: 20%;
+    height: 42%;
+    text-align: justify;
+    padding: 70px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+.separador {
+    width: 80%;
+    border-bottom: 1px solid rgb(246, 246, 246); /* Puedes ajustar el grosor y el color de la línea según tus necesidades */
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.titulo {
+    color: rgba(48 239 188);
 }
