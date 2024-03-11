@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-evenly;
     color: aliceblue;
+    font-family: 'Outfit', sans-serif;
 }
 .mapa{
     height: 60vh;border-radius: 60px;

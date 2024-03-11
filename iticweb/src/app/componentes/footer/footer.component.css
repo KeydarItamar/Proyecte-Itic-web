@@ -4,6 +4,7 @@ footer {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
     align-items: center; /* Centra verticalmente los elementos */
+    font-family: 'Outfit', sans-serif;
   }
   
   .redes {
@@ -22,6 +23,7 @@ footer {
   .icono-sponsor {
     padding-left: 10px;
   }
+
   
   .logo-footer {
     margin-right: 40px;
