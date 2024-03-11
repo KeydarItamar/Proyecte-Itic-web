@@ -1,10 +1,13 @@
 //Archivo principal de node.js
 const connection = require('./bbdd/connection');
 const inserts = require ('./bbdd/inserts');
+const userLogin = require('./bbdd/login')
 const { exec } = require('child_process');
 const express = require('express');
 const cors = require('cors');
 const app = express();
+app.use(express.json({ limit: '10mb', extended: true }));
+
 
 app.use(cors());
 //le decimos a python que responda en utf-8
@@ -28,6 +31,53 @@ app.get('/usuario', (req, res) => { inserts.createUser(); })
 
 // Creación de una noticia
 app.get('/noticia', (req, res) => { inserts.createNoticia(); })
+
+app.post('/login/userLogin', async (req, res) => { 
+    try {
+        const email = req.body.email;    
+        const password = req.body.password;
+
+        userLogin.login(email, password)
+            .then((isLoggedIn) => {
+                console.log('Usuario autenticado (index.js):', isLoggedIn);
+                // Enviar la respuesta solo después de que la promesa se haya resuelto
+                res.json({ success: isLoggedIn });
+            })
+            .catch((error) => {
+                console.error('Error en la autenticación:', error);
+                // Manejo de errores aquí
+                res.status(500).json({ error: 'Error en la autenticación' });
+            });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error en el servidor' });
+    }
+});
+
+app.post('/register/userRegister', async (req, res) => { 
+    try {
+        const nombre = req.body.nombre;
+        const apellido = req.body.apellido;
+        const email = req.body.email;    
+        const password = req.body.password;
+
+        inserts.createUser(nombre, apellido, email, password)
+            .then((isCreated) => {
+                console.log('Usuario autenticado (index.js):', isCreated);
+                // Enviar la respuesta solo después de que la promesa se haya resuelto
+                res.json({ success: isCreated });
+            })
+            .catch((error) => {
+                console.error('Error en la autenticación:', error);
+                // Manejo de errores aquí
+                res.status(500).json({ error: 'Error en la autenticación' });
+            });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error en el servidor' });
+    }
+});
+
 
 app.post('/enviar-datos', (req, res) => {
     const datos = req.body;
