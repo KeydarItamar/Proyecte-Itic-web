@@ -91,3 +91,10 @@ li:active {
     height: 65px;
     width: 60px;
 }
+
+.icono-user {
+    padding-left: 5px;
+    padding-right: 10px;
+    height: 70px;
+    width: 60px;
+}

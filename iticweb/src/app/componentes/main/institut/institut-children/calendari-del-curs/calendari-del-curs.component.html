@@ -1,1 +1,25 @@
-<p>calendari-del-curs works!</p>
+<main>
+<h2>{{ getMonthName(currentMonth) }}, {{ currentYear }}</h2>
+<button (click)="previousMonth()">Anterior</button>
+<button (click)="nextMonth()">Següent</button>
+<table>
+  <thead>
+    <tr>
+      <th>Sun</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let week of weeks">
+      <ng-container *ngFor="let day of week">
+        <td>{{ day }}</td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
+</main>
