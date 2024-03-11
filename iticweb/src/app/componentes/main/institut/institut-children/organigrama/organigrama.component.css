@@ -1,15 +1,21 @@
 main{
     padding-top: 6rem;
-    background-image: url('/assets/fondos/fondo1.jpg'); 
+    background-image:linear-gradient(rgba(0, 0, 0, 0.043), rgba(0, 0, 0, 0.8)),url(/assets/fondos/fondo1.jpg);
     background-size: cover; 
     background-position: center;
     width: 100%;
     height: 100vh;
-    background-color: rgb(44, 44, 233);
     display: flex;
     flex-direction: column;
     align-items: center;
     color: aliceblue;
+}
+
+.titulo  {
+    background-color: rgba(0, 0, 0, 0.454);
+    padding: 20px;
+    border-radius: 20px;
+    color: rgba(48 239 188);
 }
 .contenido{
     width: 100%;

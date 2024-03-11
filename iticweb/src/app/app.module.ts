@@ -38,6 +38,7 @@ import { LoginComponent } from './componentes/main/login/login.component';
 import { RegisterComponent } from './componentes/main/register/register.component'; 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { RegisterComponent } from './componentes/main/register/register.componen
     NoticiasComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
+
  
   ],
   imports: [

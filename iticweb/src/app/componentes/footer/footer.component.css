@@ -1,5 +1,6 @@
-nav {
+footer {
     background-color: rgb(66, 66, 66);
+    height: 5vw;
     display: flex;
     justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
     align-items: center; /* Centra verticalmente los elementos */
@@ -26,10 +27,19 @@ nav {
     margin-right: 40px;
     order: 3; /* Cambia el orden para que aparezca en el medio */
   }
+
+  .logo-consorci {
+    width: 142px;
+    order: 4;
+  }
+
+  .icono-consorci {
+    height: 50px;
+  }
   
   .contacte {
     color: white;
-    order: 4; /* Cambia el orden para que aparezca al final */
+    order: 5; /* Cambia el orden para que aparezca al final */
     padding-right: 10px;
 }
   
