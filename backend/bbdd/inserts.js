@@ -2,8 +2,7 @@ function createUser(nombre, apellido, email, password) {
     return new Promise((resolve, reject) => {
         // Verificar que no haya valores vacíos
         if (!nombre || !apellido || !email || !password) {
-            reject("Todos los campos son obligatorios");
-            return;
+            resolve(false);
         }
 
         var mysql = require('mysql');
