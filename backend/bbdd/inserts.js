@@ -1,9 +1,16 @@
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt'); // Para el cifrado seguro de contraseñas
+
 function createUser(nombre, apellido, email, password) {
     return new Promise((resolve, reject) => {
         // Verificar que no haya valores vacíos
         if (!nombre || !apellido || !email || !password) {
-            resolve(false);
+            resolve({ success: false, token: null });
+            return;
         }
+
+        // Hash de la contraseña antes de almacenarla en la base de datos
+        const hashedPassword = bcrypt.hashSync(password, 10);
 
         var mysql = require('mysql');
 
@@ -23,7 +30,7 @@ function createUser(nombre, apellido, email, password) {
 
             // Variable de query de Insert
             var sql_usuarios = `INSERT INTO usuarios (nombre, apellidos, rol, email, contraseña) 
-                VALUES ('${nombre}', '${apellido}', 1, '${email}', '${password}'); `;
+                VALUES ('${nombre}', '${apellido}', 1, '${email}', '${hashedPassword}'); `;
 
             console.log(sql_usuarios);
 
@@ -36,10 +43,14 @@ function createUser(nombre, apellido, email, password) {
 
                 if (result.affectedRows > 0) {
                     console.log(`Usuario creado! (${email})`);
-                    resolve(true);
+
+                    // Generar el token JWT
+                    const token = jwt.sign({ email: email }, 'pass-itic8assword', { expiresIn: '1h' });
+
+                    resolve({ success: true, token });
                 } else {
                     console.log("Credenciales inválidas!");
-                    resolve(false);
+                    resolve({ success: false, token: null });
                 }
 
                 // Cerramos la conexión después de completar la consulta
@@ -48,6 +59,11 @@ function createUser(nombre, apellido, email, password) {
         });
     });
 }
+
+module.exports = {
+    createUser
+};
+
 
 function createNoticia() {
     var mysql = require('mysql');
