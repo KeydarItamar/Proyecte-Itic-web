@@ -54,6 +54,30 @@ app.post('/login/userLogin', async (req, res) => {
     }
 });
 
+app.post('/register/userRegister', async (req, res) => { 
+    try {
+        const nombre = req.body.nombre;
+        const apellido = req.body.apellido;
+        const email = req.body.email;    
+        const password = req.body.password;
+
+        inserts.createUser(nombre, apellido, email, password)
+            .then((isCreated) => {
+                console.log('Usuario autenticado (index.js):', isCreated);
+                // Enviar la respuesta solo después de que la promesa se haya resuelto
+                res.json({ success: isCreated });
+            })
+            .catch((error) => {
+                console.error('Error en la autenticación:', error);
+                // Manejo de errores aquí
+                res.status(500).json({ error: 'Error en la autenticación' });
+            });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error en el servidor' });
+    }
+});
+
 
 app.post('/enviar-datos', (req, res) => {
     const datos = req.body;

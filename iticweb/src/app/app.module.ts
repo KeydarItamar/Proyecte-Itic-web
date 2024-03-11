@@ -34,7 +34,8 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NoticiasComponent } from './componentes/noticias/noticias.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-import { LoginComponent } from './componentes/main/login/login.component'; 
+import { LoginComponent } from './componentes/main/login/login.component';
+import { RegisterComponent } from './componentes/main/register/register.component'; 
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { LoginComponent } from './componentes/main/login/login.component';
     NoticiasComponent,
     FooterComponent,
     LoginComponent,
+    RegisterComponent,
  
   ],
   imports: [
