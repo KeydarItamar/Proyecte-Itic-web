@@ -1,11 +1,10 @@
 footer {
-    background-color: rgb(66, 66, 66);
+    background-color: rgba(0, 0, 0, 0.838);
     height: 7vw;
     display: flex;
     justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
     align-items: center; /* Centra verticalmente los elementos */
     font-family: 'Outfit', sans-serif;
-    border-radius: 20px 20px 0 0;
   }
   
   .redes {

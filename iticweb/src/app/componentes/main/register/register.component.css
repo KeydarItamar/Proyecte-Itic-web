@@ -7,7 +7,7 @@
 
 
 main {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
     background-size: cover; 
     background-position: center;
     width: 100%;
