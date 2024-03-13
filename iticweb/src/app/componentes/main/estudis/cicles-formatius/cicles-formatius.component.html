@@ -1,1 +1,278 @@
-<p>cicles-formatius works!</p>
+<main>
+    <div class="ciclos">
+        <h1>Estudis que hay en el centro</h1>
+        <ul>
+            <li class="smx" (mouseover)="showDescription('smx')" >
+                <div class="hov">CFGM Sistemes Microinformàtics i Xarxes (SMX) (IC10)</div>
+            </li>
+            <li class="asix" (mouseover)="showDescription('asix')">
+                <div class="hov">CFGS Administració de Sistemes Informàtics en Xarxa (ASIX) (ICA0)</div>
+            </li>
+            <li class="dam" (mouseover)="showDescription('dam')" >
+                <div class="hov">CFGS Desenvolupament d’Aplicacions Multiplataforma (DAM) (ICB0)</div>
+            </li>
+            <li class="daw" (mouseover)="showDescription('daw')" >
+                <div class="hov">CFGS Desenvolupament d’Aplicacions Web (DAW) (ICC0)</div>
+            </li>
+            <li class="data" (mouseover)="showDescription('data')" >
+                <div class="hov">CE en Intel·ligència Artificial i Big Data</div>
+            </li>
+            <li class="pfi" (mouseover)="showDescription('pfi')" >
+                <div class="hov">PFI Auxiliar de muntatge i manteniment d’equips informàtics</div>
+            </li>
+            <li class="incs" (mouseover)="showDescription('incs')">
+                <div class="hov">Informació per les inscripcions a cada curs</div>
+            </li>
+        </ul>
+
+        <!--Para hacer que desaparezca el div se pone esta linea -> (mouseout)="hideDescription()"   -->
+    </div>
+    <div class="descrip">
+        <div *ngIf="showingDescription === 'smx'"  class="info">
+            <div class="block">
+                <h3>
+                    Què estudiaràs?
+                </h3>
+                Estudiaràs SMX amb orientació a la programació. Si t’agrada la informàtica i vols aprendre sobre sistemes operatius, xarxes, seguretat informàtica, maquinari i programació aquest és el teu cicle. I després podràs estudiar també els cicles superiors amb nosaltres convalidant FOL i EIE (Empresa).
+                De què podré treballar?
+                Tindràs diferents sortides professionals com són instal·lador-reparador d’equips informàtics, tècnic de suport informàtic, tècnic de xarxes, reparador de perifèrics informàtics, comercial de microinformàtica, operador de sistemes o operador de tele-assistència.
+               <h3>Per què a l’ITICBCN?</h3> 
+                Perquè faràs SMX, però estudiaràs també programació i desenvolupament d’aplicacions web, d’aquesta forma et serà molt més fàcil decidir-te per quin cicle superior vols fer (si DAM, DAW o ASIX) i quan vagis a treballar podran valorar aquestes capacitats que altres companys no tindran.
+                I perquè treballaràs amb Kubernetes, amb AWS i altres tecnologies punteres en la indústria 4.0.
+               <h3>En quin horari?</h3> 
+                Les classes a primer de matí en horari de 8:00h a 13:30h i segon curs són a la tarda, de 14:30h a 21:00h.
+                Durant el segon curs faràs la formació en centres de treball (FCT) o formació DUAL en horari de matí.
+                En el cas de FCT, faràs pràctiques al matí i classes de tarda de 14:30h a 21:00h.
+                En cas de formació DUAL, faràs al matí (5 hores) a l’empresa i estaràs 3 hores al centre, de 18:00h a 21:00h.
+            </div>
+            <div class="block-der">
+                
+                <ul>
+                    <h3>Primer curs</h3>
+                    <li> MP01. Muntatge i manteniment d’equips</li>
+                    <li> MP02. Sistemes operatius monolloc</li>
+                    <li> MP03. Aplicacions ofimàtiques</li>
+                    <li> MP05. Xarxes</li>
+                    <li> MP09. Formació i orientació laboral</li>
+                    <li> MP11. Anglès tècnic</li>
+                    <li> MP14. Introducció a la programació</li>
+                    <li> Segon curs</li>
+                    <li> MP04. Sistemes operatius en xarxa</li>
+                    <li> MP06. Seguretat informàtica</li>
+                    <li> MP07. Serveis de xarxa</li>
+                    <li> MP08. Aplicacions Web</li>
+                    <li> MP10. Empresa i iniciativa emprenedora</li>
+                    <li> MP12. Mòdul de síntesi</li>
+                    <li> MP13. Formació en centres de treball</li>
+                </ul>
+               
+                <ul>
+                    <h3> Segon curs</h3>
+                   <li> MP04. Sistemes operatius en xarxa</li>
+                   <li> MP06. Seguretat informàtica</li>
+                   <li> MP07. Serveis de xarxa</li>
+                   <li> MP08. Aplicacions Web</li>
+                   <li> MP10. Empresa i iniciativa emprenedora</li>
+                   <li> MP12. Mòdul de síntesi</li>
+                   <li> MP13. Formació en centres de treball</li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="showingDescription === 'asix'" class="info">
+            <div class="block">
+                <h3>Què estudiaré?</h3>
+                Especialitzem els nostres estudis d’administració de sistemes informàtics en xarxa (ASIX ICA0) en Cloud Computing. Estudiaràs administració de sistemes operatius, de serveis d’Internet, de xarxes, de bases de dades, així com seguretat informàtica, ciberseguretat i cloud computing.
+                <h3>Per què a l’ITICBCN?</h3> 
+                Perquè gràcies a l’acord que tenim amb Oracle, pots obtenir les certificacions en Disseny de bases de dades i programació amb SQL, Programació de bases de dades amb PL/SQL, Fonaments de Java i Programació amb Java.
+                Perquè treballaràs amb tecnologia Cloud puntera, com AWS. i podràs fer pràctiques a importants empreses del sector.
+                Perquè el nostre professorat és expert en les matèries que imparteix.
+                <h3>En quin horari?</h3> 
+                Les classes a primer de matí en horari de 8:00h a 13:30h i segon curs són a la tarda, de 14:30h a 21:00h.
+                Durant el segon curs faràs la formació en centres de treball (FCT) o formació DUAL en horari de matí.
+                En el cas de FCT, faràs pràctiques al matí i classes de tarda de 14:30h a 21:00h.
+                En cas de formació DUAL, faràs al matí (5 hores) a l’empresa i estaràs 3 hores al centre, de 18:00h a 21:00h.
+            </div>
+            <div class="block-der"> 
+                <ul>
+                   <h3>Primer curs</h3>
+                   <li>MP01. Implantació de sistemes operatius</li>
+                   <li>MP02. Gestió de bases de dades</li>
+                   <li>MP03. Programació bàsica</li>
+                   <li>MP04. Llenguatges de marques i sistemes de gestió de la informació</li>
+                   <li>MP05. Fonaments de maquinari</li>
+                   <li>MP07. Planificació i administració de xarxes</li>
+                   <li>MP10. Administració de sistemes gestors de bases de dades</li>
+                   <li>MP12. Formació i orientació laboral</li>
+                </ul>
+                <ul>
+                   <h3>Segon curs</h3>
+                   <li>MP06. Administració de sistemes operatius</li>
+                   <li>MP08. Serveis de xarxa i Internet</li>
+                   <li>MP09. Implantació d’aplicacions web</li>
+                   <li>MP11. Seguretat i alta disponibilitat</li>
+                   <li>MP13. Empresa i iniciativa emprenedora</li>
+                   <li>MP14. Projecte d’administració de sistemes informàtics en xarxa</li>
+                   <li>MP15. Formació en centres de treball</li>
+                   <li>MP16. Computació al núvol (Cloud Computing)</li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="showingDescription === 'dam'" class="info">
+            <div class="block">
+                <h3>Què estudiaré?</h3>
+                Pots estudiar DAM si vols desenvolupar aplicacions informàtiques per la gestió empresarial i de negoci, de propòsit general i en l’àmbit de l’entreteniment (videojocs) i la informàtica mòbil (Apps).
+                <h3>Per què a l’ITICBCN?</h3> 
+                Perquè pots venir a estudiar DAM amb nosaltres en modalitat DUAL. Així que el 80% de les hores de segon curs et podràs formar treballant a les empreses amb les quals tenim conveni de col·laboració, cobrant un sou i creixent professionalment.
+                Perquè gràcies a l’acord que tenim amb Oracle, pots obtenir les certificacions en Disseny de bases de dades i programació amb SQL, Programació de bases de dades amb PL/SQL, Fonaments de Java i Programació amb Java.
+                Perquè treballaràs amb tecnologia Cloud puntera, com AWS. i podràs fer pràctiques a importants empreses del sector.
+                Perquè el nostre professorat és expert en les matèries que imparteix.
+                <h3>En quin horari?</h3> 
+                Les classes a primer de matí en horari de 8:00h a 13:30h i segon curs són a la tarda, de 14:30h a 21:00h.
+                Durant el segon curs faràs la formació en centres de treball (FCT) o formació DUAL en horari de matí.   
+                En el cas de FCT, faràs pràctiques al matí i classes de tarda de 14:30h a 21:00h.
+                En cas de formació DUAL, faràs al matí (5 hores) a l’empresa i estaràs 3 hores al centre, de 18:00h a 21:00h.
+            </div>
+            <div class="block-der">
+                    <ul>
+                       <h3>Primer curs</h3>
+                       <li> MP01. Sistemes informàtics</li>
+                       <li> MP02. Bases de dades</li>
+                       <li> MP03. Programació bàsica</li>
+                       <li> MP04. Llenguatges de marques</li>
+                       <li> MP05. Entorns de desenvolupament</li>
+                       <li> MP10. Sistemes de gestió empresarial.</li>
+                       <li> MP11. Formació i orientació laboral</li>
+                    </ul>
+                    <ul>
+                        <h3>Segon curs</h3>
+                        <li> MP06. Accés a dades</li>
+                        <li> MP07. Desenvolupament d’interfícies.</li>
+                        <li> MP08. Programació multimèdia i dispositius mòbils</li>
+                        <li> MP09. Programació de serveis i processos.</li>
+                        <li> MP12. Empresa i iniciativa emprenedora</li>
+                        <li> MP13. Projecte</li>
+                        <li> MP14. Formació en centres de treball</li>
+                        <li> MP15. Orientació. Mòdul de 66 hores a triar entre:</li>
+                        <li> • Aprenentatge automàtic (Machine Learning)</li>
+                        <li> • Big Data</li>
+                        <li> • Intel·ligència artificial (IA)</li>
+                    </ul>
+            </div>
+        </div>
+        <div *ngIf="showingDescription === 'daw'" class="info">
+            <div class="block">
+                <h3>Què estudiaré?</h3>
+                Aquests són els estudis ideals si et vols dedicar a desenvolupar, implantar i mantenir aplicacions web i aplicacions híbrides. Les aplicacions híbrides són aplicacions mòbils que estan dissenyades i programades amb llenguatges de programació web com CSS, HTML o JavaScript.
+
+                <h3>Per què a l’ITICBCN?</h3> 
+                Perquè pots venir a estudiar DAW amb nosaltres en modalitat DUAL. així que el 80% de les hores de segon curs et podràs formar treballant a les empreses amb les que tenim conveni de col·laboració, cobrant un sou i creixent professionalment.
+                Perquè gràcies a l’acord que tenim amb Oracle, pots obtenir les certificacions en Disseny de bases de dades i programació amb SQL, Programació de bases de dades amb PL/SQL, Fonaments de Java i Programació amb Java.
+                Perquè treballaràs amb tecnologia Cloud puntera, com AWS. i podràs fer pràctiques a importants empreses del sector.
+                Perquè el nostre professorat és expert en les matèries que imparteix.
+
+                <h3>En quin horari?</h3> 
+                Les classes a primer de matí en horari de 8:00h a 13:30h i segon curs són a la tarda, de 14:30h a 21:00h.
+                Durant el segon curs faràs la formació en centres de treball (FCT) o formació DUAL en horari de matí.
+                En el cas de FCT, faràs pràctiques al matí i classes de tarda de 14:30h a 21:00h.
+                En cas de formació DUAL, faràs al matí (5 hores) a l’empresa i estaràs 3 hores al centre, de 18:00h a 21:00h.
+            </div>
+            <div class="block-der">
+                    <ul>
+                        <h3>Primer curs</h3>
+                      <li> MP01. Sistemes informàtics</li>
+                      <li> MP02. Bases de dades</li>
+                      <li> MP03. Programació</li>
+                      <li> MP04. Llenguatges de marques</li>
+                      <li> MP05. Entorns de desenvolupament.</li>
+                      <li> MP09. Disseny d’interfícies web</li>
+                      <li> MP10. Formació i orientació laboral</li>
+                    </ul>
+                    <ul>
+                       <h3>Segon curs</h3>
+                       <li>MP06. Desenvolupament web en entorn client</li>
+                       <li>MP07. Desenvolupament web en entorn servidor</li>
+                       <li>MP08. Desplegament d’aplicacions web</li>
+                       <li>MP11. Empresa i iniciativa emprenedora</li>
+                       <li>MP12. Projecte</li>
+                       <li>MP13. Formació en centres de treball</li>
+                       <li>MP14. Orientació. Mòdul de 66 hores a triar entre:</li>
+                       <li>• Aprenentatge automàtic (Machine Learning)</li>
+                       <li>• Big Data</li>
+                       <li>• Intel·ligència artificial (IA)</li>
+                    </ul>
+            </div>
+        </div>
+        <div *ngIf="showingDescription === 'data'"  class="info">
+            <div class="block">
+                <h3>Què estudiaré?</h3>
+                La competència general d’aquest curs d’especialització consisteix a programar i aplicar sistemes intel·ligents que optimitzen la gestió de la informació i l’explotació de dades massives, garantint l’accés a les dades de forma segura i complint els criteris d’accessibilitat, usabilitat i qualitat exigides als estàndards establerts, així com els principis ètics i legals.
+
+                <h3>En quin horari?</h3> 
+                L’horari del curs d’especialització serà de tarda. De dilluns a dijous de 18:00h a 21:00h i divendres de 14:30h a 17:30h.
+            </div> 
+            <div class="block-der">
+                <ul>
+                    <h3>Pla d’estudis</h3>
+                   <li>MP1 Models d’Intel·ligència Artificial 66h (2 hores setmanals)</li>
+                   <li>MP2 Sistemes d’aprenentatge automàtic 66h (2 hores setmanals)</li>
+                   <li>MP3 Programació d’Intel·ligència Artificial 165h (5 hores setmanals)</li>
+                   <li>MP4 Sistemes de Big Data 99h (3 hores setmanals)</li>
+                   <li>MP5 Big Data aplicat 99h (3 hores setmanals)</li>
+                   <li>MP6 Formació en centres de treball 105h</li>
+                 </ul>
+                 <ul>
+                    <h3>Titulacions que donen accés</h3>
+                  <li> CFPS EEB0 Automatització i robòtica industrial</li>
+                  <li> CFPS EED0 Sistemes de telecomunicacions i informàtics</li>
+                  <li> CFPS ICA0 Administració de sistemes informàtics en xarxa</li>
+                  <li> CFPS ICB0 Desenvolupament d’aplicacions multiplataforma</li>
+                  <li> CFPS ICC0 Desenvolupament d’aplicacions web</li>
+                  <li> CFPS IMC0 Mecatrònica industrial</li>
+                 </ul>
+            </div>
+
+        </div>
+        <div *ngIf="showingDescription === 'pfi'" class="info">
+            <div class="block">
+                <h3>Què estudiaré?</h3>
+                La competència general d’aquest perfil consisteix a realitzar operacions auxiliars de muntatge i manteniment de sistemes microinformàtics, perifèrics i xarxes de comunicació de dades, operant amb la qualitat indicada i actuant en condicions de seguretat i de protecció ambiental amb responsabilitat i iniciativa personal.
+               <h3> Per què a l’ITICBCN?</h3>
+                Perquè oferim tota la formació posterior a quan acabis el PFI. En aquest cas, la formació en CFGM de Sistemes Microinformàtics i Xarxes (SMX) pot ser la teva decisió a estudiar i quan vagis a treballar podran tenir un punt de partida amb les capacitats tècniques d’informàtica que has après durant el teu PFI.
+                <h3> En quin horari?</h3>
+                Les classes a primer de matí en horari de 8:00h a 14:30h.
+                Durant el curs faràs la formació en centres de treball (FCT) en horari de matí.
+                Les classes es porten a terme de setembre a juny incloent el període de formació en centres de treball (FCT).
+            </div>
+            <div class="block-der">
+                <ul>
+                   <h3>Mòduls</h3> 
+                  <li> M1. Estratègies i eines de comunicació</li>
+                  <li> M2. Entorn social i territorial</li>
+                  <li> M3. Estratègies i eines matemàtiques</li>
+                  <li> M4. Incorporació al món professional</li>
+                  <li> MPF3029. Muntatge i manteniment de sistemes i components informàtics.</li>
+                  <li> MPF3030. Operacions auxiliars per a la configuració i l’explotació.</li>
+                  <li> MPF3016. Instal·lació i manteniment de xarxes per a transmissió de dades.</li>
+                  <li> MFCT. Formació en centres de treball.</li>
+                  <li> MPI. Projecte integrat.</li>
+                  <li> MPRL. Formació bàsica en prevenció de riscos.</li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="showingDescription === 'incs'" class="info">
+            <div class="block">
+            Al llarg dels mesos d’abril i maig desenvoluparem les Jornades de Portes Obertes del nostre institut, on explicarem els trets característics així com el funcionament i podrem resoldre els dubtes que pugueu tenir.
+            Com que som un centre públic les vies d’accés i <b>el procés d’inscripció segueix les vies oficials marcades pel Departament d’Educació.</b> Us facilitem els enllaços per a consultar els terminis, requisits i resta d’informació.
+            </div>
+            <div class="block-der">
+                <ul>
+                  <li><a href="https://preinscripcio.gencat.cat/ca/inici/">Pàgina principal preinscripció escolar curs 2024-2025</a>  </li>
+                  <li><a href="https://preinscripcio.gencat.cat/ca/estudis/pfi/inici/">PFI: Preinscripció Programes de Formació i Inserció  </a>   </li>
+                  <li><a href="https://preinscripcio.gencat.cat/ca/estudis/fp-grau-mitja/inici/">CFGM: Preinscripció Cicle Formatiu Grau Mitjà        </a>   </li>
+                  <li><a href="https://preinscripcio.gencat.cat/ca/estudis/fp-grau-superior/inici/">CFGS: Preinscripció Cicle Formatiu Grau Superior     </a>   </li>
+                  <li><a href="https://preinscripcio.gencat.cat/ca/estudis/cursos-especialitzacio-fp/inici/">CE: Preinscripció Cursos Especialització             </a>  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>

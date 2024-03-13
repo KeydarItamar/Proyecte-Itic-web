@@ -11,5 +11,13 @@ export class CiclesFormatiusComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  showingDescription: string = '';
 
+  showDescription(ciclo: string) {
+    this.showingDescription = ciclo;
+  }
+
+  hideDescription() {
+    this.showingDescription = '';
+  }
 }

@@ -1,0 +1,17 @@
+main{
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    background: #fff;
+    margin-bottom: 1.25em;
+    border: solid 1px #ddd;
+    max-width: 80vw;
+}
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+    border: 1px solid silver;
+}
