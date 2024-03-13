@@ -2,34 +2,216 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+
 }
 
 
 main {
-    background-image: url('/assets/fondos/fondo1.jpg'); 
-    background-size: cover; 
-    background-position: center;
+    background-color: #FFFFFF;
     width: 100%;
     height: 100vh;
-    background-color: rgb(44, 44, 233);
     display: flex;
     align-items: center;
 }
 
-.icono-Itic {
-    height: 500px;
-    width: 500px;
-    margin-left: 5%;
-    margin-right: 15%;
-}
-
-.chatbox-container {
-    margin-right: 5%;
-    display: flex;
-    flex-direction: column; 
-    flex: 1; 
+.logo-itic {
+    height: 100%;
+    width: 60%;
+    margin: 10% 10%;
+    padding-top:10% ;
 }
 
 .auth_error {
     color:red;
+}
+
+.login {
+    background-color: #D9D9D9;
+    padding: 8px 15px;
+    border:0px;
+    border-radius: 4px;
+    cursor: pointer;
+    border:1px solid black;
+}
+
+.buttons {
+    background-color: #B3B3B3;
+    padding: 8px 15px;
+    margin: 10px;
+    border:0px;
+    border-radius: 4px;
+    cursor: pointer;
+    border:1px solid black;
+}
+
+.title {
+    font-size: 30px;
+    padding-bottom: 15%;
+}
+
+.form_container {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 50px 40px 20px 40px;
+  background-color: #ffffff;
+  border-radius: 11px;
+}
+
+.logo_container {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(248, 248, 248, 0) 50%, #F8F8F888 100%);
+  border: 1px solid #F7F7F8;
+  filter: drop-shadow(0px 0.5px 0.5px #EFEFEF) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  border-radius: 11px;
+}
+
+.title_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.subtitle {
+  font-size: 0.725rem;
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.1rem;
+  color: #8B8E98
+}
+
+.input_container {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.icon {
+  width: 20px;
+  position: absolute;
+  z-index: 99;
+  left: 12px;
+  bottom: 9px;
+}
+
+.input_label {
+  font-size: 0.75rem;
+  color: #8B8E98;
+  font-weight: 600;
+}
+
+.input_field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 40px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+#email{
+  background-image: url('../../../../assets/iconos/email.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#password{
+  background-image: url('../../../../assets/iconos/contraseña.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.sign-in_btn {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background: #30efbc;
+  border-radius: 7px;
+  outline: none;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #8B8E98;
+}
+
+.separator .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: #e8e8e8;
+}
+
+.sign-in_google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #30efbc;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sign-in_google:hover, .sign-in_btn:hover{
+  background-color: #3A31F4;
+  color: #ffffff;
+}
+
+.google_icon {
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.no-account {
+  text-align: right; /* Centra el texto */
+  margin-top: 10px; /* Espacio entre el botón y el texto */
+  font-size: 0.75rem; /* Tamaño del texto */
+  color: #8B8E98; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.no-account:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
 }
