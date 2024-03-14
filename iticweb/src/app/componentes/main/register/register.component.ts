@@ -22,8 +22,8 @@ export class RegisterComponent implements OnInit {
 
   enviarBackend(): void {
     // Accede a los valores de los inputs a través de la referencia local
-    const nombre = (document.getElementById('nombre') as HTMLInputElement).value;
-    const apellido = (document.getElementById('apellido') as HTMLInputElement).value;
+    const nombre = (document.getElementById('nom') as HTMLInputElement).value;
+    const apellido = (document.getElementById('cognom') as HTMLInputElement).value;
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const password = (document.getElementById('password') as HTMLInputElement).value;
 

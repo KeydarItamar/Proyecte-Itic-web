@@ -4,25 +4,37 @@
     </div>
 
     <div class="right">
-        <h2>Crear cuenta</h2>
-        <form (ngSubmit)="onSubmit()">
-            <label for="nombre">Nombre</label>
-            <input type="nombre" name="nombre" id="nombre" required>
-            <br><br>
-            <label for="apellido">Apellido</label>
-            <input type="apellido" name="apellido" id="apellido" required>
-            <br><br>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" required>
-            <br><br>
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" required>
-            <br><br>
+        <div class="form">
+        <form class="form_container" (ngSubmit)="onSubmit()">
+            <div class="title_container">
+                <p class="title">Crear Compte</p>
+                <span class="subtitle">Formulari de creació del compte ITICBCN</span>
+            </div>
+            <br>
+            <div class="input_container">
+                <label class="input_label" for="nom_field">Nom</label>
+                <input placeholder="Nom" title="Input Nom" name="input-name" type="text" class="input_field" id="nom">
+            </div>
+            <div class="input_container">
+                <label class="input_label" for="cognom_field">Cognom</label>
+                <input placeholder="Cognom" title="Input Cognom" name="input-name" type="text" class="input_field" id="cognom">
+            </div>
+            <div class="input_container">
+                <label class="input_label" for="email_field">Email</label>
+                <input placeholder="Email" title="Input Email" name="input-name" type="text" class="input_field" id="email">
+            </div>
+            <div class="input_container">
+                <label class="input_label" for="password_field">Contrasenya</label>
+                <input placeholder="Contrasenya" title="Input Contrasenya" name="input-name" type="password" class="input_field" id="password">
+            </div>
             <div *ngIf="!isAuthenticated">
                 <p class="auth_error">Error. Los valores no pueden estar vacíos!</p>
             </div>
             
-            <input type="submit" name="submit" value="Registrarse">        
+            <button title="Register" type="submit" class="sign-in_btn" >
+                <span>Crear Compte</span>
+            </button>     
         </form>
+        </div>
     </div>
 </main>
