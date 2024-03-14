@@ -1,6 +1,8 @@
 
 <main>
-    <div class="icono-Itic" ><img class="icono-Itic" src="../../../../assets/iconos/logo quadrat Institut TIC de Barcelona (Monocromo) 2.png" alt=""></div>
+    <div class="icono-Itic" >
+        <img class="icono-Itic" src="../../../../assets/iconos/logo quadrat Institut TIC de Barcelona (Monocromo) 2.png" alt="">
+    </div>
     <div class="chatbox-container">
         <div class="response-container">
             <ul *ngFor="let query of listaQuerys let i= index " >
@@ -18,7 +20,6 @@
         #queryInput
         (keyup.enter)="iaChat(queryInput.value); queryInput.value = '' "
         style="height: 3rem; width: 100%;">
-
     </div>
 </main>
 

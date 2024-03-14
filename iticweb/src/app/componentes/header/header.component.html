@@ -1,18 +1,23 @@
 
 <header class="titulos" (mouseenter)="mostrarSubtitulos()" (mouseleave)="ocultarSubtitulos()">
-  <div class="icono-itic"><img class="icono-itic" routerLink="home" src="../../../assets/iconos/Opera_Snapshot_2024-03-05_144830_www.figma.com-removebg-preview.png" alt=""></div>
-  <!-- Iteramos sobre cada opción del menú -->
-  <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of Menu.opciones">
-    <!-- Mostramos el título de la opción -->
-    <li class="principales" [routerLink]="opcion.titulo">{{ opcion.titulo }}</li>
-    <!-- Verificamos si hay subtitulos -->
-    <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
-      <!-- Iteramos sobre cada subtitulo de la opción -->
-      <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
+  <div class="icono-itic">
+    <img class="icono-itic" routerLink="home" src="../../../assets/iconos/Opera_Snapshot_2024-03-05_144830_www.figma.com-removebg-preview.png" alt="">
+  </div>
+  <!-- Envolver la estructura en un nuevo div -->
+  <div class="conteiner-itens">
+    <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of Menu.opciones">
+      <!-- Mostramos el título de la opción -->
+      <li class="principales" [routerLink]="opcion.titulo">{{ opcion.titulo }}</li>
+      <!-- Verificamos si hay subtitulos -->
+      <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
+        <!-- Iteramos sobre cada subtitulo de la opción -->
+        <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
+      </ul>
     </ul>
-  </ul>
+  </div>
   <div class="usuario"><img class="icono-user" routerLink="login" src="../../../assets/iconos/usuario.png" alt="User"></div>
 </header>
+
 
 
 

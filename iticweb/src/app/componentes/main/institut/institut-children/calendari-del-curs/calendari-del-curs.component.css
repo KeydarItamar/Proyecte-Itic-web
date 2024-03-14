@@ -4,9 +4,9 @@ main {
 height: 90vh;
 display: flex;
 flex-direction: column;
+padding-top: 5%;
 align-items: center;
 font-family: "Poppins", serif;
-background: rgb(238, 174, 202);
 background: radial-gradient(
     circle,
     rgb(35, 207, 237) 0%,
@@ -40,13 +40,6 @@ td {
     /* -webkit-backdrop-filter: blur(4px); */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-
-
 }
-.today {
-    time {
-        font-weight: 800;
-    }
-    background: #ff70;
-}
+
 

@@ -4,9 +4,12 @@
     margin: 0%;
 }
 
-/* body {
-    display: flex;
-} */
+@font-face {
+    font-family: 'Outfit';
+    src: url('../../../Proyecte-Itic-web/iticweb/src/assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+  }
+  
+
 
 
 html, body { height: 100%; }
