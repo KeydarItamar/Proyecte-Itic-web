@@ -37,20 +37,6 @@ main {
     font-size: 0.9rem;
 }
 
-.left {
-    background-color: rgba(0, 0, 0, 0.302);
-    padding: 60px;
-    margin-left: 10%;
-    border-radius: 60px;
-}
-
-.right{
-    background-color: rgba(209, 33, 33, 0.544);
-    padding: 60px;
-    margin-left: 15%;
-    padding: 11% 20px 11% 20px;
-    border-radius: 60px;
-}
 
 
 .login {
