@@ -5,7 +5,6 @@ main{
     flex-direction: column;
 }
 
-
 .info{
     display: flex;
     flex-direction: row;

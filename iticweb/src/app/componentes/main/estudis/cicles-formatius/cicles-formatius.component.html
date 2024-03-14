@@ -28,6 +28,7 @@
         <!--Para hacer que desaparezca el div se pone esta linea -> (mouseout)="hideDescription()"   -->
     </div>
     <div class="descrip">
+        <div *ngIf="showingDescription === 'inicio'"  class="info"> si pones el raton en el nombre del curso te saldra la infomacion</div>
         <div *ngIf="showingDescription === 'smx'"  class="info">
             <div class="block">
                 <h3>
