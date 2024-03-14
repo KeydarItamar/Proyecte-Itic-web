@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  Secretaria = 'Secretaria'
   Menu = Menu
   mostrarSubtitulosFlag: boolean = false;
   constructor() {
