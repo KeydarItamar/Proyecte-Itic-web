@@ -7,8 +7,8 @@
         <div class="form">
             <form class="form_container" (ngSubmit)="onSubmit()">
                 <div class="title_container">
-                  <p class="title">Iniciar Sesión</p>
-                  <span class="subtitle">Inicia sesión para poder entrar a tu área de usuario.</span>
+                  <p class="title">Iniciar Sessió</p>
+                  <span class="subtitle">Inicia sessió per poder accedir a la teva àrea d'usuari.</span>
                 </div>
                 <br>
                 <div class="input_container">
@@ -16,23 +16,23 @@
                   <input placeholder="Email" title="Inpit title" name="input-name" type="text" class="input_field" id="email">
                 </div>
                 <div class="input_container">
-                  <label class="input_label" for="password_field">Contraseña</label>
+                  <label class="input_label" for="password_field">Contrasenya</label>
                   <input placeholder="Contraseña" title="Inpit title" name="input-name" type="password" class="input_field" id="password">
                 </div>
                 <div *ngIf="!isAuthenticated">
-                    <p class="auth_error">Autenticación fallida. Email y/o Contraseña incorrectos.</p>
+                    <p class="auth_error">Autenticació fallida. Email i/o Contrasenya incorrectes.</p>
                 </div>
                 <button title="Sign In" type="submit" class="sign-in_btn" >
                   <span>Iniciar Sesión</span>
                 </button>
-                <a class="no-account" routerLink="/register">¿No tienes cuenta?</a>
+                <a class="no-account" routerLink="/register">¿No tens compte?</a>
               
                 <div class="separator">
                   <hr class="line">
                 </div>
                 <button title="Sign In" type="submit" class="sign-in_google">
                   <img src="../../../../assets/iconos/Google__G__logo.svg.png" alt="Google" class="google_icon">
-                  <span>Entrar con Google</span>
+                  <span>Entrar amb Google</span>
                 </button>
             </form>
         </div>
