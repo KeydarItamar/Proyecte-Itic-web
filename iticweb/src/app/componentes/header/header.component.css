@@ -5,6 +5,7 @@
     width: 100%;
     font-family: 'Outfit', sans-serif;
     position: fixed;
+    z-index: 1;
 }
 
 .conteiner-itens{
@@ -28,42 +29,28 @@ ul {
 .principales {
     cursor: pointer;
     padding: 20px;
-    /* Por ejemplo, un relleno */
     box-sizing: border-box;
-    /* Esto asegura que el relleno se incluya en el ancho total */
     justify-content: center;
-    /* Centra el texto horizontalmente */
     align-items: center;
-    /* Centra el texto verticalmente */
     flex: 1;
-    /* Hace que el texto se ajuste al tamaño del contenedor */
     white-space: nowrap;
-    /* Evita que el texto se rompa en varias líneas */
     overflow: hidden;
-    /* Oculta el texto que sobresale del contenedor */
     text-overflow: ellipsis;
-    /* Agrega puntos suspensivos (...) al texto que sobresale del contenedor */
     color: white;
-    
 }
 
 
 .subtitulos {
     padding: 7px;
-    /* Por ejemplo, un relleno */
 }
 
 /* Estilo para los subtitulos, inicialmente ocultos */
 .nombre-subtitulos {
     display: none;
     position: absolute;
-    /* Sacamos los subtitulos del flujo normal del documento */
     background-color: rgba(36, 36, 36, 0.929);
-    /* Ajustamos el fondo para que sea visible */
     padding: 10px;
-    /* Agregamos un poco de espacio entre los subtitulos */
     width: auto;
-    /* Ajusta el ancho al contenido */
     border-radius: 0 0 20px 20px;
     color: white;
 }
@@ -85,7 +72,6 @@ li:active {
 /* Estilo para los subtitulos clicables */
 .nombre-subtitulos li:hover {
     cursor: pointer;
-    /* Cambia el cursor al pasar sobre los subtitulos */
     background-color: rgba(48 239 188);
     color: black;
     border-radius: 25px;
@@ -94,7 +80,7 @@ li:active {
 
 /* Estilo para el icono */
 .icono-itic {
-    padding-left: 5px;
+    padding-left: 8px;
     padding-right: 10px;
     height: 65px;
     width: 60px;
@@ -102,14 +88,19 @@ li:active {
 
 .icono-user{
     padding: 8px;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
+}
+
+.usuario {
+    margin-left: 0.7%;
 }
 
 .icono-user:hover  {
     cursor: pointer;
-    background-color: rgba(48, 239, 188, 0.457);;
+    background-color: rgba(48, 239, 188, 0.457);
     border-radius: 25px;
+    transition: background-color 0.5s ease, border-radius 0.6s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
 }
 
 

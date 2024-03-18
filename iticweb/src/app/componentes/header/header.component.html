@@ -14,7 +14,7 @@
         <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
       </ul>
     </ul>
-    <ul> <li class="principales" [routerLink]="Secretaria"> Secretaria </li></ul>
+    <ul class="nombre-titulos"> <li class="principales" [routerLink]="Secretaria"> Secretaria </li></ul>
   </div>
   <div class="usuario"><img class="icono-user" routerLink="login" src="../../../assets/iconos/usuario.png" alt="User"></div>
 </header>
