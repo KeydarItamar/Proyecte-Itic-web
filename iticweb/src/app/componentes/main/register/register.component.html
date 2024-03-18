@@ -27,8 +27,12 @@
                 <label class="input_label" for="password_field">Contrasenya</label>
                 <input placeholder="Contrasenya" title="Input Contrasenya" name="input-name" type="password" class="input_field" id="password">
             </div>
+            <div class="input_container">
+                <label class="input_label" for="password_repeat_field">Repetir Contrasenya</label>
+                <input placeholder="Repetir Contrasenya" title="Input Repetir Contrasenya" name="input-name" type="password" class="input_field" id="repeat_password">
+            </div>
             <div *ngIf="!isAuthenticated">
-                <p class="auth_error">Error. Los valores no pueden estar vacíos!</p>
+                <p class="auth_error">{{auth_error}}</p>
             </div>
             
             <button title="Register" type="submit" class="sign-in_btn" >

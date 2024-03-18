@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         } else {
           // Manejar el caso en el que la autenticación falla, por ejemplo, mostrar un mensaje de error.
+          // let auth_error = document.getElementById('auth_error');
+          // if (auth_error) auth_error.innerHTML = "Error. Los valores no pueden estar vacíos!";
           console.error('Autenticación fallida');
         }
       });
