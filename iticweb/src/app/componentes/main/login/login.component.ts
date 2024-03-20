@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
 
         // Redirige a la ruta /home solo si el usuario está autenticado
         if (this.isAuthenticated) {
+          document.cookie = `email=${data.email}; expires=${new Date(Date.now() + 864e5).toUTCString()}; path=/`;
           this.router.navigate(['/home']);
         } else {
           // Manejar el caso en el que la autenticación falla, por ejemplo, mostrar un mensaje de error.

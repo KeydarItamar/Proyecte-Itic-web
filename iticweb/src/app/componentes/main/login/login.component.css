@@ -3,10 +3,7 @@
     margin: 0%;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
-    font-family: "Outfit", sans-serif;
-
 }
-
 
 main {
     background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
@@ -23,23 +20,12 @@ main {
     height: 100%;
     width: 60%;
     margin: 10% 10%;
-    padding-top:10% ;
+    padding-top:10%;
 }
 
 .auth_error {
     color:red;
     font-size: 0.9rem;
-}
-
-
-
-.login {
-    background-color: #D9D9D9;
-    padding: 8px 15px;
-    border:0px;
-    border-radius: 4px;
-    cursor: pointer;
-    border:1px solid black;
 }
 
 .buttons {
@@ -50,11 +36,6 @@ main {
     border-radius: 4px;
     cursor: pointer;
     border:1px solid black;
-}
-
-.title {
-    font-size: 30px;
-    padding-bottom: 15%;
 }
 
 .form_container {
