@@ -17,9 +17,10 @@ main {
 }
 
 #conten {
+    width: 100vw;
     display: flex;
-    margin-top: 5%;
-    margin-left: 20%;
+    margin-top: 4%;
+    margin-left: 16%;
 }
 
 .left {
@@ -27,10 +28,11 @@ main {
     max-height: 100vh; /* Altura máxima del contenedor */
     overflow: hidden;
     text-align: center;
-    
-    background-color: #ffffff44;
-    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9)); 
     padding: 5%;
+    padding-left: 10%;
+    background-color: rgba(255, 255, 255, 0.195);
+    background-image: linear-gradient(to right, transparent, rgb(255, 255, 255));
+    border-radius: 20px 0 0 20px;
 }
 
 .right{
@@ -38,19 +40,29 @@ main {
     max-height: 100vh; /* Altura máxima del contenedor */
     overflow: hidden;
     text-align: center;
-    background-color: #ffffff44;
-    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9)); 
-    padding: 7% 0% 7% 0%;
+    background-color: #ffffffc3;
+    background-image: linear-gradient(to left, transparent, rgb(255, 255, 255)); 
     padding: 5%;
+    border-radius: 0px 20px 20px 0px;
 }
 
 
-.icono-Itic {
+img {
     height: 500px;
     width: 500px;
        
 }
 
+.form_container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 50px 40px 50px 40px;
+  }
 
 .auth_error {
     color:red;
