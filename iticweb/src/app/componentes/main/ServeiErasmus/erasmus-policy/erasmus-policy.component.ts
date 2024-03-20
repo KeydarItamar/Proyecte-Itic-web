@@ -11,5 +11,8 @@ export class ErasmusPolicyComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  descargarDocumento() {
+    // Simplemente redirecciona a la URL del documento
+    window.location.href = "../../../../../assets/erasmus/ITICBCN-Erasmus-data-sheet.pdf";
+  }
 }
