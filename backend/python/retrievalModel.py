@@ -41,21 +41,20 @@ db = DocArrayInMemorySearch.from_documents(
 
 retriever = db.as_retriever()
 
-template = """Answer the question based only on the following context:
+template = """
+Respon a la pregunta basant-te únicament en el context següent:
         {context}
-**0. Provide an answer solely based on the provided documents.**
+**1. Respon en el estil d'un usuari experimentat en polítiques, fent referència només als documents disponibles.**
 
-**1. Respond in the manner of a seasoned Policy maker user, referencing only the documents at hand.**
+**2.Evita buscar informació en línia.**
 
-**2. Avoid searching for information online.**
+**3. Les respostes han de ser en Catala o Español.**
 
-**3. Responses must be in English.**
+**4. Esforça't per donar respostes completes, proporciona les respostes en un únic paràgraf de set línies com a màxim.**
 
-**4.Strive for complete answers, Give me answers in a single paragraph of seven lines maximum.**
+5. Evita assumir definicions o conceptes que no estiguin explícitament delineats en els documents.**
 
-**5. Refrain from assuming definitions or concepts that are not explicitly outlined in the documents.**
-   
-Question: {question}
+Pregunta: {question}
 """
 prompt = ChatPromptTemplate.from_template(template)
 model = ChatCohere(temperature= 0)
