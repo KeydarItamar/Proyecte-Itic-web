@@ -3,21 +3,17 @@
     margin: 0%;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
-    font-family: "Outfit", sans-serif;
-
 }
 
 
 main {
-    background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    background-image:linear-gradient(rgba(0, 255, 183, 0.141), rgba(2, 251, 222, 0.28)),url(/assets/fondos/fondoMain.jpg);  
     background-size: cover; 
     background-position: center;
     background-color: #FFFFFF;
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
-    
 }
 
 .icono-Itic {
@@ -26,19 +22,38 @@ main {
     margin-left: 5%;
     margin-right: 15%;
 }
+
+.left {
+  width: 70%; /* Ancho máximo del contenedor */
+  height: 72.6vh; /* Altura máxima del contenedor */
+  margin-top: 8%;
+  margin-left: 14%;
+  background-color: #ffffff44;
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
+  background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9));
+}
+
+.right {
+  width: 70%; /* Ancho máximo del contenedor */
+  height: 72.6vh; /* Altura máxima del contenedor */
+  margin-top: 8%;
+  overflow: hidden;
+}
+
+
 .logo-itic {
+    align-items: center;
     height: 100%;
-    width: 60%;
-    margin: 10% 10%;
-    padding-top:10% ;
+    width: 73.3%;
+    padding: 5%;
+    
 }
 
 .auth_error {
     color:red;
     font-size: 0.9rem;
 }
-
-
 
 .login {
     background-color: #D9D9D9;
@@ -72,9 +87,10 @@ main {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  padding: 50px 40px 20px 40px;
-  background-color: #ffffff;
-  border-radius: 11px;
+  padding: 50px 40px 50px 40px;
+  background-color: rgba(255, 255, 255, 0.917);
+  border-radius: 0 20px 20px 0;
+  margin-right: 10%;
 }
 
 .logo_container {
@@ -82,7 +98,7 @@ main {
   width: 80px;
   height: 80px;
   background: linear-gradient(180deg, rgba(248, 248, 248, 0) 50%, #F8F8F888 100%);
-  border: 1px solid #F7F7F8;
+  border: 1px solid #f7f8f7;
   filter: drop-shadow(0px 0.5px 0.5px #EFEFEF) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
   border-radius: 11px;
 }

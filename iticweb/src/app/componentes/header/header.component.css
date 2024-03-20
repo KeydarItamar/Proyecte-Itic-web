@@ -55,12 +55,10 @@ ul {
     color: white;
 }
 
-li:active {
-    color: rgba(48 239 188);
-}
-
 .nombre-titulos:hover {
     background-color: rgb(112, 112, 112);
+    transition: background-color 0.4s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+
 }
 
 /* Estilo para mostrar los subtitulos cuando se pasa el ratón sobre el título */
@@ -75,6 +73,8 @@ li:active {
     background-color: rgba(48 239 188);
     color: black;
     border-radius: 25px;
+    transition: background-color 0.6s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+
     
 }
 
