@@ -1,6 +1,6 @@
 <main>
     <div class="left">
-        <img class="logo-itic" src="../../../../assets/iconos/logo quadrat Institut TIC de Barcelona (Monocromo) 2.png" alt="">
+        <img class="logo-itic" src="../../../../assets/logos_itic/logo quadrat Institut TIC de Barcelona (Color).png" alt="">
     </div>
 
     <div class="right">
@@ -12,25 +12,26 @@
             </div>
             <br>
             <div class="input_container">
-                <label class="input_label" for="nom_field">Nom</label>
                 <input placeholder="Nom" title="Input Nom" name="input-name" type="text" class="input_field" id="nom">
             </div>
             <div class="input_container">
-                <label class="input_label" for="cognom_field">Cognom</label>
                 <input placeholder="Cognom" title="Input Cognom" name="input-name" type="text" class="input_field" id="cognom">
             </div>
             <div class="input_container">
-                <label class="input_label" for="email_field">Email</label>
                 <input placeholder="Email" title="Input Email" name="input-name" type="text" class="input_field" id="email">
             </div>
             <div class="input_container">
-                <label class="input_label" for="password_field">Contrasenya</label>
                 <input placeholder="Contrasenya" title="Input Contrasenya" name="input-name" type="password" class="input_field" id="password">
             </div>
             <div class="input_container">
-                <label class="input_label" for="password_repeat_field">Repetir Contrasenya</label>
                 <input placeholder="Repetir Contrasenya" title="Input Repetir Contrasenya" name="input-name" type="password" class="input_field" id="repeat_password">
             </div>
+            <mat-progress-spinner *ngIf="!enviado"
+                        class="example-margin"
+                        [color]="color"
+                        [mode]="mode"
+                        [value]="value">
+                     </mat-progress-spinner>
             <div *ngIf="!isAuthenticated">
                 <p class="auth_error">{{auth_error}}</p>
             </div>

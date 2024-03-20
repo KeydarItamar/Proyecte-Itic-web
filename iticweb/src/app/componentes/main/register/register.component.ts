@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +15,10 @@ export class RegisterComponent implements OnInit {
   
   auth_error = ''
   isAuthenticated: boolean = true;
+  color: ThemePalette = 'accent';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 25;
+  enviado: boolean = true;
 
   ngOnInit(): void {
   }
@@ -34,6 +40,7 @@ export class RegisterComponent implements OnInit {
     if (!this.checkErrors(data)) {
       this.isAuthenticated = false;
     } else {
+      this.enviado = false;
       // Realiza una solicitud HTTP POST al backend
       this.http.post('http://localhost:3000/register/userRegister', data)
       .subscribe((response: any) => {
@@ -49,8 +56,6 @@ export class RegisterComponent implements OnInit {
         }
       });
     }
-
-    
   }
 
   checkErrors(data: { nombre?: string; apellido?: string; email?: string; password: any; repeat_password: any; }): boolean {

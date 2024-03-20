@@ -12,13 +12,17 @@
                 </div>
                 <br>
                 <div class="input_container">
-                  <label class="input_label" for="email_field">Email</label>
                   <input placeholder="Email" title="Input Email" name="input-name" type="text" class="input_field" id="email">
                 </div>
                 <div class="input_container">
-                  <label class="input_label" for="password_field">Contrasenya</label>
                   <input placeholder="Contrasenya" title="Input Contrasenya" name="input-name" type="password" class="input_field" id="password">
                 </div>
+                <!-- <mat-progress-spinner *ngIf="!respuestas[i]"
+                        class="example-margin"
+                        [color]="color"
+                        [mode]="mode"
+                        [value]="value">
+                </mat-progress-spinner> -->
                 <div *ngIf="!isAuthenticated">
                     <p class="auth_error">Autenticació fallida. Email i/o Contrasenya incorrectes.</p>
                 </div>
