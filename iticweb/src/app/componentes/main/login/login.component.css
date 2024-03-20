@@ -15,13 +15,6 @@ main {
     display: flex;
 }
 
-.icono-Itic {
-    height: 500px;
-    width: 500px;
-    margin-left: 5%;
-    margin-right: 15%;
-}
-
 .left {
   width: 70%; /* Ancho máximo del contenedor */
   height: 72.6vh; /* Altura máxima del contenedor */
@@ -75,7 +68,7 @@ main {
 
 .form_container {
   width: fit-content;
-  height: fit-content;
+  height: 73vh;
   display: flex;
   flex-direction: column;
   align-items: center;
