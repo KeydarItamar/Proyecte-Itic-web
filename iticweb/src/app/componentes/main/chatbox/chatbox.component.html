@@ -10,6 +10,12 @@
                     <h4>User promtp</h4>
                     <p>{{listaQuerys[i]}}</p>
                     <h4>Ia response</h4>
+                    <mat-progress-spinner *ngIf="!respuestas[i]"
+                        class="example-margin"
+                        [color]="color"
+                        [mode]="mode"
+                        [value]="value">
+                     </mat-progress-spinner>
                  <div class="query" [innerHTML]="respuestas[i]" style="white-space: pre-line"></div>
                 </li>
             </ul>

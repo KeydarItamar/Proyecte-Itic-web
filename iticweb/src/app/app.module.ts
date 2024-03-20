@@ -36,7 +36,8 @@ import { NoticiasComponent } from './componentes/noticias/noticias.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/main/login/login.component';
 import { RegisterComponent } from './componentes/main/register/register.component'; 
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -66,8 +67,7 @@ import { RegisterComponent } from './componentes/main/register/register.componen
     FooterComponent,
     LoginComponent,
     RegisterComponent
-
- 
+  
   ],
   imports: [
     BrowserModule,
@@ -79,6 +79,8 @@ import { RegisterComponent } from './componentes/main/register/register.componen
     MatTabsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
     
   ],
   providers: [],
