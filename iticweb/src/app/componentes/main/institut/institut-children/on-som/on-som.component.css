@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-family: 'Outfit', sans-serif;
 }
 .mapa{
@@ -16,7 +16,7 @@
 }
 
 .texto {
-    background-color: rgba(0, 0, 0, 0.41);
+    background-color: rgba(247, 247, 247, 0.521);
     width: 20%;
     height: 42%;
     text-align: justify;
@@ -26,13 +26,19 @@
 }
 .separador {
     width: 80%;
-    border-bottom: 1px solid rgb(246, 246, 246); /* Puedes ajustar el grosor y el color de la línea según tus necesidades */
+    border-bottom: 3px solid rgba(48 239 188); /* Puedes ajustar el grosor y el color de la línea según tus necesidades */
 }
 
 ul {
     padding-left: 20px;
 }
 
+.conteiner-titulo {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.388) ;
+}
+
 .titulo {
     color: rgba(48 239 188);
+    text-align: center;
 }
