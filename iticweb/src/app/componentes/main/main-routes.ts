@@ -20,6 +20,7 @@ import { SecretariaComponent } from './secretaria/secretaria.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FormNoticiaComponent } from './form-noticia/form-noticia.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -51,6 +52,7 @@ const routes: Routes = [
       ]},
         { path: 'Serveis', component: ServeisComponent },
         { path: 'Secretaria', component: SecretariaComponent },
+        { path: 'Formulario', component: FormNoticiaComponent },
         { path: '**', redirectTo: '/error', pathMatch: 'full' },
   ];
 

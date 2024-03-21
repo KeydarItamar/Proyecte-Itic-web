@@ -72,7 +72,7 @@ module.exports = {
 };
 
 
-function createNoticia() {
+function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPortada, foto1,foto2,foto3,noticiaFijada ) {
     var mysql = require('mysql');
 
     // Variable con las credenciales de conexión de la base de datos
@@ -89,17 +89,76 @@ function createNoticia() {
     })
 
     // Variable de query de Insert
-    var sql_noticias = `INSERT INTO noticias (titulo, texto, imagenes, autor_id) 
-        VALUES ('itamar', 'keydar', 'alumno', 1); `;
+    var sql_insert_noticias = `INSERT INTO noticias (titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada) 
+        VALUES ('${titulo}', '${subtitulo}', '${parrafo1}', '${parrafo2}', '${parrafo3}', '${fotoPortada}', '${foto1}', '${foto2}', '${foto3}', ${noticiaFijada}); `;
 
     // Ejecutamos la query
-    conn.query(sql_noticias, function(err, result) {
+    conn.query(sql_insert_noticias, function(err, result) {
         if (err) throw err;
         console.log("Insertado noticia!")
     })
 }
 
+function deleteNoticia(id ) {
+    var mysql = require('mysql');
+
+    // Variable con las credenciales de conexión de la base de datos
+    var conn = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "pass-itic8",
+        database: "itic_database"
+    });
+
+    conn.connect(function(err) {
+        if (err) throw err;
+        console.log("Conectado a la Base de Datos!");
+    })
+
+    // Variable de query de Insert
+    var sql_delete_noticias = `DELETE FROM noticias WHERE id = ${id};
+    `
+    // Ejecutamos la query
+    conn.query(sql_delete_noticias, function(err, result) {
+        if (err) throw err;
+        console.log("Noticia borrada!")
+    })
+}
+
+function selectNoticia(id ) {
+    var noticiasJSON;
+    var mysql = require('mysql');
+
+    // Variable con las credenciales de conexión de la base de datos
+    var conn = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "pass-itic8",
+        database: "itic_database"
+    });
+
+    conn.connect(function(err) {
+        if (err) throw err;
+        console.log("Conectado a la Base de Datos!");
+    })
+
+    // Variable de query de Insert
+    var sql_select_noticias = `SELECT * FROM noticias WHERE id = ${id};
+    `
+    // Ejecutamos la query
+    conn.query(sql_select_noticias, function(err, result) {
+        if (err) throw err;
+         // Si hay resultados, los guardamos en una variable
+        var noticias = result;
+         // Convertimos el resultado a formato JSON
+        noticiasJSON = JSON.stringify(noticias);
+    })
+    return noticiasJSON
+}
+
 module.exports = {
     createUser,
-    createNoticia 
+    createNoticia, 
+    deleteNoticia,
+    selectNoticia
 }

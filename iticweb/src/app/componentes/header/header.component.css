@@ -38,7 +38,9 @@ ul {
     text-overflow: ellipsis;
     color: white;
 }
-
+.sublista{
+    display: flex;
+}
 
 .subtitulos {
     padding: 7px;

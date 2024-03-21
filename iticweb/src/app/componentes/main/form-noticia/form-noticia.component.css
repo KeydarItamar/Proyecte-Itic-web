@@ -1,0 +1,13 @@
+main {
+    height: 90vh;
+    display: flex;
+    padding-top: 5%;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Poppins", serif;
+    background: radial-gradient(
+        circle,
+        rgb(35, 207, 237) 0%,
+        rgb(7, 98, 203) 100%
+    );
+}

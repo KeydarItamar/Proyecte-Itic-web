@@ -5,7 +5,11 @@ const userLogin = require('./bbdd/login')
 const { exec } = require('child_process');
 const express = require('express');
 const cors = require('cors');
+const { send } = require('process');
 const app = express();
+const multer = require('multer');
+const path = require('path');
+
 app.use(express.json({ limit: '10mb', extended: true }));
 
 
@@ -29,8 +33,60 @@ app.get('/home', (req, res) => {
 // Creación de un usuario
 app.get('/usuario', (req, res) => { inserts.createUser(); })
 
-// Creación de una noticia
-app.get('/noticia', (req, res) => { inserts.createNoticia(); })
+app.post('/insertNoticia', (req, res) => {
+    try {
+        const { id, titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada } = req.body;
+
+        // Llamar a la función para insertar la noticia
+        inserts.createNoticia(id, titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada, (err, result) => {
+            if (err) {
+                // Manejar el error si ocurre
+                console.error(err);
+                res.status(500).json({ error: 'Error al insertar la noticia' });
+            } else {
+                // Si no hay errores, devolver un mensaje de éxito
+                res.status(200).json({ message: 'Noticia insertada correctamente' });
+            }
+        });
+    } catch (error) {
+        // Manejar cualquier error de forma general
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+app.post('/getNoticia', (req, res) => {
+    try {
+        const id = req.body.id; // Suponiendo que el ID se envía como parte del cuerpo de la solicitud
+
+        inserts.selectNoticia(id, (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).json({ error: 'Error al obtener la noticia' });
+            } else {
+                res.status(200).json(result);
+            }
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+app.delete('/deleteNoticia/:id', (req, res) => {
+    const id = req.params.id;
+  
+    // Llamar a la función para eliminar la noticia
+    inserts.deleteNoticia(id, (err, result) => {
+      if (err) {
+        // Manejar el error si ocurre
+        console.error(err);
+        res.status(500).json({ error: 'Error al eliminar la noticia' });
+      } else {
+        // Si no hay errores, devolver un mensaje de éxito
+        res.status(200).json({ message: 'Noticia eliminada correctamente' });
+      }
+    });
+  });
 
 app.post('/login/userLogin', async (req, res) => { 
     try {
@@ -105,5 +161,27 @@ app.post('/enviar-datos', (req, res) => {
 
         res.send(stdout);
     });
+});
+
+//Guardar Documento
+
+
+
+// Configuración de multer
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../iticweb/src/assets/img-noticias'); // La carpeta donde se guardarán los archivos
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname); // El nombre original del archivo
+    }
+});
+
+const upload = multer({ storage: storage });
+
+// Ruta para subir archivos
+app.post('/subirImagenes', upload.array('files'), (req, res) => {
+    console.log('Archivos recibidos:', req.files);
+    res.send('Archivos recibidos correctamente');
 });
 
