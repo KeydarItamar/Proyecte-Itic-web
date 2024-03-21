@@ -71,6 +71,21 @@ app.post('/getNoticia', (req, res) => {
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 });
+app.get('/getAllNoticias', (req, res) => {
+    try {
+        inserts.selectAllNoticias((err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).json({ error: 'Error al obtener las noticias' });
+            } else {
+                res.status(200).json(result);
+            }
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
 
 app.delete('/deleteNoticia/:id', (req, res) => {
     const id = req.params.id;

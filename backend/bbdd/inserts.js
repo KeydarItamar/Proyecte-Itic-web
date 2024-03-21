@@ -149,9 +149,40 @@ function selectNoticia(id ) {
     return noticiasJSON
 }
 
+function selectAllNoticias(callback) {
+    var noticiasJSON;
+    var mysql = require('mysql');
+
+    // Variable con las credenciales de conexión de la base de datos
+    var conn = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "pass-itic8",
+        database: "itic_database"
+    });
+
+    conn.connect(function(err) {
+        if (err) throw err;
+        console.log("Conectado a la Base de Datos!");
+    })
+
+    // Variable de query de Insert
+    var sql_select_noticias = `SELECT * FROM noticias;`
+    conn.query(sql_select_noticias, function(err, result) {
+        if (err) {
+            callback(err, null);
+        } else {
+            callback(null, result);
+        }
+    });
+    // return noticiasJSON
+    
+}
+
 module.exports = {
     createUser,
     createNoticia, 
     deleteNoticia,
-    selectNoticia
+    selectNoticia,
+    selectAllNoticias
 }

@@ -15,6 +15,11 @@ export class NoticiasService {
   getNoticia(id: number): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/getNoticia`, { id });
   }
+  // Método para obtener todas las noticias
+  getAllNoticias(): Observable<any> {
+    console.log('entrando en service')
+    return this.http.get<any>(`${this.baseUrl}/getAllNoticias`);
+  }
 
   // Método para insertar una nueva noticia
   insertNoticia(nuevaNoticia: any): Observable<any> {

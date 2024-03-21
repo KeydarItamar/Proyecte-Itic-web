@@ -21,6 +21,7 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormNoticiaComponent } from './form-noticia/form-noticia.component';
+import { NoticiaDetalleComponent } from '../noticias/noticia-detalle/noticia-detalle.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -53,6 +54,7 @@ const routes: Routes = [
         { path: 'Serveis', component: ServeisComponent },
         { path: 'Secretaria', component: SecretariaComponent },
         { path: 'Formulario', component: FormNoticiaComponent },
+        {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
         { path: '**', redirectTo: '/error', pathMatch: 'full' },
   ];
 

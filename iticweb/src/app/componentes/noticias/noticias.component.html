@@ -9,10 +9,13 @@
 <div>
 </div> 
 
-
 <div class="noticias" >
     <button (click)="anteriorNoticia()">Anterior</button>
-    <app-mini-noticia [id]="currentIndex"></app-mini-noticia>
+    <app-mini-noticia [routerLink]="['/noticiaDetalle', miniNoticia]"
+    [titulo]="titulo"
+    [parrafo1]="parrafo1"
+    [imagen]="imagen" 
+    ></app-mini-noticia>
     <button (click)="siguienteNoticia()">Siguiente</button>
 </div>
 
