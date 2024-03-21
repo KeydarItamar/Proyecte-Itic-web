@@ -18,7 +18,7 @@
       <li class="principales" [routerLink]="Secretaria"> Secretaria </li>
     </ul>
     
-    <ul class="nombre-titulos titulos-principales " > 
+    <ul class="nombre-titulos titulos-principales " *ngIf="getCookie('rol') == '2'"> 
       <li class="principales" [routerLink]="Formulario"> Insert noticia </li>    
     </ul>
 
