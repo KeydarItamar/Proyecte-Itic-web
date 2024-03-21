@@ -42,7 +42,7 @@ app.post('/login/userLogin', async (req, res) => {
                 console.log('Usuario autenticado (index.js):', authResult.success);
 
                 // Enviar la respuesta solo después de que la promesa se haya resuelto
-                res.json({ success: authResult.success, token: authResult.token });
+                res.json({ success: authResult.success, token: authResult.token, rol: authResult.rol });
             })
             .catch((error) => {
                 console.error('Error en la autenticación:', error);
@@ -70,7 +70,7 @@ app.post('/register/userRegister', async (req, res) => {
                 console.log('Usuario autenticado (index.js):', result);
 
                 // Enviar la respuesta con el token
-                res.json({ success: true, token: result.token });
+                res.json({ success: true, token: result.token, rol: result.rol});
             } else {
                 console.error('Credenciales inválidas');
                 res.status(401).json({ success: false, message: 'Credenciales inválidas' });
