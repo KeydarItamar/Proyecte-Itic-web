@@ -1,5 +1,12 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
 .noticia-container{
-    height: 96vh;
+    height: 97vh;
     width: 100%;
     display: flex;
     justify-content: space-around;

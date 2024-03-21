@@ -1,29 +1,33 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+
 /* Estilo para el contenedor de los títulos */
 .titulos {
     display: flex;
     background-color: rgba(31, 31, 31, 0.969);
-    width: 100%;
+    width: 100vw;
     font-family: 'Outfit', sans-serif;
     position: fixed;
     z-index: 1;
+    padding: 5px 0 5px 0;
 }
 
 .conteiner-itens{
     display: flex;
     overflow: hidden;
-    width: 90vw;
-    
-    
+    width: 90vw;   
 }
 
 
 ul {
     list-style-type: none;
-    /* Elimina los marcadores de la lista */
     padding: 0;
-    /* Asegúrate de que no haya relleno */
     margin: 0;
-    /* Asegúrate de que no haya margen */
 }
 
 .principales {
@@ -58,7 +62,7 @@ ul {
 .nombre-titulos:hover {
     background-color: rgb(112, 112, 112);
     transition: background-color 0.4s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
-
+    border-radius: 10px;
 }
 
 /* Estilo para mostrar los subtitulos cuando se pasa el ratón sobre el título */
@@ -72,8 +76,8 @@ ul {
     cursor: pointer;
     background-color: rgba(48 239 188);
     color: black;
-    border-radius: 25px;
-    transition: background-color 0.4s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+    border-radius: 20px;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
 
     
 }
@@ -82,14 +86,18 @@ ul {
 .icono-itic {
     padding-left: 8px;
     padding-right: 10px;
-    height: 65px;
-    width: 60px;
+    height: 62px;
+    width: 75px;
+}
+
+.icono-itic:hover {
+    cursor: pointer;
 }
 
 .icono-user{
     padding: 8px;
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
 }
 
 .usuario {
@@ -100,7 +108,7 @@ ul {
     cursor: pointer;
     background-color: rgba(48, 239, 188, 0.457);
     border-radius: 25px;
-    transition: background-color 0.5s ease, border-radius 0.6s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+    transition: background-color 0.3s ease, border-radius 0.6s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
 }
 
 

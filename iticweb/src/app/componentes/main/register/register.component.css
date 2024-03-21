@@ -18,7 +18,7 @@ main {
 
 #container {
   display: flex;
-  width: 72%; /* Ancho máximo del contenedor */
+  width: 72vw; /* Ancho máximo del contenedor */
   height: 73vh;
   margin-top: 4%;
   margin-left: 15%;
@@ -116,7 +116,7 @@ main {
 .input_field {
   width: auto;
   height: 40px;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 30px;
   border-radius: 7px;
   outline: none;
   border: 1px solid #e5e5e5;
@@ -146,4 +146,48 @@ main {
 .sign-in_btn:hover{
     background-color: #3A31F4;
     color: #ffffff;
+}
+
+
+#email{
+  background-image: url('../../../../assets/iconos/email.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#password{
+  background-image: url('../../../../assets/iconos/contraseña.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#nom{
+  background-image: url('../../../../assets/iconos/usuarioForm.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#cognom {
+  background-image: url('../../../../assets/iconos/usuarioForm.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#repeat_password {
+  background-image: url('../../../../assets/iconos/contraseña.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+.no-account {
+  text-align: right; /* Centra el texto */
+  margin-top: 10px; /* Espacio entre el botón y el texto */
+  font-size: 0.75rem; /* Tamaño del texto */
+  color: #8B8E98; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado del enlace */
 }
