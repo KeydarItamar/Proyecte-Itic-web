@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   Secretaria = 'Secretaria'
+  Formulario = 'Formulario'
   Menu = Menu
   mostrarSubtitulosFlag: boolean = false;
   constructor() {

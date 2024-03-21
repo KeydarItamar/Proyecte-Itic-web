@@ -25,23 +25,40 @@ function createTables() {
         contraseña VARCHAR(255)
     );`;
 
+  // ----TABLA NOTICIAS----
+   var sql_noticias= ` CREATE TABLE IF NOT EXISTS noticias (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        titulo VARCHAR(255) NOT NULL,
+        subtitulo VARCHAR(255),
+        parrafo1 TEXT,
+        parrafo2 TEXT,
+        parrafo3 TEXT,
+        fotoPortada VARCHAR(255),
+        foto1 VARCHAR(255),
+        foto2 VARCHAR(255),
+        foto3 VARCHAR(255),
+        noticiaFijada BOOLEAN DEFAULT FALSE
+    )`;
+       // var sql_noticias = `CREATE TABLE IF NOT EXISTS noticias (
+    //     id INT AUTO_INCREMENT PRIMARY KEY,
+    //     titulo VARCHAR(255),
+    //     texto VARCHAR(5000),
+    //     imagenes VARCHAR(255),
+    //     autor_id INT,
+    //     FOREIGN KEY (autor_id) REFERENCES usuarios(id)
+    // );`;
+
+
+
     // Ejecutamos la query
     conn.query(sql_usuarios, function(err, result) {
         if (err) throw err;
         console.log("Tabla usuarios creada!")
     })
 
-    // ----TABLA NOTICIAS----
+  
 
-    var sql_noticias = `CREATE TABLE IF NOT EXISTS noticias (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        titulo VARCHAR(255),
-        texto VARCHAR(5000),
-        imagenes VARCHAR(255),
-        autor_id INT,
-        FOREIGN KEY (autor_id) REFERENCES usuarios(id)
-    );`;
-
+ 
     // Ejecutamos la query
     conn.query(sql_noticias, function(err, result) {
         if (err) throw err;

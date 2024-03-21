@@ -46,7 +46,9 @@ ul {
     color: white;
     
 }
-
+.sublista{
+    display: flex;
+}
 
 .subtitulos {
     padding: 7px;
