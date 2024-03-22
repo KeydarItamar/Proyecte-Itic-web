@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 
 
 @Component({
@@ -11,6 +13,10 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
+
+  color: ThemePalette = 'accent';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 25;
 
   isAuthenticated: boolean = true;
 
@@ -36,9 +42,12 @@ export class LoginComponent implements OnInit {
 
         // Redirige a la ruta /home solo si el usuario está autenticado
         if (this.isAuthenticated) {
+          document.cookie = `email=${data.email}; expires=${new Date(Date.now() + 864e5).toUTCString()}; path=/`;
           this.router.navigate(['/home']);
         } else {
           // Manejar el caso en el que la autenticación falla, por ejemplo, mostrar un mensaje de error.
+          // let auth_error = document.getElementById('auth_error');
+          // if (auth_error) auth_error.innerHTML = "Error. Los valores no pueden estar vacíos!";
           console.error('Autenticación fallida');
         }
       });

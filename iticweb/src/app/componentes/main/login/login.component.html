@@ -1,42 +1,54 @@
 <main>
-    <div class="left">
-        <img class="logo-itic" src="../../../../assets/logos_itic/logo quadrat Institut TIC de Barcelona (Color).png" alt="">
+  <div id="container">
+
+      <div class="left">
+          <img class="logo-itic" src="../../../../assets/logos_itic/logo quadrat Institut TIC de Barcelona (Color).png" alt="">
+      </div>
+
+
+
+
+      <div class="right">
+          <div class="form">
+              <form class="form_container" (ngSubmit)="onSubmit()">
+                  <div class="title_container">
+                    <h1 class="title">Iniciar Sessió</h1>
+                    <span class="subtitle">Inicia sessió per poder accedir a la teva àrea d'usuari.</span>
+                  </div>
+                  <br>
+                  <div class="input_container">
+                    <input placeholder="Email" title="Input Email" name="input-name" type="text" class="input_field" id="email">
+                  </div>
+                  <div class="input_container">
+                    <input placeholder="Contrasenya" title="Input Contrasenya" name="input-name" type="password" class="input_field" id="password">
+                  </div>
+                  <!-- <mat-progress-spinner *ngIf="!respuestas[i]"
+                          class="example-margin"
+                          [color]="color"
+                          [mode]="mode"
+                          [value]="value">
+                  </mat-progress-spinner> -->
+                  <div *ngIf="!isAuthenticated">
+                      <p class="auth_error">Autenticació fallida. Email i/o Contrasenya incorrectes.</p>
+                  </div>
+                  <button title="Sign In" type="submit" class="sign-in_btn" >
+                    <span>Iniciar Sessió</span>
+                  </button>
+                  <a class="no-account" routerLink="/register">¿No tens compte?</a>
+                
+                  <div class="separator">
+                    <hr class="line">
+                  </div>
+                  <button title="Sign In" type="submit" class="sign-in_google">
+                    <img src="../../../../assets/iconos/Google__G__logo.svg.png" alt="Google" class="google_icon">
+                    <span>Entrar amb Google</span>
+                  </button>
+              </form>
+          </div>
     </div>
 
-    <div class="right">
-        <div class="form">
-            <form class="form_container" (ngSubmit)="onSubmit()">
-                <div class="title_container">
-                  <p class="title">Iniciar Sessió</p>
-                  <span class="subtitle">Inicia sessió per poder accedir a la teva àrea d'usuari.</span>
-                </div>
-                <br>
-                <div class="input_container">
-                  <label class="input_label" for="email_field">Email</label>
-                  <input placeholder="Email" title="Inpit title" name="input-name" type="text" class="input_field" id="email">
-                </div>
-                <div class="input_container">
-                  <label class="input_label" for="password_field">Contrasenya</label>
-                  <input placeholder="Contraseña" title="Inpit title" name="input-name" type="password" class="input_field" id="password">
-                </div>
-                <div *ngIf="!isAuthenticated">
-                    <p class="auth_error">Autenticació fallida. Email i/o Contrasenya incorrectes.</p>
-                </div>
-                <button title="Sign In" type="submit" class="sign-in_btn" >
-                  <span>Iniciar Sesión</span>
-                </button>
-                <a class="no-account" routerLink="/register">¿No tens compte?</a>
-              
-                <div class="separator">
-                  <hr class="line">
-                </div>
-                <button title="Sign In" type="submit" class="sign-in_google">
-                  <img src="../../../../assets/iconos/Google__G__logo.svg.png" alt="Google" class="google_icon">
-                  <span>Entrar amb Google</span>
-                </button>
-            </form>
-        </div>
-    </div>
+
+  </div>   
 </main>
 
 

@@ -129,8 +129,8 @@ app.post('/login/userLogin', async (req, res) => {
 
 app.post('/register/userRegister', async (req, res) => {
     try {
-        const nombre = req.body.nombre;
-        const apellido = req.body.apellido;
+        const nombre = req.body.nom;
+        const apellido = req.body.cognom;
         const email = req.body.email;
         const password = req.body.password;
 

@@ -1,25 +1,88 @@
-main{
-    height: 90vh;
+main {
+    font-family: 'Outfit', sans-serif;
+    background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    padding-bottom: 2%;
+    
+}
+
+.ciclos {
+    padding-top: 3.4%;
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
-.info{
+
+.llista {
     display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 100vw;
-    border: 1px solid black;
+    list-style-type: none; 
+    justify-content: center;
 }
-.block{
-    width: 50%;
+
+.llista li {
+    color: rgb(225, 225, 225);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
-.block-der{
+
+.hov {
+    background-image: linear-gradient(to bottom, rgba(47, 41, 161, 0.886), #7db2b6);
+    padding: 20px; 
+    cursor: pointer;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.302);
+}
+
+.hov:hover {
+    box-shadow: 0 8px 32px 0 rgba(4, 7, 45, 0.37);
+}
+
+/***********************************************************************************/
+/* .descrip {
+    background-color: aquamarine;
+} */
+
+.titulos {
+    text-align: center;
+    padding: 1%;
+    color: rgba(48 239 188);   
+    background-color: rgba(0, 0, 0, 0.288); 
+    margin: 2% 20% 2% 20%;
+    border-radius: 50px;
+}
+
+
+.block {
+    background-color: rgba(247, 247, 247, 0.521);
+    margin: 50px;
+    padding: 70px;
+    padding-top: 30px;
+    border-radius: 50px;
+}
+
+
+
+.block-der {
     display: flex;
-    flex-direction: row;
-    width: 50%;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    background-color: rgba(247, 247, 247, 0.521);
+    margin: 50px;
+    padding: 70px;
+    padding-top: 30px;
+    border-radius: 50px;
 }
-li:hover{
-    color: blue;
+
+.block-der ul {
+    list-style-type: none; /* Quita los estilos de lista por defecto */
+    padding: 0; /* Elimina el relleno predeterminado de la lista */
+    text-align: left; /* Alinea el texto a la izquierda dentro de la lista */
+    margin: 0 20px; /* Añade un margen a los lados para separar las listas */
+}
+
+.block-der h3 {
+    text-align: center; /* Centra el texto del encabezado */
+}
+
+.block-der li {
+    margin-bottom: 10px; /* Espaciado entre elementos de la lista */
 }
