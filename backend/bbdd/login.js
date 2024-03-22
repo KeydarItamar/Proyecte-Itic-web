@@ -37,8 +37,8 @@ function login(email, password) {
 
                             // Generar el token JWT
                             const token = jwt.sign({ email: email }, 'pass-itic8assword', { expiresIn: '1h' });
-
-                            resolve({ success: true, token });
+                            
+                            resolve({ success: true, token, rol: result[0].rol });
                         } else {
                             console.log("Credenciales inválidas!");
                             resolve({ success: false, token: null });
