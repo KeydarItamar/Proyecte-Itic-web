@@ -36,4 +36,11 @@ export class NoticiasService {
     return this.http.post<any>(`${this.baseUrl}/subirImagenes`, formulario);
   }
 
+
+  createTables(): Observable<any> {
+    console.log('entrando en service para create table')
+    return this.http.get<any>(`${this.baseUrl}/createTablas`);
+  }
+
+
 }

@@ -26,7 +26,7 @@ app.listen(3000, () => {
 app.use(express.json({limit: '10mb', extended: true, charset: 'utf-8'}));
 
 // Conexión a la base de datos y creación de las tablas
-app.get('/home', (req, res) => { 
+app.get('/createTablas', (req, res) => { 
     connection.createTables();
 })
 

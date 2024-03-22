@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu-header';
 import { RouterModule } from '@angular/router';
-
+import { NoticiasService } from 'src/app/noticias.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,11 +12,13 @@ export class HeaderComponent implements OnInit {
   Formulario = 'Formulario'
   Menu = Menu
   mostrarSubtitulosFlag: boolean = false;
-  constructor() {
+
+  constructor(private noticiaService : NoticiasService) {
 
   }
 
   ngOnInit(): void {
+    this.crearTablas()
   }
 
   mostrarSubtitulos() {
@@ -42,5 +44,16 @@ export class HeaderComponent implements OnInit {
     // Si no se encuentra la cookie, devolver null
     return null;
   }
+
+ crearTablas(){
+   this.noticiaService.createTables().subscribe({
+    next: response =>{
+      console.log('tablas creadas')
+    },
+    error : error => {
+    console.error('Error al subir imágenes:', error);
+  }
+   })
+ }
 
 }
