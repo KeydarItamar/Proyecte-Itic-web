@@ -36,8 +36,12 @@ import { NoticiasComponent } from './componentes/noticias/noticias.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/main/login/login.component';
 import { RegisterComponent } from './componentes/main/register/register.component'; 
-
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NoticiaDetalleComponent } from './componentes/noticias/noticia-detalle/noticia-detalle.component';
+import { MiniNoticiaComponent } from './componentes/noticias/mini-noticia/mini-noticia.component';
+import { FormNoticiaComponent } from './componentes/main/form-noticia/form-noticia.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -65,9 +69,11 @@ import { RegisterComponent } from './componentes/main/register/register.componen
     NoticiasComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
-
- 
+    RegisterComponent,
+    NoticiaDetalleComponent,
+    MiniNoticiaComponent,
+    FormNoticiaComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -79,6 +85,10 @@ import { RegisterComponent } from './componentes/main/register/register.componen
     MatTabsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    
     
   ],
   providers: [],

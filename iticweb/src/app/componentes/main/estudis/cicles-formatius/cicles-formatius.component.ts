@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cicles-formatius.component.css']
 })
 export class CiclesFormatiusComponent implements OnInit {
-  showingDescription: string = 'inicio';
+  showingDescription: string = 'smx';
   
   constructor() { }
 

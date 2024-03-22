@@ -1,79 +1,70 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+
 /* Estilo para el contenedor de los títulos */
 .titulos {
     display: flex;
     background-color: rgba(31, 31, 31, 0.969);
-    width: 100%;
+    width: 100vw;
     font-family: 'Outfit', sans-serif;
     position: fixed;
+    z-index: 1;
+    padding: 5px 0 5px 0;
 }
 
 .conteiner-itens{
     display: flex;
     overflow: hidden;
-    width: 90vw;
-    
-    
+    width: 90vw;   
 }
 
 
 ul {
     list-style-type: none;
-    /* Elimina los marcadores de la lista */
     padding: 0;
-    /* Asegúrate de que no haya relleno */
     margin: 0;
-    /* Asegúrate de que no haya margen */
 }
 
 .principales {
     cursor: pointer;
     padding: 20px;
-    /* Por ejemplo, un relleno */
     box-sizing: border-box;
-    /* Esto asegura que el relleno se incluya en el ancho total */
     justify-content: center;
-    /* Centra el texto horizontalmente */
     align-items: center;
-    /* Centra el texto verticalmente */
     flex: 1;
-    /* Hace que el texto se ajuste al tamaño del contenedor */
     white-space: nowrap;
-    /* Evita que el texto se rompa en varias líneas */
     overflow: hidden;
-    /* Oculta el texto que sobresale del contenedor */
     text-overflow: ellipsis;
-    /* Agrega puntos suspensivos (...) al texto que sobresale del contenedor */
     color: white;
-    
 }
-
+.sublista{
+    display: flex;
+}
 
 .subtitulos {
     padding: 7px;
-    /* Por ejemplo, un relleno */
 }
 
 /* Estilo para los subtitulos, inicialmente ocultos */
 .nombre-subtitulos {
     display: none;
     position: absolute;
-    /* Sacamos los subtitulos del flujo normal del documento */
     background-color: rgba(36, 36, 36, 0.929);
-    /* Ajustamos el fondo para que sea visible */
     padding: 10px;
-    /* Agregamos un poco de espacio entre los subtitulos */
     width: auto;
-    /* Ajusta el ancho al contenido */
     border-radius: 0 0 20px 20px;
     color: white;
 }
 
-li:active {
-    color: rgba(48 239 188);
-}
-
 .nombre-titulos:hover {
     background-color: rgb(112, 112, 112);
+    transition: background-color 0.4s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+    border-radius: 10px;
 }
 
 /* Estilo para mostrar los subtitulos cuando se pasa el ratón sobre el título */
@@ -85,31 +76,41 @@ li:active {
 /* Estilo para los subtitulos clicables */
 .nombre-subtitulos li:hover {
     cursor: pointer;
-    /* Cambia el cursor al pasar sobre los subtitulos */
     background-color: rgba(48 239 188);
     color: black;
-    border-radius: 25px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+
     
 }
 
 /* Estilo para el icono */
 .icono-itic {
-    padding-left: 5px;
+    padding-left: 8px;
     padding-right: 10px;
-    height: 65px;
-    width: 60px;
+    height: 62px;
+    width: 75px;
+}
+
+.icono-itic:hover {
+    cursor: pointer;
 }
 
 .icono-user{
     padding: 8px;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
+}
+
+.usuario {
+    margin-left: 0.7%;
 }
 
 .icono-user:hover  {
     cursor: pointer;
-    background-color: rgba(48, 239, 188, 0.457);;
+    background-color: rgba(48, 239, 188, 0.457);
     border-radius: 25px;
+    transition: background-color 0.3s ease, border-radius 0.6s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
 }
 
 

@@ -14,7 +14,15 @@
         <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
       </ul>
     </ul>
-    <ul> <li class="principales" [routerLink]="Secretaria"> Secretaria </li></ul>
+    <ul class="nombre-titulos titulos-principales " > 
+      <li class="principales" [routerLink]="Secretaria"> Secretaria </li>
+    </ul>
+    
+    <!-- este ul sólo se muestra si el usuario es profesor o admin -->
+    <ul class="nombre-titulos titulos-principales " *ngIf="getCookie('rol') == '2' || getCookie('rol') == '0'"> 
+      <li class="principales" [routerLink]="Formulario"> Insert noticia </li>    
+    </ul>
+
   </div>
   <div class="usuario"><img class="icono-user" routerLink="login" src="../../../assets/iconos/usuario.png" alt="User"></div>
 </header>

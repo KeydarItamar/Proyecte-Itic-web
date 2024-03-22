@@ -1,12 +1,22 @@
+
 <div class="noticia-container">
     <div class="noticia-fijada">
-        <img src="../../../assets/imagenes/portas-obertes.png" alt="">
+        <img src="../../../assets/imagenes/portas-obertes.png" alt="" >
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus ad commodi molestiae eligendi, odio soluta nemo nulla illum, tempora aperiam quos reiciendis ipsa consectetur aspernatur cumque, nihil dolorum enim.
         Nisi doloremque iste, similique eaque reprehenderit beatae ab itaque quam cupiditate asperiores a quas nostrum aliquam laboriosam id. Quasi delectus laboriosam commodi debitis officiis ipsam, mollitia eum nostrum possimus quis.</p>
     </div>
-    <div class="noticia-fijada">
-        <img src="../../../assets/imagenes/portas-obertes.png" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus ad commodi molestiae eligendi, odio soluta nemo nulla illum, tempora aperiam quos reiciendis ipsa consectetur aspernatur cumque, nihil dolorum enim.
-        Nisi doloremque iste, similique eaque reprehenderit beatae ab itaque quam cupiditate asperiores a quas nostrum aliquam laboriosam id. Quasi delectus laboriosam commodi debitis officiis ipsam, mollitia eum nostrum possimus quis.</p>
-    </div>
+
+<div>
+</div> 
+
+<div class="noticias" >
+    <button (click)="anteriorNoticia()">Anterior</button>
+    <app-mini-noticia [routerLink]="['/noticiaDetalle', miniNoticia]"
+    [titulo]="titulo"
+    [parrafo1]="parrafo1"
+    [imagen]="imagen" 
+    ></app-mini-noticia>
+    <button (click)="siguienteNoticia()">Siguiente</button>
 </div>
+
+

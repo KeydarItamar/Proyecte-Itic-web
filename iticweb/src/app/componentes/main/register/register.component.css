@@ -5,40 +5,189 @@
     font-family: 'Outfit', sans-serif;
 }
 
-
 main {
-    background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    background-image:linear-gradient(rgba(0, 255, 183, 0.141), rgba(2, 251, 222, 0.28)),url(/assets/fondos/fondoMain.jpg);  
     background-size: cover; 
     background-position: center;
+    background-color: #FFFFFF;
     width: 100%;
     height: 100vh;
-    background-color: rgb(44, 44, 233);
     display: flex;
     align-items: center;
 }
 
-.icono-Itic {
-    height: 500px;
-    width: 500px;
-    margin-left: 5%;
-    margin-right: 15%;
+#container {
+  display: flex;
+  width: 72vw; /* Ancho máximo del contenedor */
+  height: 73vh;
+  margin-top: 4%;
+  margin-left: 15%;
+}
+
+.left {
+  background-color: #ffffff44;
+  border-radius: 20px 0 0 20px;
+  background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9));
+  padding-right: 20%;
+
+}
+
+
+.logo-itic {
+  align-items: center;
+  height: 90%;
+  padding: 5% 5% 1% 6%;
+  border-radius: 20px 0 0 0 20px;
+  
 }
 
 .auth_error {
     color:red;
+    font-size: 0.9rem;
 }
 
-.left {
-    background-color: rgba(0, 0, 0, 0.302);
-    padding: 60px;
-    margin-left: 10%;
-    border-radius: 60px;
+
+
+.form_container {
+  width: fit-content;
+  height: 73vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding-right: 9vw;
+  padding-left: 2%;
+  background-color: #ffffffe9;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
 }
 
-.right{
-    background-color: rgba(209, 33, 33, 0.544);
-    padding: 60px;
-    margin-left: 15%;
-    padding: 8% 20px 8% 20px;
-    border-radius: 60px;
+
+
+.title_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.subtitle {
+  font-size: 1rem;
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.1rem;
+  color: #8B8E98
+}
+
+.input_container {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.icon {
+  width: 20px;
+  position: absolute;
+  z-index: 99;
+  left: 12px;
+  bottom: 9px;
+}
+
+.input_label {
+  font-size: 0.75rem;
+  color: #8B8E98;
+  font-weight: 600;
+  padding: 0 0 0 10px;
+}
+
+.input_field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 30px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.sign-in_btn {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background: #30efbc;
+  border-radius: 7px;
+  outline: none;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sign-in_btn:hover{
+    background-color: #3A31F4;
+    color: #ffffff;
+}
+
+
+#email{
+  background-image: url('../../../../assets/iconos/email.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#password{
+  background-image: url('../../../../assets/iconos/contraseña.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#nom{
+  background-image: url('../../../../assets/iconos/usuarioForm.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#cognom {
+  background-image: url('../../../../assets/iconos/usuarioForm.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+#repeat_password {
+  background-image: url('../../../../assets/iconos/contraseña.png');
+  background-repeat: no-repeat;
+  background-position: left center; /* posicionar el icono en el centro a la derecha */
+  background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
+}
+
+.no-account {
+  text-align: right; /* Centra el texto */
+  margin-top: 10px; /* Espacio entre el botón y el texto */
+  font-size: 0.75rem; /* Tamaño del texto */
+  color: #8B8E98; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado del enlace */
 }

@@ -1,28 +1,52 @@
 <main>
-    <div class="left">
-        <img class="logo-itic" src="../../../../assets/iconos/logo quadrat Institut TIC de Barcelona (Monocromo) 2.png" alt="">
-    </div>
 
-    <div class="right">
-        <h2>Crear cuenta</h2>
-        <form (ngSubmit)="onSubmit()">
-            <label for="nombre">Nombre</label>
-            <input type="nombre" name="nombre" id="nombre" required>
-            <br><br>
-            <label for="apellido">Apellido</label>
-            <input type="apellido" name="apellido" id="apellido" required>
-            <br><br>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" required>
-            <br><br>
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" required>
-            <br><br>
-            <div *ngIf="!isAuthenticated">
-                <p class="auth_error">Error. Los valores no pueden estar vacíos!</p>
+    <div id="container">
+        <div class="left">
+            <img class="logo-itic" src="../../../../assets/logos_itic/logo quadrat Institut TIC de Barcelona (Color).png" alt="">
+        </div>
+    
+        <div class="right">
+            <div class="form">
+            <form class="form_container" (ngSubmit)="onSubmit()">
+                <div class="title_container">
+                    <h1 class="title">Crear Compte</h1>
+                    <span class="subtitle">Formulari de creació del compte ITICBCN</span>
+                </div>
+                <br>
+                <div class="input_container">
+                    <input placeholder="Nom" title="Input Nom" name="input-name" type="text" class="input_field" id="nom">
+                </div>
+                <div class="input_container">
+                    <input placeholder="Cognom" title="Input Cognom" name="input-name" type="text" class="input_field" id="cognom">
+                </div>
+                <div class="input_container">
+                    <input placeholder="Email" title="Input Email" name="input-name" type="text" class="input_field" id="email">
+                </div>
+                <div class="input_container">
+                    <input placeholder="Contrasenya" title="Input Contrasenya" name="input-name" type="password" class="input_field" id="password">
+                </div>
+                <div class="input_container">
+                    <input placeholder="Repetir Contrasenya" title="Input Repetir Contrasenya" name="input-name" type="password" class="input_field" id="repeat_password">
+                </div>
+                <mat-progress-spinner *ngIf="!enviado"
+                            class="example-margin"
+                            [color]="color"
+                            [mode]="mode"
+                            [value]="value">
+                         </mat-progress-spinner>
+                <div *ngIf="!isAuthenticated">
+                    <p class="auth_error">{{auth_error}}</p>
+                </div>
+                
+                <button title="Register" type="submit" class="sign-in_btn" >
+                    <span>Crear Compte</span>
+                </button>  
+                
+                <a class="no-account" routerLink="/login">Ya tinc compte</a>
+
+            </form>
             </div>
-            
-            <input type="submit" name="submit" value="Registrarse">        
-        </form>
+        </div>
     </div>
+    
 </main>
