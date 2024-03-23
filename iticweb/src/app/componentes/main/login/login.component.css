@@ -56,7 +56,7 @@ main {
   justify-content: center;
   gap: 15px;
   padding-right: 9vw;
-  padding-left: 4px;
+  padding-left: 10px;
   background-color: #ffffffe9;
   border-radius: 0 20px 20px 0;
   overflow: hidden;
@@ -89,16 +89,14 @@ main {
 .input_container {
   width: 100%;
   height: fit-content;
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  
 }
 
 .icon {
   width: 20px;
-  position: absolute;
-  z-index: 99;
   left: 12px;
   bottom: 9px;
 }
@@ -190,4 +188,8 @@ main {
 
 .no-account:hover {
   text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
+}
+
+.auth_error {
+  text-align: center;
 }

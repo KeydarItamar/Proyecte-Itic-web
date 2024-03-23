@@ -9,25 +9,26 @@
 /* Estilo para el contenedor de los títulos */
 .titulos {
     display: flex;
-    background-color: rgba(31, 31, 31, 0.969);
+    background-color: rgba(74, 74, 74, 0.769);
+    background-image: linear-gradient(to top, transparent, rgba(13, 13, 13, 0.683));
     width: 100vw;
-    font-family: 'Outfit', sans-serif;
     position: fixed;
     z-index: 1;
-    padding: 5px 0 5px 0;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    font-size: 18px;
 }
 
 .conteiner-itens{
     display: flex;
     overflow: hidden;
-    width: 90vw;   
+    width: 90vw;  
+    margin-left: 30px;  
 }
 
 
 ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 .principales {
@@ -40,8 +41,12 @@ ul {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: white;
+    color: rgb(255, 255, 255);
+    
+    
 }
+
+
 .sublista{
     display: flex;
 }
@@ -54,64 +59,73 @@ ul {
 .nombre-subtitulos {
     display: none;
     position: absolute;
-    background-color: rgba(36, 36, 36, 0.929);
     padding: 10px;
     width: auto;
-    border-radius: 0 0 20px 20px;
-    color: white;
 }
 
+
 .nombre-titulos:hover {
-    background-color: rgb(112, 112, 112);
-    transition: background-color 0.4s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.656);
+    transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+    border-radius: 10px 10px 0 0;
+    color: rgb(255, 255, 255);
+    
+
 }
+
+
 
 /* Estilo para mostrar los subtitulos cuando se pasa el ratón sobre el título */
 .nombre-titulos:hover .nombre-subtitulos {
     display: block;
-
+    background-color: rgba(0, 0, 0, 0.656);
+    border-radius: 0 8px 20px 20px;
+    margin-top: 12px;
 }
 
 /* Estilo para los subtitulos clicables */
 .nombre-subtitulos li:hover {
     cursor: pointer;
     background-color: rgba(48 239 188);
-    color: black;
     border-radius: 20px;
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
-
-    
+    transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */  
 }
+.nombre-titulos:hover li {
+    color: rgb(255, 255, 255); /* Color blanco */
+    padding-bottom: 10px;
+}
+
 
 /* Estilo para el icono */
-.icono-itic {
-    padding-left: 8px;
-    padding-right: 10px;
-    height: 62px;
-    width: 75px;
+.container-icono-itic {
+    height: 60px;
+    width: 60px;
+    text-align: center;
 }
 
-.icono-itic:hover {
+.container-icono-itic img{
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: 100%;
+    margin-left: 18px;
+    padding: 8px;
+    border-radius: 100%;
+    background-color: rgb(112, 112, 112);
     cursor: pointer;
 }
+
 
 .icono-user{
     padding: 8px;
     height: 60px;
     width: 60px;
-}
-
-.usuario {
-    margin-left: 0.7%;
-}
-
-.icono-user:hover  {
-    cursor: pointer;
     background-color: rgb(112, 112, 112);
-    border-radius: 25px;
-    transition: background-color 0.2s ease, border-radius 0.3s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+    border-radius: 100%;
+    cursor: pointer;
 }
+
+
+
+
 
 
 
