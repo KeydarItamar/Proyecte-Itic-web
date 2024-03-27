@@ -27,19 +27,39 @@ export class ChatboxComponent implements OnInit {
 
   
   iaChat(query: string): void {
-    this.listaQuerys.push(query)
+    // Verificar si la consulta está vacía
+    if (!query.trim()) {
+        // No hacer nada si la consulta está vacía
+        return;
+    }
+
+    // Agregar la consulta a listaQuerys
+    this.listaQuerys.push(query);
+
+    // Enviar la consulta al backend
     this.chatService.enviarDatosAlBackend(query)
-      .subscribe({
-         next: response => {
-          this.resultado = response;
-          this.respuestas.push(this.resultado)
-        },
-        error: error => {
-          console.error('Error al llamar al backend:', error);
-        }
-       });
+        .subscribe({
+            next: response => {
+                this.resultado = response;
+                this.respuestas.push(this.resultado);
+            },
+            error: error => {
+                console.error('Error al llamar al backend:', error);
+            }
+        });
+        
+        // Desplazar hacia abajo después de recibir la respuesta
+        setTimeout(() => {
+          const responseContainer = document.getElementById('response-container');
+          if (responseContainer) {
+              responseContainer.scrollTop = responseContainer.scrollHeight;
+          }
+      }, 0);
+
+    // Limpiar el campo de entrada
     query = '';
-  }
+}
+
 
 
 }

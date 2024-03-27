@@ -40,6 +40,8 @@ main {
     max-height: 100%;
     max-width: 100%;
     border-radius: 45px;
+    padding: 40px;
+    overflow: hidden;
 }
 
 
@@ -71,4 +73,12 @@ input {
 input:focus {
     outline: none;
 }
+.example-margin {
+    width: 10%;
+    height: 5%;
+}
 
+.pregunta {
+    display: flex;
+    flex-direction: row;
+}
