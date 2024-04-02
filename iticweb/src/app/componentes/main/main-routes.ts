@@ -25,7 +25,7 @@ import { NoticiaDetalleComponent } from '../noticias/noticia-detalle/noticia-det
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'login', component: LoginComponent},
+    { path: 'Cerrar Sesión', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'home', component: ChatboxComponent},
     { path: 'Institut', children: [
@@ -53,8 +53,9 @@ const routes: Routes = [
       ]},
         { path: 'Serveis', component: ServeisComponent },
         { path: 'Secretaria', component: SecretariaComponent },
-        { path: 'Formulario', component: FormNoticiaComponent },
+        { path: 'Insertar Noticia', component: FormNoticiaComponent },
         {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
+        // {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
         { path: '**', redirectTo: '/error', pathMatch: 'full' },
   ];
 

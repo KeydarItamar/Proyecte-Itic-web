@@ -103,7 +103,9 @@ ul {
 }
 
 .usuario {
-    margin-left: 0.7%;
+    padding-left: 8px;
+    padding-right: 50px;
+    justify-content: end;
 }
 
 .icono-user:hover  {

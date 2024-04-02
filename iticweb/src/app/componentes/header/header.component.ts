@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu-header';
+import { MenuLogin } from 'src/app/models/menu-login';
 import { RouterModule } from '@angular/router';
 import { NoticiasService } from 'src/app/noticias.service';
 @Component({
@@ -11,6 +12,7 @@ export class HeaderComponent implements OnInit {
   Secretaria = 'Secretaria'
   Formulario = 'Formulario'
   Menu = Menu
+  MenuLogin = MenuLogin
   mostrarSubtitulosFlag: boolean = false;
 
   constructor(private noticiaService : NoticiasService) {
@@ -44,6 +46,21 @@ export class HeaderComponent implements OnInit {
     // Si no se encuentra la cookie, devolver null
     return null;
   }
+
+  getMenuLogin() {
+    const rol = this.getCookie('rol');
+    switch(rol) {
+      case '0':
+        return this.MenuLogin.admin;
+      case '1':
+        return this.MenuLogin.usuario;
+      case '2':
+        return this.MenuLogin.profesor;
+      default:
+        return [];
+    }
+  }
+  
 
  crearTablas(){
    this.noticiaService.createTables().subscribe({

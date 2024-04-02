@@ -18,21 +18,24 @@
       <li class="principales" [routerLink]="Secretaria"> Secretaria </li>
     </ul>
     
-    <!-- este ul sólo se muestra si el usuario es profesor o admin -->
+    <!-- este ul sólo se muestra si el usuario es profesor o admin
     <ul class="nombre-titulos titulos-principales " *ngIf="getCookie('rol') == '2' || getCookie('rol') == '0'"> 
       <li class="principales" [routerLink]="Formulario"> Insert noticia </li>    
-    </ul>
+    </ul> -->
 
   </div>
-  <div class="usuario"><img class="icono-user" routerLink="login" src="../../../assets/iconos/usuario.png" alt="User"></div>
+
+  <div class="conteiner-itens usuario" >
+    <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of getMenuLogin()">
+      <img class="icono-user" src="../../../assets/iconos/usuario.png" alt="User">
+      <!-- Verificamos si hay subtitulos -->
+      <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
+        <!-- Iteramos sobre cada subtitulo de la opción -->
+        <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[subtitulo]"> {{subtitulo}}</li>
+      </ul>
+    </ul>
+  </div>
 </header>
-
-
-
-
-
-
-
 
 <!-- La parte comentada es para el efecto slider del menu que se ha descartado. -->
 
