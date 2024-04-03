@@ -53,8 +53,9 @@ const routes: Routes = [
       ]},
         { path: 'Serveis', component: ServeisComponent },
         { path: 'Secretaria', component: SecretariaComponent },
-        { path: 'Formulario', component: FormNoticiaComponent },
+        { path: 'insert_noticia', component: FormNoticiaComponent },
         {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
+        // {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
         { path: '**', redirectTo: '/error', pathMatch: 'full' },
   ];
 
