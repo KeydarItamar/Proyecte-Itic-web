@@ -47,17 +47,16 @@ main {
 }
 
 
-
 .form_container {
-  width: fit-content;
+  width: 25vw;
   height: 73vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  padding-right: 9vw;
-  padding-left: 2%;
+  padding-right: 6vw;
+  padding-left: 10px;
   background-color: #ffffffe9;
   border-radius: 0 20px 20px 0;
   overflow: hidden;
@@ -190,4 +189,8 @@ main {
   font-size: 0.75rem; /* Tamaño del texto */
   color: #8B8E98; /* Color del texto */
   text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.no-account:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
 }

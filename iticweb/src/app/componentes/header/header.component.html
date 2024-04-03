@@ -1,6 +1,6 @@
 
 <header class="titulos" (mouseenter)="mostrarSubtitulos()" (mouseleave)="ocultarSubtitulos()">
-  <div class="icono-itic">
+  <div class="container-icono-itic">
     <img class="icono-itic" routerLink="home" src="../../../assets/iconos/Opera_Snapshot_2024-03-05_144830_www.figma.com-removebg-preview.png" alt="">
   </div>
   <!-- Envolver la estructura en un nuevo div -->
@@ -15,7 +15,7 @@
       </ul>
     </ul>
     <ul class="nombre-titulos titulos-principales " > 
-      <li class="principales" [routerLink]="Secretaria"> Secretaria </li>
+      <li class="principales secretaria" [routerLink]="Secretaria"> Secretaria </li>
     </ul>
     
     <!-- este ul sólo se muestra si el usuario es profesor o admin -->
@@ -24,7 +24,9 @@
     </ul>
 
   </div>
-  <div class="usuario"><img class="icono-user" routerLink="login" src="../../../assets/iconos/usuario.png" alt="User"></div>
+    <div class="usuario">
+      <img class="icono-user" routerLink="login" src="../../../assets/iconos/usuario.png" alt="User">
+    </div>
 </header>
 
 
