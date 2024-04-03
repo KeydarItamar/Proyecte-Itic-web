@@ -57,7 +57,7 @@ export class HeaderComponent implements OnInit {
       case '2':
         return this.MenuLogin.profesor;
       default:
-        return [];
+        return this.MenuLogin.noLogeado;
     }
   }
   

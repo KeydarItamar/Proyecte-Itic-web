@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
   isAuthenticated: boolean = true;
 
   ngOnInit(): void {
+    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "rol=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
 
   onSubmit(): void {

@@ -1,9 +1,17 @@
 export const MenuLogin = {
+    noLogeado: [
+        {
+            titulo: "No logeado",
+            subtitulos: [
+              { text: "Iniciar Sesión", ruta: "/login" }
+            ]
+        } 
+    ],
     usuario: [
         {
             titulo: "Usuario",
             subtitulos: [
-              "Cerrar Sesión",
+              { text: "Cerrar Sesión", ruta: "/login" }
             ]
         }
     ],
@@ -11,8 +19,8 @@ export const MenuLogin = {
         {
             titulo: "Profesor",
             subtitulos: [
-              "Insertar Noticia",
-              "Cerrar Sesión",
+              { text: "Insertar Noticia", ruta: "/insert_noticia" },
+              { text: "Cerrar Sesión", ruta: "/login" }
             ]
         }
     ],
@@ -20,8 +28,8 @@ export const MenuLogin = {
         {
             titulo: "Admin",
             subtitulos: [
-              "Insertar Noticia",
-              "Cerrar Sesión",
+              { text: "Insertar Noticia", ruta: "/insert_noticia" },
+              { text: "Cerrar Sesión", ruta: "/login" }
             ]
         }
     ]
