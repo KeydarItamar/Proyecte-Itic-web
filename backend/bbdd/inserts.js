@@ -125,36 +125,41 @@ function deleteNoticia(id ) {
     })
 }
 
-function selectNoticia(id ) {
-    var noticiasJSON;
-    var mysql = require('mysql');
+function selectNoticia(id,callback) {
+    console.log('entrando en selectnoticia.')
+    return new Promise((resolve, reject) => {
+        var mysql = require('mysql');
 
-    // Variable con las credenciales de conexión de la base de datos
-    var conn = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "pass-itic8",
-        database: "itic_database"
+        // Credenciales de conexión a la base de datos
+        var conn = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "pass-itic8",
+            database: "itic_database"
+        });
+
+        conn.connect(function(err) {
+            if (err) {
+                reject(err);
+            } else {
+                console.log("Conectado a la Base de Datos!");
+                // Query de selección de noticias
+                var sql_select_noticia = `SELECT * FROM noticias WHERE id = ${id}`;
+                conn.query(sql_select_noticia, function(err, result) {
+                    if (err) {
+                        callback(err, null);
+                        console.log(err)
+                    } else {
+                        callback(null, result);
+                        console.log(result)
+                    }
+                    conn.end(); 
+                });
+            }
+        });
     });
-
-    conn.connect(function(err) {
-        if (err) throw err;
-        console.log("Conectado a la Base de Datos!");
-    })
-
-    // Variable de query de Insert
-    var sql_select_noticias = `SELECT * FROM noticias WHERE id = ${id};
-    `
-    // Ejecutamos la query
-    conn.query(sql_select_noticias, function(err, result) {
-        if (err) throw err;
-         // Si hay resultados, los guardamos en una variable
-        var noticias = result;
-         // Convertimos el resultado a formato JSON
-        noticiasJSON = JSON.stringify(noticias);
-    })
-    return noticiasJSON
 }
+
 
 function selectAllNoticias(callback) {
     var noticiasJSON;
@@ -182,7 +187,7 @@ function selectAllNoticias(callback) {
             callback(null, result);
         }
     });
-    // return noticiasJSON
+    conn.end(); 
     
 }
 

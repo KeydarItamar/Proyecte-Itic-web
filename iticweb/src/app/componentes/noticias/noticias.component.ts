@@ -18,11 +18,12 @@ export class NoticiasComponent implements OnInit {
   titulo!: string;
   subtitulo!: string;
   parrafo1!:string;
+  id:number = 1
   ngOnInit(): void {
     this.selectAllNoticias()
-    this.currentIndex = 0;
+    this.currentIndex = 1;
   }
-  currentIndex = 0;
+  currentIndex = 1;
 
   siguienteNoticia() {
     this.noticias = this.allNoticias
@@ -31,6 +32,8 @@ export class NoticiasComponent implements OnInit {
     this.imagen = this.miniNoticia.fotoPortada;
     this.titulo = this.miniNoticia.titulo;
     this.parrafo1 = this.miniNoticia.parrafo1;
+    this.id= this.allNoticias[this.currentIndex]["id"]
+    console.log(`id : ${this.id}`)
     console.log(this.currentIndex)
   }
   

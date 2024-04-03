@@ -36,9 +36,12 @@ main {
     display: flex;
     flex-direction: column;
     background-color:  rgba(4, 4, 4, 0.46);
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.236));
     max-height: 100%;
     max-width: 100%;
     border-radius: 45px;
+    padding: 40px;
+    overflow: hidden;
 }
 
 
@@ -62,11 +65,20 @@ main {
 }
 
 input {
-    background-color: rgba(251, 251, 251, 0.759);
+    background-color: rgba(251, 251, 251, 0.685);
+    background-image: linear-gradient(to right transparent, rgba(255, 255, 255, 0.221));
     border: 0px;
 }
 
 input:focus {
     outline: none;
-  }
+}
+.example-margin {
+    width: 10%;
+    height: 5%;
+}
 
+.pregunta {
+    display: flex;
+    flex-direction: row;
+}

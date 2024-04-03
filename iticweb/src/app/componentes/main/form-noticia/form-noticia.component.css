@@ -1,13 +1,76 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
 main {
-    height: 90vh;
-    display: flex;
-    padding-top: 5%;
-    flex-direction: row;
-    align-items: center;
-    font-family: "Poppins", serif;
-    background: radial-gradient(
-        circle,
-        rgb(35, 207, 237) 0%,
-        rgb(7, 98, 203) 100%
-    );
+    background-image:linear-gradient(rgba(206, 206, 206, 0.043), rgba(219, 219, 219, 0.8)),url(/assets/fondos/fondo1.jpg);
+    padding: 5% 0 3% 0;
+}
+
+/* Estilos generales del formulario */
+#noticiaForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.288);
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.669));
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Estilos para etiquetas */
+label {
+    font-weight: bold;
+}
+
+/* Estilos para los campos de texto */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.288);
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.669));
+    border-radius: 20px;
+    box-sizing: border-box;
+
+}
+
+/* Estilos para los botones */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el checkbox */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Estilos para los espacios entre elementos */
+br {
+    display: none;
+}
+
+/* Estilos adicionales para los elementos cuando se encuentran dentro del formulario */
+#noticiaForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#noticiaForm textarea {
+    height: 100px;
+    /* Altura adecuada para los campos de texto */
 }

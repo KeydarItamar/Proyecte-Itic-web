@@ -57,7 +57,8 @@ app.post('/insertNoticia', (req, res) => {
 app.post('/getNoticia', (req, res) => {
     try {
         const id = req.body.id; // Suponiendo que el ID se envía como parte del cuerpo de la solicitud
-
+        console.log('En el backend el Id recibido es: ' + id );
+        
         inserts.selectNoticia(id, (err, result) => {
             if (err) {
                 console.error(err);
@@ -71,6 +72,7 @@ app.post('/getNoticia', (req, res) => {
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 });
+
 app.get('/getAllNoticias', (req, res) => {
     try {
         inserts.selectAllNoticias((err, result) => {
