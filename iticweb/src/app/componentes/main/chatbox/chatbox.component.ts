@@ -19,6 +19,7 @@ export class ChatboxComponent implements OnInit {
   color: ThemePalette = 'accent';
   mode: ProgressSpinnerMode = 'indeterminate';
   value = 25;
+  
   constructor(private chatService: ChatService) { }
 
   ngOnInit(): void {

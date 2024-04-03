@@ -1,0 +1,10 @@
+main {
+    background-image:linear-gradient(rgba(0, 255, 183, 0.141), rgba(2, 251, 222, 0.28)),url(/assets/fondos/fondoMain.jpg);  
+    background-size: cover; 
+    background-position: center;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}

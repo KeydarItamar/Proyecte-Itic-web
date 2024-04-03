@@ -11,7 +11,8 @@
 
 <div class="noticias" >
     <button (click)="anteriorNoticia()">Anterior</button>
-    <app-mini-noticia [routerLink]="['/noticiaDetalle', miniNoticia]"
+    <app-mini-noticia 
+    [id]="id"
     [titulo]="titulo"
     [parrafo1]="parrafo1"
     [imagen]="imagen" 

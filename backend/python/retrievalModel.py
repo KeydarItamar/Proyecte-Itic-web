@@ -23,7 +23,7 @@ query = datos['query']
 
 
 #Cargamos los documentos del directorio  word or Pdf
-loaders = UnstructuredWordDocumentLoader("C:/Users/Itamar/Desktop/Itic docker/Proyecte-Itic-web/backend/python/texto.docx")
+loaders = UnstructuredWordDocumentLoader(".")
 content = loaders.load()
 
 #Separamos en trozos los documentos 

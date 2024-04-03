@@ -1,13 +1,11 @@
-<app-header></app-header>
+<main>
 
-<h1>{{noticia.titulo}}</h1>
-<h2>{{noticia.subtitulo}}</h2>
-<p>{{noticia.parrafo1}}</p>
-<img src="{{noticia.foto1}}" alt="">
-<p>{{noticia.parrafo2}}</p>
-<img src="{{noticia.foto2}}" alt="">
-<p>{{noticia.parrafo3}}</p>
-<img src="{{noticia.foto3}}" alt="">
+    <h1>Aqui la noticia: </h1>
+    <h1 *ngIf="noticia.titulo">{{noticia.titulo}}</h1>
+    <h2 *ngIf="noticia.subtitulo">{{noticia.subtitulo}}</h2>
+    <p *ngIf="noticia.parrafo1" >{{noticia.parrafo1}}</p>
+   <div *ngIf="noticia.fotoPortada"><img src="../../../../assets/img-noticias/{{noticia.fotoPortada}}" alt=""></div>
+   <div *ngIf="noticia.foto1"><img src="../../../../assets/img-noticias/{{noticia.foto1}}" alt=""></div>
+</main>
 
-<app-footer></app-footer>
 

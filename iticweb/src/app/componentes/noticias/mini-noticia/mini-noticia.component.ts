@@ -20,4 +20,9 @@ export class MiniNoticiaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  abrirPestanya(id: number){
+    window.open(`noticiaDetalle?id=${this.id}`, '_blank');
+  }
+
 }
