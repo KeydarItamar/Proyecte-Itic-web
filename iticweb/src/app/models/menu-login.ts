@@ -29,6 +29,7 @@ export const MenuLogin = {
             titulo: "Admin",
             subtitulos: [
               { text: "Insertar Noticia", ruta: "/insert_noticia" },
+              { text: "Gestionar Noticias", ruta: "/gestor_noticias"},
               { text: "Cerrar Sesión", ruta: "/login" }
             ]
         }
