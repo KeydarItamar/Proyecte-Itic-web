@@ -4,6 +4,9 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Outfit', sans-serif;
+    background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    padding-bottom: 2%;
 }
 
 table {
