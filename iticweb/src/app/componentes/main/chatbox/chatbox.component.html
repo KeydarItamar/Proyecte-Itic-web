@@ -8,18 +8,17 @@
             <ul *ngFor="let query of listaQuerys let i= index " >
                 <li *ngIf=respuestas>
                     <h4>User promtp</h4>
-                    <p class="pregunta">{{listaQuerys[i]}}  
-                        <mat-progress-spinner *ngIf="!respuestas[i]"
+                    <p class="pregunta">{{listaQuerys[i]}}</p>
+                    
+                    <h4>Ia response</h4>
+                    <br>
+                    <mat-progress-spinner *ngIf="!respuestas[i]"
                         class="example-margin"
                         [color]="color"
                         [mode]="mode"
                         [value]="value"
                         diameter="24">
                      </mat-progress-spinner>
-                    </p>
-                    
-                    <h4>Ia response</h4>
-                    
                  <div class="query" [innerHTML]="respuestas[i]" style="white-space: pre-line"></div>
                 </li>
             </ul>

@@ -17,6 +17,7 @@
     padding-top: 10px;
     padding-bottom: 1px;
     font-size: 18px;
+    
 }
 
 .conteiner-itens{
@@ -69,7 +70,7 @@ ul {
     transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
     border-radius: 10px 10px 0 0;
     color: rgb(255, 255, 255);
-    
+    box-shadow: 0 0 30px rgba(48 239 188);
 
 }
 
@@ -81,17 +82,19 @@ ul {
     background-color: rgba(0, 0, 0, 0.656);
     border-radius: 0 8px 20px 20px;
     margin-top: 12px;
+   
 }
 
 /* Estilo para los subtitulos clicables */
 .nombre-subtitulos li:hover {
     cursor: pointer;
     background-color: rgba(48 239 188);
+    color: black;
     border-radius: 20px;
     transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */  
 }
+
 .nombre-titulos:hover li {
-    color: rgb(255, 255, 255); /* Color blanco */
     padding-bottom: 10px;
 }
 
@@ -101,6 +104,7 @@ ul {
     height: 60px;
     width: 60px;
     text-align: center;
+    
 }
 
 .container-icono-itic img{
@@ -111,6 +115,7 @@ ul {
     border-radius: 100%;
     background-color: rgb(112, 112, 112);
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(48 239 188);
 }
 
 
@@ -121,11 +126,43 @@ ul {
     background-color: rgb(112, 112, 112);
     border-radius: 100%;
     cursor: pointer;
+    box-shadow: 0 0 5px rgba(48 239 188);
+   
 }
 
+.nombre-titulos-login:hover .nombre-subtitulos-login {
+    display: block;
+    
+    background-color: rgba(0, 0, 0, 0.656);
+    border-radius: 5px 5px 0px 20px;
+}
 
+.nombre-subtitulos-login {
+    display: none;
+    position: absolute; /* Cambiado a absolute para permitir el ajuste de posición */
+    padding: 15px;
+    right: 0%; /* Ajuste de posición hacia la izquierda */
+    top: 99%; /* Asegurar que los subtitulos-login aparezcan debajo de la imagen */
+}
 
+.nombre-subtitulos-login li {
+    padding: 10px;
+    margin-right: 10px;
+}
 
+.nombre-subtitulos-login li:hover {
+    cursor: pointer;
+    background-color: rgba(48 239 188);
+    border-radius: 20px;
+    color: black;
+    transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */  
+}
 
+.nombre-titulos-login:hover {
+    transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
+    border-radius: 10px 10px 0 0;
+    color: rgb(255, 255, 255);
+    
 
+}
 

@@ -42,6 +42,7 @@ main {
     border-radius: 45px;
     padding: 40px;
     overflow: hidden;
+    box-shadow: 0 0 15px rgba(48 239 188);
 }
 
 
@@ -62,12 +63,14 @@ main {
     list-style: none;
     padding-left: 20px;
     padding-top: 20px;
+    
 }
 
 input {
     background-color: rgba(251, 251, 251, 0.685);
     background-image: linear-gradient(to right transparent, rgba(255, 255, 255, 0.221));
     border: 0px;
+    box-shadow: 0 0 10px rgba(48 239 188);
 }
 
 input:focus {
