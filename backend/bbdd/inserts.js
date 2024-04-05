@@ -89,8 +89,8 @@ function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPor
     })
 
     // Variable de query de Insert
-    var sql_insert_noticias = `INSERT INTO noticias (titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada) 
-        VALUES ('${titulo}', '${subtitulo}', '${parrafo1}', '${parrafo2}', '${parrafo3}', '${fotoPortada}', '${foto1}', '${foto2}', '${foto3}', ${noticiaFijada}); `;
+    var sql_insert_noticias = `INSERT INTO noticias (titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada, dataCreacion, dataModificacion) 
+        VALUES ('${titulo}', '${subtitulo}', '${parrafo1}', '${parrafo2}', '${parrafo3}', '${fotoPortada}', '${foto1}', '${foto2}', '${foto3}', ${noticiaFijada}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); `;
 
     // Ejecutamos la query
     conn.query(sql_insert_noticias, function(err, result) {

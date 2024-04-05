@@ -1,1 +1,16 @@
-<p>gestor-noticias works!</p>
+<main>
+    <div class="lista-noti">
+        <table>
+            <tr>
+                <th>ID</th><th>Imatge</th><th>Títol</th><th>Subtítol</th><th>Data Creació/Modificació</th>
+            </tr>
+            <tr *ngFor="let noti of allNoticias">
+                <td>{{ noti["id"] }}</td>
+                <td><img src='../../../../assets/img-noticias/{{ noti["fotoPortada"] }}' alt=""></td>
+                <td>{{ noti["titulo"] }} </td>
+                <td>{{ noti["subtitulo"] }}</td>
+                <td>{{ noti["dataCreacion"] }} / {{ noti["dataModificacion"] }}</td>
+            </tr>
+        </table>
+    </div>    
+</main>

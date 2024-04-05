@@ -9,15 +9,23 @@ import { Noticia } from '../noticia-detalle/noticia';
 })
 export class GestorNoticiasComponent implements OnInit {
 
-  constructor(private noticia : NoticiasService) { }
+  noticias: number[] = [] 
 
+  constructor( private noticia : NoticiasService) { }
+  noticiaDetalle = "noticiaDetalle"
   allNoticias=[]
+  miniNoticia!: Noticia;
+  imagen!:string;
+  titulo!: string;
+  subtitulo!: string;
+  parrafo1!:string;
+  id:number = 1;
 
   ngOnInit(): void {
-    this.selectAllNoticias();
-    console.log(this.allNoticias)
-
+    this.selectAllNoticias()
+    this.currentIndex = 1;
   }
+  currentIndex = 1;
 
   selectAllNoticias()  {
     this.noticia.getAllNoticias().subscribe({
