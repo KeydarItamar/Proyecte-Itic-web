@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormNoticiaComponent } from './form-noticia/form-noticia.component';
 import { NoticiaDetalleComponent } from '../noticias/noticia-detalle/noticia-detalle.component';
+import { FormCalendariComponent } from './institut/institut-children/calendari-del-curs/form-calendari/form-calendari.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -54,6 +55,7 @@ const routes: Routes = [
         { path: 'Serveis', component: ServeisComponent },
         { path: 'Secretaria', component: SecretariaComponent },
         { path: 'insert_noticia', component: FormNoticiaComponent },
+        { path: 'FormCalendario', component: FormCalendariComponent },
         {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
         // {path: 'noticiaDetalle/:noticia', component: NoticiaDetalleComponent},
         { path: '**', redirectTo: '/error', pathMatch: 'full' },

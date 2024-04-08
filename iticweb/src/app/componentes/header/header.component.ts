@@ -9,8 +9,10 @@ import { NoticiasService } from 'src/app/noticias.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  Secretaria = 'Secretaria'
-  Formulario = 'Formulario'
+  Secretaria = 'Secretaria';
+  Formulario = 'Formulario';
+  FormCalendario = 'FormCalendario';
+
   Menu = Menu
   MenuLogin = MenuLogin
   mostrarSubtitulosFlag: boolean = false;

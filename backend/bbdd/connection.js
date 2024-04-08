@@ -39,31 +39,35 @@ function createTables() {
         foto3 VARCHAR(255),
         noticiaFijada BOOLEAN DEFAULT FALSE
     )`;
-       // var sql_noticias = `CREATE TABLE IF NOT EXISTS noticias (
-    //     id INT AUTO_INCREMENT PRIMARY KEY,
-    //     titulo VARCHAR(255),
-    //     texto VARCHAR(5000),
-    //     imagenes VARCHAR(255),
-    //     autor_id INT,
-    //     FOREIGN KEY (autor_id) REFERENCES usuarios(id)
-    // );`;
+   var sql_calendario = ` CREATE TABLE IF NOT EXISTS Eventos (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        titulo VARCHAR(100) NOT NULL,
+        fecha DATE NOT NULL,
+        hora TIME,
+        descripcion TEXT,
+        ubicacion VARCHAR(255)
+    )`;
 
 
 
-    // Ejecutamos la query
+    // Ejecutamos la query usuarios
     conn.query(sql_usuarios, function(err, result) {
         if (err) throw err;
         console.log("Tabla usuarios creada!")
     })
 
-  
-
- 
-    // Ejecutamos la query
+    // Ejecutamos la query noticias
     conn.query(sql_noticias, function(err, result) {
         if (err) throw err;
         console.log("Tabla noticias creada!")
     })
+ 
+    // Ejecutamos la query calendario
+    conn.query(sql_calendario, function(err, result) {
+        if (err) throw err;
+        console.log("Tabla calendario creada!")
+    })
+
 }
 
 module.exports = {

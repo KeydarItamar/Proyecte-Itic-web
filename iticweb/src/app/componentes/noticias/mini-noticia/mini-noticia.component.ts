@@ -22,7 +22,7 @@ export class MiniNoticiaComponent implements OnInit {
 
 
   abrirPestanya(id: number){
-    window.open(`noticiaDetalle?id=${this.id}`, '_blank');
+    window.open(`noticiaDetalle/${id}`);
   }
 
 }
