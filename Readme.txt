@@ -5,3 +5,11 @@
 
 
   ng g c /componentes/noticias
+
+
+
+
+solucion al bcrypt en linux:
+
+    rm -rf node_modules/bcrypt
+    npm install bcrypt

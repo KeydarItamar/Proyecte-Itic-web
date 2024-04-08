@@ -23,11 +23,11 @@
   </div>
 
   <!-- menú de usuario -->
-  <div class="conteiner-itens usuario" >
-    <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of getMenuLogin()">
+  <div class="container-user" >
+    <ul class="nombre-titulos-login titulos-principales" *ngFor="let opcion of getMenuLogin()">
       <img class="icono-user" src="../../../assets/iconos/usuario.png" alt="User">
       <!-- Verificamos si hay subtitulos -->
-      <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
+      <ul class="nombre-subtitulos-login" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
         <!-- Iteramos sobre cada subtitulo de la opción -->
         <li class="subtitulos-login" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="subtitulo.ruta"> {{subtitulo.text}}</li>
       </ul>
