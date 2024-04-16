@@ -67,11 +67,6 @@ function createUser(nombre, apellido, email, password) {
     });
 }
 
-module.exports = {
-    createUser
-};
-
-
 function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPortada, foto1,foto2,foto3,noticiaFijada ) {
     var mysql = require('mysql');
 
@@ -89,8 +84,8 @@ function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPor
     })
 
     // Variable de query de Insert
-    var sql_insert_noticias = `INSERT INTO noticias (titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada) 
-        VALUES ('${titulo}', '${subtitulo}', '${parrafo1}', '${parrafo2}', '${parrafo3}', '${fotoPortada}', '${foto1}', '${foto2}', '${foto3}', ${noticiaFijada}); `;
+    var sql_insert_noticias = `INSERT INTO noticias (titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada, dataCreacion, dataModificacion) 
+        VALUES ('${titulo}', '${subtitulo}', '${parrafo1}', '${parrafo2}', '${parrafo3}', '${fotoPortada}', '${foto1}', '${foto2}', '${foto3}', ${noticiaFijada}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); `;
 
     // Ejecutamos la query
     conn.query(sql_insert_noticias, function(err, result) {
@@ -98,6 +93,34 @@ function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPor
         console.log("Insertado noticia!")
     })
 }
+
+// Función para actualizar una noticia existente
+function updateNoticia(id, titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada) {
+    var mysql = require('mysql');
+
+    // Variable con las credenciales de conexión de la base de datos
+    var conn = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "pass-itic8",
+        database: "itic_database"
+    });
+
+    conn.connect(function (err) {
+        if (err) throw err;
+        console.log("Conectado a la Base de Datos!");
+    })
+
+    // Query para actualizar la noticia
+    var sql_update_noticia = `UPDATE noticias SET titulo = '${titulo}', subtitulo = '${subtitulo}', parrafo1 = '${parrafo1}', parrafo2 = '${parrafo2}', parrafo3 = '${parrafo3}', fotoPortada = '${fotoPortada}', foto1 = '${foto1}', foto2 = '${foto2}', foto3 = '${foto3}', noticiaFijada = ${noticiaFijada}, dataModificacion = CURRENT_TIMESTAMP WHERE id = ${id};`;
+
+    // Ejecutamos la query
+    conn.query(sql_update_noticia, function (err, result) {
+        if (err) throw err;
+        console.log("Noticia actualizada!");
+    })
+}
+
 
 function deleteNoticia(id ) {
     var mysql = require('mysql');
@@ -159,6 +182,7 @@ function selectNoticia(id,callback) {
         });
     });
 }
+
 
 
 function selectAllNoticias(callback) {

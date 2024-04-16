@@ -1,6 +1,6 @@
 CREATE TABLE noticias (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(255) NOT NULL,
+    titulo VARCHAR(255),
     subtitulo VARCHAR(255),
     parrafo1 TEXT,
     parrafo2 TEXT,
@@ -9,5 +9,7 @@ CREATE TABLE noticias (
     foto1 VARCHAR(255),
     foto2 VARCHAR(255),
     foto3 VARCHAR(255),
-    noticiaFijada BOOLEAN DEFAULT FALSE
+    noticiaFijada BOOLEAN DEFAULT FALSE,
+    dataCreacion DATE,
+    dataModificacion DATE
 );

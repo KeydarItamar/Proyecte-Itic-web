@@ -33,24 +33,8 @@ export class HeaderComponent implements OnInit {
     this.mostrarSubtitulosFlag = false;
   }
 
-  getCookie(cookieName: string) {
-    // Separar todas las cookies por punto y coma y espacio en blanco
-    var cookies = document.cookie.split('; ');
-
-    // Recorrer todas las cookies para encontrar la deseada
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].split('=');
-        // Si el nombre de la cookie coincide, devolver su valor
-        if (cookie[0] === cookieName) {
-            return decodeURIComponent(cookie[1]);
-        }
-    }
-    // Si no se encuentra la cookie, devolver null
-    return null;
-  }
-
   getMenuLogin() {
-    const rol = this.getCookie('rol');
+    const rol = localStorage.getItem("rol");
     switch(rol) {
       case '0':
         return this.MenuLogin.admin;

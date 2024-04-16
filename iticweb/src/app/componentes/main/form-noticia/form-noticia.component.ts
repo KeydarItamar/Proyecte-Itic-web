@@ -79,7 +79,6 @@ export class FormNoticiaComponent implements OnInit {
       this.subirFoto(formDataFoto)
       this.insertForm(nuevaNoticia)
     });
-   
   }
 
   insertForm(formData: Noticia){

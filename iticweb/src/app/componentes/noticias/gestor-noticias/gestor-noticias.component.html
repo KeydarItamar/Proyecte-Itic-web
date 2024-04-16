@@ -1,0 +1,18 @@
+<main>
+    <div class="lista-noticia">
+        <table>
+            <tr>
+                <th>ID</th><th>Imatge</th><th>Títol</th><th>Subtítol</th><th>Data Creació/Modificació</th>
+            </tr>
+            <tr *ngFor="let noticia of allNoticias">
+                <td>{{ noticia["id"] }}</td>
+                <td><img src='../../../../assets/img-noticias/{{ noticia["fotoPortada"] }}' alt=""></td>
+                <td>{{ noticia["titulo"] }} </td>
+                <td>{{ noticia["subtitulo"] }}</td>
+                <td>{{ noticia["dataCreacion"] | date: 'dd/MM/yyyy' }} / {{ noticia["dataModificacion"] | date: 'dd/MM/yyyy' }}</td>
+                <td><a (click)="editarNoticia(noticia)">Editar</a></td>
+                <td><a (click)="deleteNoticia(noticia)">Eliminar</a></td>
+            </tr>
+        </table>
+    </div>    
+</main>

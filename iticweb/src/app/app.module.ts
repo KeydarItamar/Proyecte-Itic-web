@@ -43,6 +43,7 @@ import { MiniNoticiaComponent } from './componentes/noticias/mini-noticia/mini-n
 import { FormNoticiaComponent } from './componentes/main/form-noticia/form-noticia.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormCalendariComponent } from './componentes/main/institut/institut-children/calendari-del-curs/form-calendari/form-calendari.component';
+import { GestorNoticiasComponent } from './componentes/noticias/gestor-noticias/gestor-noticias.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { FormCalendariComponent } from './componentes/main/institut/institut-chi
     MiniNoticiaComponent,
     FormNoticiaComponent,
     FormCalendariComponent,
+    GestorNoticiasComponent,
   
   ],
   imports: [
