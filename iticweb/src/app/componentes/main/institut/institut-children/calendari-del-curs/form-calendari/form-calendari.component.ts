@@ -33,9 +33,13 @@ export class FormCalendariComponent implements OnInit {
       // Aquí puedes hacer lo que necesites con el nuevo evento
       console.log("Nuevo evento:", nuevoEvento);
 
-      // Insertar el evento
+      // Insertar el evento 
       this.insertEvento(nuevoEvento);
+      form.reset();
+      alert('Evento insertado en la base de datos')
     });
+
+    
   }
 
   insertEvento(evento: any): void {

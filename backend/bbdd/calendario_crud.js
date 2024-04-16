@@ -10,28 +10,35 @@ const connection = mysql.createConnection({
     database: "itic_database"
 });
 
-// Función para crear un evento en el calendario
 function createEvento(titulo, fecha, hora, descripcion, ubicacion) {
-    return new Promise((resolve, reject) => {
-        // Verificar que no haya valores vacíos
-        if (!titulo || !fecha) {
-            resolve({ success: false, message: "Falta información requerida" });
-            return;
-        }
-
-        // Query de inserción
-        const sql = `INSERT INTO Eventos (titulo, fecha, hora, descripcion, ubicacion) 
-                     VALUES (?, ?, ?, ?, ?)`;
-
-        // Ejecutar la query
-        connection.query(sql, [titulo, fecha, hora, descripcion, ubicacion], (err, result) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ success: true, message: "Evento creado exitosamente" });
-            }
+    // return new Promise((resolve, reject) => {
+    //     // Verificar que no haya valores vacíos
+    //     if (!titulo || !fecha) {
+    //         resolve({ success: false, message: "Falta información requerida" });
+    //         return;
+    //     }
+        const conn = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "pass-itic8",
+            database: "itic_database"
         });
-    });
+        conn.connect(function(err) {
+            if (err) throw err;
+            console.log("Conectado a la Base de Datos!");
+        })
+
+        // Query de inserción con valores parametrizados
+        const sql = `INSERT INTO Eventos (titulo, fecha, hora, descripcion, ubicacion) 
+        VALUES ('${titulo}', '${fecha}', '${hora}', '${descripcion}', '${ubicacion}')`;
+
+        // Ejecutar la query con valores parametrizados
+            // Ejecutamos la query
+            conn.query(sql, function(err, result) {
+                if (err) throw err;
+                console.log("Insertado evento!")
+            })
+            conn.end(); 
 }
 
 // Función para actualizar un evento en el calendario
