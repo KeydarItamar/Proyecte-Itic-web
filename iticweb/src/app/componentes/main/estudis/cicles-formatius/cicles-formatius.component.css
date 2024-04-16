@@ -44,9 +44,9 @@ main {
 
 .titulos {
     text-align: center;
-    padding: 1%;
+    padding: 10px;
     color: rgba(48 239 188);   
-    background-color: rgba(0, 0, 0, 0.288); 
+    background-color: rgba(0, 0, 0, 0.398); 
     margin: 2% 20% 2% 20%;
     border-radius: 50px;
 }
