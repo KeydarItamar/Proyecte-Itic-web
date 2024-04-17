@@ -1,0 +1,12 @@
+main {
+    height: 100vh;
+    padding-top: 15vh;
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+img {
+    height: 50px;
+}

@@ -1,20 +1,75 @@
 main{
-    padding-top: 3%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Outfit', sans-serif;
-    background-image:linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    background-image:linear-gradient(rgba(108, 108, 108, 0.513), rgba(139, 139, 139, 0.8)),url(/assets/fondos/fondo1.jpg);  
+    padding-top: 7vh;
     padding-bottom: 2%;
 }
 
+.intro {
+    padding: 3.4% 8% 3.4% 8%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    background-color: rgba(247, 247, 247, 0.521);
+    border-radius: 0 0 40px 40px;
+}
+
+.intro ul {
+    list-style-type: none;
+}
+
+
+
 table {
-    background: #fff;
-    margin-bottom: 1.25em;
-    border: solid 1px #ddd;
+    background-color: rgba(247, 247, 247, 0.521);
+    margin-bottom: 2em;
     max-width: 80vw;
+    padding: 50px;
+    border-radius: 20px;
 }
+
+.titulos-tablas{
+    text-align: center;
+    padding: 10px 0 20px 0;
+}
+
+td {
+    padding-right: 20px;
+}
+
+td,
+    th {
+        padding: 10px; /* Ajusta el valor según sea necesario */
+    }
+
+
+.filas-tablas{
+    padding-top: 10px;
+}
+
 table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-    border: 1px solid silver;
+    border: 1px solid rgba(48, 239, 188, 0.269); 
 }
+
+.titulos{
+    background-color: rgba(0, 0, 0, 0.398);
+    padding: 20px;
+    border-radius: 20px;
+    color: rgba(48 239 188); 
+}
+
+.intro .titulos-principal {
+    background-color: rgba(0, 0, 0, 0.398);
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    color: rgba(48 239 188); 
+    width: 100%;
+}
+

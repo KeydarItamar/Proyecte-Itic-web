@@ -42,6 +42,8 @@ import { NoticiaDetalleComponent } from './componentes/noticias/noticia-detalle/
 import { MiniNoticiaComponent } from './componentes/noticias/mini-noticia/mini-noticia.component';
 import { FormNoticiaComponent } from './componentes/main/form-noticia/form-noticia.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormCalendariComponent } from './componentes/main/institut/institut-children/calendari-del-curs/form-calendari/form-calendari.component';
+import { GestorNoticiasComponent } from './componentes/noticias/gestor-noticias/gestor-noticias.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NoticiaDetalleComponent,
     MiniNoticiaComponent,
     FormNoticiaComponent,
+    FormCalendariComponent,
+    GestorNoticiasComponent,
   
   ],
   imports: [

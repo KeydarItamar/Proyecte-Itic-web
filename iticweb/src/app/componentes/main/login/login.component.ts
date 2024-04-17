@@ -21,8 +21,9 @@ export class LoginComponent implements OnInit {
   isAuthenticated: boolean = true;
 
   ngOnInit(): void {
-    document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = "rol=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    localStorage.removeItem("email")
+    localStorage.removeItem("rol")
+
   }
 
   onSubmit(): void {
@@ -45,8 +46,8 @@ export class LoginComponent implements OnInit {
         // Redirige a la ruta /home solo si el usuario está autenticado
         if (this.isAuthenticated) {
           // Creamos las cookies
-          document.cookie = `email=${data.email}; expires=${new Date(Date.now() + 864e5).toUTCString()}; path=/`;
-          document.cookie = `rol=${response.rol}; expires=${new Date(Date.now() + 864e5).toUTCString()}; path=/`;
+          localStorage.setItem("email", data.email);
+          localStorage.setItem("rol", response.rol);
 
           this.router.navigate(['/home']);
         } else {
