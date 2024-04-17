@@ -17,8 +17,13 @@
     
     <label for="noticiaFijada">Noticia fijada:</label><br>
     <input type="checkbox" id="noticiaFijada" name="noticiaFijada"><br><br>
+    <span *ngIf="!editing">
+    <button type="submit">Crear Noticia</button>
+    </span> 
+    <span *ngIf="editing">
+    <button type="submit">Editar Noticia</button>
+    </span> 
     
-    <button type="submit" >Crear Noticia</button>
   </form>
 
   <div id="imagenes">

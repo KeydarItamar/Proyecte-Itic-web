@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarioServiceService } from 'src/app/services/calendario-service.service';
+interface  Day {
+  Day : number;
+  Month: number;
+  year: number;
+  tittle: string;
+  hour: string;
+  description: string;
+  place: string;
+}
 
 @Component({
   selector: 'app-calendari-del-curs',
@@ -6,11 +16,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendari-del-curs.component.css']
 })
 export class CalendariDelCursComponent implements OnInit {
+ numDay: number = 17
+eventos: Day[] = []
 
-  constructor() { }
+  constructor(private calendar : CalendarioServiceService) { }
 
   ngOnInit(): void {
+    this.getAllEventos()
   }
+
   currentDate: Date = new Date();
   currentMonth: number = this.currentDate.getMonth();
   currentYear: number = this.currentDate.getFullYear();
@@ -73,6 +87,20 @@ export class CalendariDelCursComponent implements OnInit {
       this.currentMonth--;
     }
     this.weeks = this.getCalendar();
+  }
+
+
+  getAllEventos(){
+    this.calendar.getAllEventos().subscribe({
+      next: response => {
+       console.log(response)
+       console.log(response[0].fecha)
+       console.log(typeof(response[0].fecha))
+      },
+      error: error => {
+        console.log(`Error al subir la noticia : ${error} `)
+      }
+    })
   }
 
 }

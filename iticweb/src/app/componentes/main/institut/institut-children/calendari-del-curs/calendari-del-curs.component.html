@@ -17,7 +17,11 @@
   <tbody>
     <tr *ngFor="let week of weeks">
       <ng-container *ngFor="let day of week">
-        <td>{{ day }}</td>
+        <td>{{ day }}
+          <div *ngIf="day === numDay"> 
+              <p>hola</p>
+          </div>
+        </td>
       </ng-container>
     </tr>
   </tbody>

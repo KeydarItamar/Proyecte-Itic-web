@@ -26,6 +26,10 @@ export class NoticiasService {
     return this.http.post<any>(`${this.baseUrl}/insertNoticia`, nuevaNoticia);
   }
 
+  // Método para actualizar una noticia existente
+  updateNoticia(noticia: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/updateNoticia/${noticia.id}`, noticia);
+  }
 
   deleteNoticia(id: number): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/deleteNoticia/${id}`);

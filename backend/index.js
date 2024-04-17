@@ -1,6 +1,7 @@
 //Archivo principal de node.js
 const connection = require('./bbdd/connection');
 const inserts = require ('./bbdd/inserts');
+const calendar = require ('./bbdd/calendario_crud');
 const userLogin = require('./bbdd/login')
 const { exec } = require('child_process');
 const express = require('express');
@@ -201,4 +202,69 @@ app.post('/subirImagenes', upload.array('files'), (req, res) => {
     console.log('Archivos recibidos:', req.files);
     res.send('Archivos recibidos correctamente');
 });
+
+
+//********************************************************************************************************************************** */
+//rutas para los eventos del calendario: 
+
+//ruta para insertar un evento en el calendario
+app.post('/createEvento', (req, res) => {
+    try {
+
+        const data = req.body;
+        console.log('Enviando a función bbdd: ' + data.titulo, data.fecha, data.hora, data.descripcion, data.ubicacion);
+        
+        // Llamar a la función para insertar en la base de datos
+        calendar.createEvento(data.titulo, data.fecha, data.hora, data.descripcion, data.ubicacion, (err, result) => {
+            if (err) {
+                // Manejar el error si ocurre
+                console.error(err);
+                res.status(500).json({ error: 'Error al insertar evento' });
+            } else {
+                // Si no hay errores, devolver un mensaje de éxito
+                res.status(200).json({ message: 'Evento insertado correctamente' });
+            }
+        });
+        
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// Endpoint para actualizar un evento por su ID
+app.put('/updateEvento/:id', (req, res) => {
+    const id = req.params.id;
+    const { titulo, fecha, hora, descripcion, ubicacion } = req.body;
+
+    // Llamar a la función para actualizar el evento por su ID
+    calendar.updateEvento(id, titulo, fecha, hora, descripcion, ubicacion)
+        .then(result => res.status(200).json({ message: 'Evento actualizado correctamente' }))
+        .catch(error => res.status(500).json({ error: 'Error al actualizar el evento' }));
+});
+
+
+// Endpoint para obtener todos los eventos del calendario
+app.get('/getAllEventos', (req, res) => {
+    try {
+        // Llamar a la función para obtener todos los eventos
+        calendar.getAllEventos()
+            .then(eventos => res.status(200).json(eventos))
+            .catch(error => res.status(500).json({ error: 'Error al obtener los eventos' }));
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// Endpoint para eliminar un evento por su ID
+app.delete('/deleteEvento/:id', (req, res) => {
+    const id = req.params.id;
+
+    // Llamar a la función para eliminar el evento por su ID
+    calendar.deleteEvento(id)
+        .then(result => res.status(200).json({ message: 'Evento eliminado correctamente' }))
+        .catch(error => res.status(500).json({ error: 'Error al eliminar el evento' }));
+});
+
 
