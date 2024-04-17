@@ -10,6 +10,6 @@ CREATE TABLE noticias (
     foto2 VARCHAR(255),
     foto3 VARCHAR(255),
     noticiaFijada BOOLEAN DEFAULT FALSE,
-    dataCreacion DATE,
-    dataModificacion DATE
+    dataCreacion TIMESTAMP,
+    dataModificacion TIMESTAMP
 );

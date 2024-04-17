@@ -1,19 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Noticia } from '../../noticias/noticia-detalle/noticia';
 import { NoticiasService } from 'src/app/noticias.service';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-form-noticia',
   templateUrl: './form-noticia.component.html',
   styleUrls: ['./form-noticia.component.css']
 })
 export class FormNoticiaComponent implements OnInit {
+  id!: number;
+  editing: boolean = false; 
 
-  constructor(private noticiaService: NoticiasService) { }
+
+  constructor(private noticiaService: NoticiasService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.setupFormListener();
-  }
+    this.route.params.subscribe(params => {
+      this.id = +params['id']; // Convertir el parámetro a número
+      this.editing= params['editing']
+      console.log('log del nuevo componente: id: ' + this.id);
+      console.log('log del editing: ' + this.editing);
+      this.setupFormListener();
+    });
+    }
+
 
   setupFormListener(): void {
     const form = document.getElementById("noticiaForm") as HTMLFormElement;
@@ -76,8 +89,13 @@ export class FormNoticiaComponent implements OnInit {
       // console.log("Nombre de la foto 1:", foto1Nombre);
       // console.log("Nombre de la foto 2:", foto2Nombre);
       // console.log("Nombre de la foto 3:", foto3Nombre);
-      this.subirFoto(formDataFoto)
-      this.insertForm(nuevaNoticia)
+     
+      if(this.editing){
+        // this.updateNoticia(nuevaNoticia,this.idNoticiaUpdate)
+      }else{
+        this.subirFoto(formDataFoto)
+        this.insertForm(nuevaNoticia)
+      }
     });
   }
 
@@ -102,4 +120,17 @@ export class FormNoticiaComponent implements OnInit {
       // }
   });
   }
+
+  // updateNoticia(nuevaNoticia, id){
+  //   this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
+  //     next: response =>{
+  //       console.log(response)
+  //     },
+  //     error: error => {
+  //       console.error('Error al actualizar la noticia: ' + error)
+  //     }
+  //   })
+  // }
+
+
 }

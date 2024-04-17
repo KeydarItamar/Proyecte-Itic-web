@@ -15,23 +15,28 @@
     <label for="parrafo3">Párrafo 3:</label><br>
     <textarea id="parrafo3" name="parrafo3"></textarea><br>
     
-
-    <label for="fotoPortada">Foto de Portada:</label><br>
-    <input type="file" id="fotoPortada" name="fotoPortada" accept="image/*" required><br>
-    
-    <label for="foto1">Foto 1:</label><br>
-    <input type="file" id="foto1" name="foto1" accept="image/*"><br>
-    
-    <label for="foto2">Foto 2:</label><br>
-    <input type="file" id="foto2" name="foto2" accept="image/*"><br>
-    
-    <label for="foto3">Foto 3:</label><br>
-    <input type="file" id="foto3" name="foto3" accept="image/*"><br>
-    
-    
     <label for="noticiaFijada">Noticia fijada:</label><br>
     <input type="checkbox" id="noticiaFijada" name="noticiaFijada"><br><br>
-    
+    <span *ngIf="!editing">
     <button type="submit">Crear Noticia</button>
-</form>
+    </span> 
+    <span *ngIf="editing">
+    <button type="submit">Editar Noticia</button>
+    </span> 
+    
+  </form>
+
+  <div id="imagenes">
+    <label class="file-label" for="fotoPortada">Foto de Portada:</label><br>
+    <input type="file" id="fotoPortada" name="fotoPortada" accept="image/*" required><br>
+    
+    <label class="file-label" for="foto1">Foto 1:</label><br>
+    <input type="file" id="foto1" name="foto1" accept="image/*"><br>
+    
+    <label class="file-label" for="foto2">Foto 2:</label><br>
+    <input type="file" id="foto2" name="foto2" accept="image/*"><br>
+    
+    <label class="file-label" for="foto3">Foto 3:</label><br>
+    <input type="file" id="foto3" name="foto3" accept="image/*"><br>
+  </div>
 </main>
