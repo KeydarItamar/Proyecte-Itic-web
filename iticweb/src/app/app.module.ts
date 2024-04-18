@@ -44,6 +44,7 @@ import { FormNoticiaComponent } from './componentes/main/form-noticia/form-notic
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormCalendariComponent } from './componentes/main/institut/institut-children/calendari-del-curs/form-calendari/form-calendari.component';
 import { GestorNoticiasComponent } from './componentes/noticias/gestor-noticias/gestor-noticias.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,7 @@ import { GestorNoticiasComponent } from './componentes/noticias/gestor-noticias/
     MatProgressSpinnerModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    
+    EditorModule,
     
   ],
   providers: [],

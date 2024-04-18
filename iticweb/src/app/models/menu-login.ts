@@ -20,6 +20,7 @@ export const MenuLogin = {
             titulo: "Profesor",
             subtitulos: [
               { text: "Insertar Noticia", ruta: "/insert_noticia" },
+              { text: "Form Calendario", ruta: "/FormCalendario"},
               { text: "Cerrar Sesión", ruta: "/login" }
             ]
         }
@@ -31,6 +32,7 @@ export const MenuLogin = {
               { text: "Insertar Noticia", ruta: "/insert_noticia" },
               { text: "Gestionar Noticias", ruta: "/gestor_noticias"},
               { text: "Añadir Usuarios", ruta: "/register" },
+              { text: "Form Calendario", ruta: "/FormCalendario"},
               { text: "Cerrar Sesión", ruta: "/login" }
             ]
         }
