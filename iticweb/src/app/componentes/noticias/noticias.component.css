@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     align-items:center ;
-    background-image:linear-gradient(rgba(193, 193, 193, 0.301), rgba(201, 201, 201, 0.979));  
+    background-image:linear-gradient(rgba(119, 119, 119, 0.457), rgba(23, 23, 23, 0.835));  
 
 }
 
@@ -42,3 +42,25 @@ img{
     flex-direction: row;
     align-items:center ;
 }
+
+.arrow-button-left {
+    background: transparent;
+    background-image: url('src/assets/iconos/flecha-correcta1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 30px; /* ajusta el padding según el tamaño de tu imagen */
+    border: none;
+    cursor: pointer;
+   
+}
+
+.arrow-button-right {
+    background: transparent;
+    background-image: url('src/assets/iconos/flecha-correcta.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 30px; /* ajusta el padding según el tamaño de tu imagen */
+    border: none;
+    cursor: pointer;
+}
+

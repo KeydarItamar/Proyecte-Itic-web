@@ -9,15 +9,15 @@
 <div>
 </div> 
 
-<div class="noticias" >
-    <button (click)="anteriorNoticia()">Anterior</button>
+<div class="noticias">
+    <button class="arrow-button-left" (click)="anteriorNoticia()"></button>
     <app-mini-noticia 
     [id]="id"
     [titulo]="titulo"
     [parrafo1]="parrafo1"
     [imagen]="imagen" 
     ></app-mini-noticia>
-    <button (click)="siguienteNoticia()">Siguiente</button>
+    <button class="arrow-button-right" (click)="siguienteNoticia()"></button>
 </div>
 
 
