@@ -84,14 +84,15 @@ export class FormNoticiaComponent implements OnInit {
       };
   
       // Aquí puedes hacer lo que necesites con la nueva noticia
-      console.log("Nueva noticia:", nuevaNoticia);
 
       if(this.editing){
         console.log(this.id)
         this.updateNoticia(nuevaNoticia, this.id)
+        alert("Noticia creada correctamente.")
       }else{
         this.subirFoto(formDataFoto)
         this.insertForm(nuevaNoticia)
+        alert("Has creado una noticia correctamente.")
       }
     });
   }
