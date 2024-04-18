@@ -33,6 +33,12 @@ export class HeaderComponent implements OnInit {
     this.mostrarSubtitulosFlag = false;
   }
 
+  getRol() {
+    const rol = localStorage.getItem("rol");
+    console.log(rol)
+    return rol;
+  }
+
   getMenuLogin() {
     const rol = localStorage.getItem("rol");
     switch(rol) {
