@@ -85,13 +85,10 @@ export class FormNoticiaComponent implements OnInit {
   
       // Aquí puedes hacer lo que necesites con la nueva noticia
       console.log("Nueva noticia:", nuevaNoticia);
-      // console.log("Nombre de la foto de portada:", fotoPortadaNombre);
-      // console.log("Nombre de la foto 1:", foto1Nombre);
-      // console.log("Nombre de la foto 2:", foto2Nombre);
-      // console.log("Nombre de la foto 3:", foto3Nombre);
-     
+
       if(this.editing){
-        // this.updateNoticia(nuevaNoticia,this.idNoticiaUpdate)
+        console.log(this.id)
+        this.updateNoticia(nuevaNoticia, this.id)
       }else{
         this.subirFoto(formDataFoto)
         this.insertForm(nuevaNoticia)
@@ -121,16 +118,16 @@ export class FormNoticiaComponent implements OnInit {
   });
   }
 
-  // updateNoticia(nuevaNoticia, id){
-  //   this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
-  //     next: response =>{
-  //       console.log(response)
-  //     },
-  //     error: error => {
-  //       console.error('Error al actualizar la noticia: ' + error)
-  //     }
-  //   })
-  // }
+  updateNoticia(nuevaNoticia: any, id: number){
+    this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
+      next: response =>{
+        console.log(response)
+      },
+      error: error => {
+        console.error('Error al actualizar la noticia: ' + error)
+      }
+    })
+  }
 
 
 }

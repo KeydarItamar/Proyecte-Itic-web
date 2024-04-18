@@ -55,6 +55,31 @@ app.post('/insertNoticia', (req, res) => {
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 });
+
+//update noticia:
+app.put('/updateNoticia', (req, res) => {
+    try {
+        const { titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada } = req.body.noticia;
+        const id = req.body.id
+        console.log("Este es el id de la noticia actualzada" + id)
+        console.log("data recibida   " + titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada)
+        // Llamar a la función para insertar la noticia
+        inserts.updateNoticia(id, titulo, subtitulo, parrafo1, parrafo2, parrafo3, fotoPortada, foto1, foto2, foto3, noticiaFijada, (err, result) => {
+            if (err) {
+                // Manejar el error si ocurre
+                console.error(err);
+                res.status(500).json({ error: 'Error al actualizar la noticia' });
+            } else {
+                // Si no hay errores, devolver un mensaje de éxito
+                res.status(200).json({ message: 'Noticia actualizada correctamente' });
+            }
+        });
+    } catch (error) {
+        // Manejar cualquier error de forma general
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
 app.post('/getNoticia', (req, res) => {
     try {
         const id = req.body.id; // Suponiendo que el ID se envía como parte del cuerpo de la solicitud

@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CalendarioServiceService } from 'src/app/services/calendario-service.service';
 interface  Day {
-  Day : number;
-  Month: number;
-  year: number;
-  tittle: string;
-  hour: string;
-  description: string;
-  place: string;
+  id: number;
+  titulo: string;
+  fecha: Date;
+  hora: string;
+  descripcion: string;
+  ubicacion: string;
+
 }
+
+
 
 @Component({
   selector: 'app-calendari-del-curs',
@@ -22,7 +25,7 @@ eventos: Day[] = []
   constructor(private calendar : CalendarioServiceService) { }
 
   ngOnInit(): void {
-    this.getAllEventos()
+    // this.getAllEventos()
   }
 
   currentDate: Date = new Date();
@@ -89,18 +92,34 @@ eventos: Day[] = []
     this.weeks = this.getCalendar();
   }
 
-
-  getAllEventos(){
-    this.calendar.getAllEventos().subscribe({
-      next: response => {
-       console.log(response)
-       console.log(response[0].fecha)
-       console.log(typeof(response[0].fecha))
-      },
-      error: error => {
-        console.log(`Error al subir la noticia : ${error} `)
-      }
-    })
-  }
+  // getAllEventos() {
+  //   this.calendar.getAllEventos().subscribe({
+  //     next: (response: Day[]) => {
+  //       response.forEach(evento => {
+  //         const fechaEvento = new Date(evento.fecha);
+  //         const dayOfMonth = fechaEvento.getDate();
+  //         const month = fechaEvento.getMonth();
+  //         const year = fechaEvento.getFullYear();
+  
+  //         // Busca el día correspondiente en la matriz weeks
+  //         this.weeks.forEach(week => {
+  //           week.forEach(day => {
+  //             if (day === dayOfMonth && day.month === month && day.year === year) {
+  //               // Agrega el título del evento al día correspondiente
+  //               day.titulo = evento.titulo;
+  //               day.hora = evento.hora;
+  //               day.descripcion = evento.descripcion;
+  //               day.ubicacion = evento.ubicacion;
+  //             }
+  //           });
+  //         });
+  //       });
+  //     },
+  //     error: error => {
+  //       console.log(`Error al obtener los eventos: ${error}`);
+  //     }
+  //   });
+  // }
+  
 
 }
