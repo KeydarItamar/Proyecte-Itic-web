@@ -1,29 +1,29 @@
 <main>
-<h2>{{ getMonthName(currentMonth) }}, {{ currentYear }}</h2>
-<button (click)="previousMonth()">Anterior</button>
-<button (click)="nextMonth()">Següent</button>
-<table>
-  <thead>
-    <tr>
-      <th>Sun</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let week of weeks">
-      <ng-container *ngFor="let day of week">
-        <td>{{ day }}
-          <div *ngIf="day === numDay"> 
-              <p>hola</p>
-          </div>
-        </td>
-      </ng-container>
-    </tr>
-  </tbody>
-</table>
+  <h2>{{ getMonthName(currentMonth) }}, {{ currentYear }}</h2>
+  <button (click)="previousMonth()">Anterior</button>
+  <button (click)="nextMonth()">Següent</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Dl</th>
+        <th>Dt</th>
+        <th>Dc</th>
+        <th>Dj</th>
+        <th>Dv</th>
+        <th>Ds</th>
+        <th>Dg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of weeks">
+        <ng-container *ngFor="let day of week">
+          <td>{{ day.day }}
+            <div *ngIf="day.eventTitle"> 
+              <p>{{ day.eventTitle }}</p>
+            </div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
 </main>
