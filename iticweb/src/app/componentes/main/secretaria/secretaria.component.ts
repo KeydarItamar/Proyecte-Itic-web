@@ -1,4 +1,5 @@
-import {Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 declare var tinymce: any;
 
@@ -8,13 +9,31 @@ declare var tinymce: any;
   styleUrls: ['./secretaria.component.css']
 })
 export class SecretariaComponent implements OnInit {
-  //contenidoInicial: string = "adasdas"; // Definir la propiedad contenidoInicial
-
-  @ViewChild('entryContent', { static: true }) entryContentRef!: ElementRef; // Inicializar entryContentRef
+  editorVisible: boolean = false;
+  initialContent: string = ''; // Guarda el contenido inicial del editor
 
   constructor() { }
 
   ngOnInit(): void {
-    tinymce.get("editor").setContent(document.getElementById("entry-content")?.innerHTML)
+  }
+
+  mostrarEditor() {
+    this.editorVisible = true;
+    document.body.style.overflow = 'hidden'; // Evitar el desplazamiento de la página
+  }
+
+  cerrarEditor() {
+    this.editorVisible = false;
+    document.body.style.overflow = ''; // Restaurar el desplazamiento de la página
+  }
+
+  cancelarEdicion() {
+    this.cerrarEditor();
+  }
+
+  editarContent(entryContent: HTMLElement) {
+    const editorContent = tinymce.get('editor').getContent();
+    entryContent.innerHTML = editorContent;
+    this.cerrarEditor();
   }
 }
