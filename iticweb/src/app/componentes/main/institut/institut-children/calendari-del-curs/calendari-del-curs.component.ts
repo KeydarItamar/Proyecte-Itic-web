@@ -6,6 +6,10 @@ interface Day {
   Month: number;
   Year: number;
   Title: string;
+  Date: string;
+  Hour: string | null;
+  Description: string | null;
+  Place: string | null;
 }
 
 @Component({
@@ -14,8 +18,8 @@ interface Day {
   styleUrls: ['./calendari-del-curs.component.css']
 })
 export class CalendariDelCursComponent implements OnInit {
-  numDay: number = 17;
   eventos: Day[] = [];
+  selectedEvent: Day | null = null;
 
   constructor(private calendar: CalendarioServiceService) { }
 
@@ -26,8 +30,6 @@ export class CalendariDelCursComponent implements OnInit {
   currentDate: Date = new Date();
   currentMonth: number = this.currentDate.getMonth();
   currentYear: number = this.currentDate.getFullYear();
-
-  selectedEvent: Day | null = null;
 
   getDaysInMonth(month: number, year: number): number {
     return new Date(year, month + 1, 0).getDate();
@@ -44,27 +46,30 @@ export class CalendariDelCursComponent implements OnInit {
 
   getCalendar(): { day: number, eventTitle?: string }[][] {
     const daysInMonth = this.getDaysInMonth(this.currentMonth, this.currentYear);
-    const firstDayOfWeek = this.getFirstDayOfMonth(this.currentMonth, this.currentYear);
-
+    let firstDayOfWeek = this.getFirstDayOfMonth(this.currentMonth, this.currentYear);
+  
+    if (firstDayOfWeek === 0) {
+      firstDayOfWeek = 7;
+    }
+  
     let weeks: { day: number, eventTitle?: string }[][] = [[]];
     let currentWeekIndex = 0;
-
+  
+    if (firstDayOfWeek !== 1) {
+      weeks[currentWeekIndex] = new Array(firstDayOfWeek - 1).fill({ day: null });
+    }
+  
     for (let i = 1; i <= daysInMonth; i++) {
-      if (i === 1 && firstDayOfWeek > 0) {
-        weeks[currentWeekIndex] = new Array(firstDayOfWeek).fill({ day: null });
-      }
-
-      let eventTitle = this.getEventTitleForDay(i);
-      weeks[currentWeekIndex].push({ day: i, eventTitle });
-
-      if ((i + firstDayOfWeek) % 7 === 0 && i !== daysInMonth) {
+      weeks[currentWeekIndex].push({ day: i, eventTitle: this.getEventTitleForDay(i) });
+  
+      if (weeks[currentWeekIndex].length === 7) {
         currentWeekIndex++;
         weeks[currentWeekIndex] = [];
       }
     }
-
     return weeks;
   }
+  
 
   weeks: { day: number, eventTitle?: string }[][] = this.getCalendar();
 
@@ -95,7 +100,11 @@ export class CalendariDelCursComponent implements OnInit {
           Day: new Date(evento.fecha).getDate(),
           Month: new Date(evento.fecha).getMonth(),
           Year: new Date(evento.fecha).getFullYear(),
-          Title: evento.titulo
+          Title: evento.titulo,
+          Date: evento.fecha,
+          Hour: evento.hora,
+          Description: evento.descripcion,
+          Place: evento.ubicacion
         }));
         this.weeks = this.getCalendar();
       },
@@ -111,5 +120,9 @@ export class CalendariDelCursComponent implements OnInit {
     });
   
     return event ? event.Title : '';
+  }
+
+  showEventDetails(eventTitle: string) {
+    this.selectedEvent = this.eventos.find(evento => evento.Title === eventTitle) || null;
   }
 }

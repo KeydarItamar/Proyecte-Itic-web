@@ -19,11 +19,22 @@
         <ng-container *ngFor="let day of week">
           <td>{{ day.day }}
             <div *ngIf="day.eventTitle"> 
-              <p>{{ day.eventTitle }}</p>
+              <p (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
             </div>
           </td>
         </ng-container>
       </tr>
     </tbody>
   </table>
+
+  <!-- Card para mostrar detalles del evento -->
+  <div *ngIf="selectedEvent" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ selectedEvent.Title }}</h5>
+      <p class="card-text">Fecha: {{ selectedEvent.Date }}</p>
+      <p class="card-text" *ngIf="selectedEvent.Hour">Hora: {{ selectedEvent.Hour }}</p>
+      <p class="card-text" *ngIf="selectedEvent.Description">Descripción: {{ selectedEvent.Description }}</p>
+      <p class="card-text" *ngIf="selectedEvent.Place">Ubicación: {{ selectedEvent.Place }}</p>
+    </div>
+  </div>
 </main>
