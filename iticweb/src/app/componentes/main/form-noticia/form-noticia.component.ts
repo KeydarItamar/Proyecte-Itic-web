@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Noticia } from '../../noticias/noticia-detalle/noticia';
 import { NoticiasService } from 'src/app/noticias.service';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-
 
 @Component({
   selector: 'app-form-noticia',
@@ -14,18 +12,33 @@ export class FormNoticiaComponent implements OnInit {
   id!: number;
   editing: boolean = false; 
 
-
   constructor(private noticiaService: NoticiasService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = +params['id']; // Convertir el parámetro a número
-      this.editing= params['editing']
-      console.log('log del nuevo componente: id: ' + this.id);
-      console.log('log del editing: ' + this.editing);
+      this.editing = params['editing'];
+
+      if (this.editing) {
+        this.noticiaService.getNoticia(this.id).subscribe((data) => {
+          let noticia = data;
+          this.setupFormFields(noticia);
+        });
+      }
+
       this.setupFormListener();
     });
-    }
+  }
+
+  setupFormFields(noticia: any): void {
+    const form = document.getElementById("noticiaForm") as HTMLFormElement;
+    form['titulo'].value = noticia[0].titulo;
+    form['subtitulo'].value = noticia[0].subtitulo;
+    form['parrafo1'].value = noticia[0].parrafo1;
+    form['parrafo2'].value = noticia[0].parrafo2;
+    form['parrafo3'].value = noticia[0].parrafo3;
+    form['noticiaFijada'].checked = noticia[0].noticiaFijada;
+  }
 
 
   setupFormListener(): void {
@@ -55,7 +68,7 @@ export class FormNoticiaComponent implements OnInit {
       const foto3File = foto3Input.files && foto3Input.files[0];
       const foto3Nombre = foto3File ? foto3File.name : '';
 
-            // Agregar las imágenes al FormData
+      // Agregar las imágenes al FormData
       if (fotoPortadaInput.files && fotoPortadaInput.files.length > 0) {
         formDataFoto.append('files', fotoPortadaInput.files[0]);
       }
@@ -83,18 +96,14 @@ export class FormNoticiaComponent implements OnInit {
         noticiaFijada: (formData.get("noticiaFijada") === "on")
       };
   
-      // Aquí puedes hacer lo que necesites con la nueva noticia
       console.log("Nueva noticia:", nuevaNoticia);
-      // console.log("Nombre de la foto de portada:", fotoPortadaNombre);
-      // console.log("Nombre de la foto 1:", foto1Nombre);
-      // console.log("Nombre de la foto 2:", foto2Nombre);
-      // console.log("Nombre de la foto 3:", foto3Nombre);
      
       if(this.editing){
-        // this.updateNoticia(nuevaNoticia,this.idNoticiaUpdate)
+        console.log("editando noticia...")
+        this.updateNoticia(nuevaNoticia, this.id); // Pasa la nueva noticia y el ID para actualizarla
       }else{
-        this.subirFoto(formDataFoto)
-        this.insertForm(nuevaNoticia)
+        this.subirFoto(formDataFoto);
+        this.insertForm(nuevaNoticia);
       }
     });
   }
@@ -105,9 +114,9 @@ export class FormNoticiaComponent implements OnInit {
         console.log('Se ha insertado correctamente en la base de datos', response);
       },
       error: error => {
-        console.log(`Error al subir la noticia : ${error} `)
+        console.log(`Error al subir la noticia : ${error} `);
       }
-    })
+    });
   }
 
   subirFoto(formulario: FormData) {
@@ -115,22 +124,20 @@ export class FormNoticiaComponent implements OnInit {
       next: response => {
         console.log('Imágenes subidas exitosamente:', response);
       },
-      // error : error => {
-      //   console.error('Error al subir imágenes:', error);
-      // }
-  });
+      error : error => {
+        console.error('Error al subir imágenes:', error);
+      }
+    });
   }
 
-  // updateNoticia(nuevaNoticia, id){
-  //   this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
-  //     next: response =>{
-  //       console.log(response)
-  //     },
-  //     error: error => {
-  //       console.error('Error al actualizar la noticia: ' + error)
-  //     }
-  //   })
-  // }
-
-
+  updateNoticia(nuevaNoticia: Noticia, id: number){
+    this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
+      next: response => {
+        console.log('Respuesta al actualizar la noticia:', response);
+      },
+      error: error => {
+        console.error('Error al actualizar la noticia:', error);
+      }
+    });
+  }
 }
