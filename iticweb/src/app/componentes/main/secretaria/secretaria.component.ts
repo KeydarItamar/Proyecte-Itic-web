@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { ContenidoService } from 'src/app/services/contenido.service';
 declare var tinymce: any;
 
 @Component({
@@ -9,12 +9,16 @@ declare var tinymce: any;
   styleUrls: ['./secretaria.component.css']
 })
 export class SecretariaComponent implements OnInit {
+  @Input() id: number = 1
   editorVisible: boolean = false;
   initialContent: string = ''; // Guarda el contenido inicial del editor
-
-  constructor() { }
+  contenido!: string;
+  objeto_content!: object;
+  titulo!: string;
+  constructor(private content:  ContenidoService ) { }
 
   ngOnInit(): void {
+    this.cargarContenido()
   }
 
   mostrarEditor() {
@@ -34,6 +38,34 @@ export class SecretariaComponent implements OnInit {
   editarContent(entryContent: HTMLElement) {
     const editorContent = tinymce.get('editor').getContent();
     entryContent.innerHTML = editorContent;
+    this.subirContenido(this.id, editorContent)
     this.cerrarEditor();
   }
+
+  cargarContenido(){
+    this.content.getArticuloById(this.id).subscribe({
+    next:response =>{
+      this.objeto_content = response
+      this.contenido = response.contenido
+      this.titulo= response.titulo
+    },
+    error:error => {
+      console.error('Error al llamar al backend');
+  }
+    })}
+
+  subirContenido(id: number, contenido: string){
+    this.content.updateArticulo(id, contenido).subscribe({
+      next: response => {
+          console.log(response)
+          alert('Se ha editado correctamente el articulo.')
+      },
+      error: error =>{
+        console.log('Ha habido un error, no se ha actualizado el articulo.' + error)
+      }
+    })
+  }
+
+
+
 }

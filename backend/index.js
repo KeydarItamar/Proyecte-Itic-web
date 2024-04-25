@@ -3,6 +3,7 @@ const connection = require('./bbdd/connection');
 const inserts = require ('./bbdd/inserts');
 const calendar = require ('./bbdd/calendario_crud');
 const userLogin = require('./bbdd/login')
+const content = require('./bbdd/contenido_crud.js')
 const { exec } = require('child_process');
 const express = require('express');
 const cors = require('cors');
@@ -292,4 +293,70 @@ app.delete('/deleteEvento/:id', (req, res) => {
         .catch(error => res.status(500).json({ error: 'Error al eliminar el evento' }));
 });
 
+//**************************************************************************************************/
 
+
+// Ruta para crear un nuevo artículo
+app.post('/createArticulo', (req, res) => {
+    try {
+        const data = req.body;
+        console.log('Enviando a función bbdd: ' + data.titulo, data.nombre_seccion, data.contenido);
+        
+        // Llamar a la función para insertar en la base de datos
+        content.createArticulo(data.titulo, data.nombre_seccion, data.contenido)
+            .then(result => res.status(200).json({ message: 'Artículo insertado correctamente' }))
+            .catch(error => res.status(500).json({ error: 'Error al insertar artículo' }));
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// Endpoint para actualizar un artículo por su ID
+app.post('/updateArticulo', (req, res) => {
+    console.log('entrando en endpoint')
+    const data = req.body;
+    // Llamar a la función para actualizar el artículo por su ID
+    content.updateArticulo(data.id, data.articulo)
+        .then(result => res.status(200).json({ message: 'Artículo actualizado correctamente' }))
+        .catch(error => res.status(500).json({ error: 'Error al actualizar el artículo' }));
+ console.log('se ha entrando en el update')
+});
+
+// Endpoint para obtener todos los artículos
+app.get('/getAllArticulos', (req, res) => {
+    try {
+        // Llamar a la función para obtener todos los artículos
+        content.getAllArticulos()
+            .then(articulos => res.status(200).json(articulos))
+            .catch(error => res.status(500).json({ error: 'Error al obtener los artículos' }));
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// Endpoint para obtener un artículo por su ID
+app.get('/getArticulo/:id', (req, res) => {
+    const id = req.params.id;
+
+    // Llamar a la función para obtener el artículo por su ID
+    content.getArticuloById(id)
+        .then(articulo => {
+            if (articulo.success === false) {
+                res.status(404).json({ error: articulo.message });
+            } else {
+                res.status(200).json(articulo);
+            }
+        })
+        .catch(error => res.status(500).json({ error: 'Error al obtener el artículo' }));
+});
+
+// Endpoint para eliminar un artículo por su ID
+app.delete('/deleteArticulo/:id', (req, res) => {
+    const id = req.params.id;
+    // Llamar a la función para eliminar el artículo por su ID
+    content.deleteArticulo(id)
+        .then(result => res.status(200).json({ message: 'Artículo eliminado correctamente' }))
+        .catch(error => res.status(500).json({ error: 'Error al eliminar el artículo' }));
+});
