@@ -11,7 +11,7 @@
     display: flex;
     background-color: rgba(74, 74, 74, 0.769);
     background-image: linear-gradient(to top, transparent, rgba(13, 13, 13, 0.683));
-    width: 100vw;
+    width: 99.2vw;
     position: fixed;
     z-index: 1;
     padding-top: 10px;
@@ -23,8 +23,9 @@
 .conteiner-itens{
     display: flex;
     overflow: hidden;
-    width: 90vw;  
-    margin-left: 30px;  
+    width: 93vw;  
+    margin-left: 30px;
+    justify-content: center;  
 }
 
 
@@ -127,6 +128,7 @@ ul {
     border-radius: 100%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(48 239 188);
+    margin-right: 18px;
    
 }
 
