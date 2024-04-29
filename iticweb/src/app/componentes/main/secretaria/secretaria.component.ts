@@ -4,7 +4,7 @@ import { ContenidoService } from 'src/app/services/contenido.service';
 declare var tinymce: any;
 
 @Component({
-  selector: 'app-secretaria',
+  selector: 'app-Texteditable',
   templateUrl: './secretaria.component.html',
   styleUrls: ['./secretaria.component.css']
 })
