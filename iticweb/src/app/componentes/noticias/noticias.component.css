@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     align-items:center ;
-    background-image:linear-gradient(rgba(119, 119, 119, 0.457), rgba(23, 23, 23, 0.835));  
+    background-image:linear-gradient(rgba(119, 119, 119, 0.469), rgba(23, 23, 23, 0.835));  
 
 }
 
@@ -64,6 +64,7 @@ img{
     border-radius: 20px;
     border-bottom: 15px;
     overflow: hidden;
+    text-align: center;
   }
   
   .text .p {

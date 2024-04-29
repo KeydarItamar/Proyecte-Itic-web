@@ -1,76 +1,80 @@
-* {
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    font-family: "Outfit", sans-serif;
-}
-
+/* Estilo para el formulario de agregar eventos */
 main {
-    background-image:linear-gradient(rgba(206, 206, 206, 0.043), rgba(219, 219, 219, 0.8)),url(/assets/fondos/fondo1.jpg);
-    padding: 5% 0 3% 0;
+    height: 90vh;
+    padding-top: 8%;
+    background-image: linear-gradient(rgba(4, 192, 195, 0.733), rgba(8, 199, 170, 0.196)), url(/assets/fondos/fondo1.jpg);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
 }
 
-/* Estilos generales del formulario */
-#noticiaForm {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.288);
-    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.669));
-    border-radius: 15px;
-    overflow: hidden;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Estilos para etiquetas */
-label {
-    font-weight: bold;
-}
-
-/* Estilos para los campos de texto */
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.288);
-    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.669));
+.titulo {
+    background-color: rgba(5, 5, 5, 0.433);
+    color: rgba(48 239 188);
+    display: flex;
+    width: 25vw;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 20px;
-    box-sizing: border-box;
-
+    text-align: center;
+    
 }
 
-/* Estilos para los botones */
-button[type="submit"] {
-    background-color: #007bff;
+
+#eventoForm {
+    width: 20vw; /* Ancho del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
+    padding: 20px;
+    background-color: #f5f5f5cf; /* Color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 20px;
+    margin-top: 30px;
+    height: 70%;
+  }
+  
+  /* Estilo para las etiquetas de los campos */
+  label {
+    font-weight: 'Outfit';
+  }
+  
+  /* Estilo para los campos de entrada */
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  textarea {
+    width: 100%; /* Ancho completo */
+    height: 12%;
+    padding: 8px; /* Espacio interno */
+    margin-bottom: 10px; /* Espacio inferior */
+    box-sizing: border-box; /* Incluir el relleno en el ancho */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 10px; /* Bordes redondeados */
+    
+  }
+  
+  /* Estilo para el botón de submit */
+  button[type="submit"] {
+    margin-top: 10px;
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    background-color: rgba(48 239 188); /* Color de fondo */
+    color: #0b0b0b; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    border-radius: 10px;
+  }
+  
+  /* Estilo para el botón de submit al pasar el mouse */
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para el checkbox */
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-/* Estilos para los espacios entre elementos */
-br {
-    display: none;
-}
-
-/* Estilos adicionales para los elementos cuando se encuentran dentro del formulario */
-#noticiaForm label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#noticiaForm textarea {
-    height: 100px;
-    /* Altura adecuada para los campos de texto */
-}
+  }
+  

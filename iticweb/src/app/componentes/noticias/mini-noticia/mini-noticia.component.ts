@@ -18,6 +18,7 @@ export class MiniNoticiaComponent implements OnInit {
   constructor( private noticia : NoticiasService) { }
 
   ngOnInit(): void {
+    
   }
 
 
