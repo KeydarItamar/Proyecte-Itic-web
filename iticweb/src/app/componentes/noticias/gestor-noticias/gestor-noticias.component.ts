@@ -34,7 +34,7 @@ export class GestorNoticiasComponent implements OnInit {
       next: response => {
         console.log(response)
         const datosNoticia = response; // Datos de la noticia obtenidos del backend
-        this.router.navigate(['/insert_noticia/:id', { 'id': id, 'editing': true }]);
+        this.router.navigate(['/insert_noticia/', { 'id': id, 'editing': true }]);
       },
       error: error => {
         console.log('Error al obtener los detalles de la noticia: ' + error);
