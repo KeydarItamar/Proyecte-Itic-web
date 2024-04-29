@@ -50,7 +50,13 @@ function createTables() {
         ubicacion VARCHAR(255)
     )`;
 
-
+   var sql_contenido=` CREATE TABLE IF NOT EXISTS Articulos (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        titulo VARCHAR(255) NOT NULL,
+        nombre_seccion VARCHAR(100) NOT NULL,
+        contenido TEXT NOT NULL
+    )`;
+    
 
     // Ejecutamos la query usuarios
     conn.query(sql_usuarios, function(err, result) {
@@ -69,6 +75,13 @@ function createTables() {
         if (err) throw err;
         console.log("Tabla calendario creada!")
     })
+
+    // Ejecutamos la query contenido
+    conn.query(sql_contenido, function(err, result) {
+        if (err) throw err;
+        console.log("Tabla contenido creada!")
+    })
+    
 
 }
 

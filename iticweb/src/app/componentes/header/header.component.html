@@ -1,24 +1,21 @@
 
 <header class="titulos" (mouseenter)="mostrarSubtitulos()" (mouseleave)="ocultarSubtitulos()">
-  <div class="container-icono-itic">
+  <div class="container-icono-itic" (click)="scrollAlPrincipio()">
     <img class="icono-itic" routerLink="home" src="../../../assets/iconos/Opera_Snapshot_2024-03-05_144830_www.figma.com-removebg-preview.png" alt="">
   </div>
   <!-- Envolver la estructura en un nuevo div -->
   <div class="conteiner-itens">
     <ul class="nombre-titulos titulos-principales" *ngFor="let opcion of Menu.opciones">
       <!-- Mostramos el título de la opción -->
-      <li class="principales" >{{ opcion.titulo }}</li>
+      <li class="principales" (click)="scrollAlPrincipio()">{{ opcion.titulo }}</li>
       <!-- Verificamos si hay subtitulos -->
       <ul class="nombre-subtitulos" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
         <!-- Iteramos sobre cada subtitulo de la opción -->
-        <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]"> {{subtitulo}}</li>
+        <li class="subtitulos" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="[opcion.titulo, subtitulo]" (click)="scrollAlPrincipio()"> {{subtitulo}}</li>
       </ul>
     </ul>
     <ul class="nombre-titulos titulos-principales " > 
-      <li class="principales secretaria" [routerLink]="Secretaria"> Secretaria </li>
-    </ul>
-    <ul class="nombre-titulos titulos-principales " > 
-      <li class="principales secretaria" [routerLink]="FormCalendario">Form Calendario </li>
+      <li class="principales secretaria" [routerLink]="Secretaria" (click)="scrollAlPrincipio()"> Secretaria </li>
     </ul>
   </div>
 
@@ -27,9 +24,9 @@
     <ul class="nombre-titulos-login titulos-principales" *ngFor="let opcion of getMenuLogin()">
       <img class="icono-user" src="../../../assets/iconos/usuario.png" alt="User">
       <!-- Verificamos si hay subtitulos -->
-      <ul class="nombre-subtitulos-login" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
+      <ul class="nombre-subtitulos-login" (click)="scrollAlPrincipio()" *ngIf="opcion.subtitulos && opcion.subtitulos.length > 0 && mostrarSubtitulosFlag">
         <!-- Iteramos sobre cada subtitulo de la opción -->
-        <li class="subtitulos-login" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="subtitulo.ruta"> {{subtitulo.text}}</li>
+        <li class="subtitulos-login" (click)="scrollAlPrincipio()" *ngFor="let subtitulo of opcion.subtitulos" [routerLink]="subtitulo.ruta"> {{subtitulo.text}}</li>
       </ul>
     </ul>
   </div>

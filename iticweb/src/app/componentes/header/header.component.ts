@@ -33,6 +33,12 @@ export class HeaderComponent implements OnInit {
     this.mostrarSubtitulosFlag = false;
   }
 
+  getRol() {
+    const rol = localStorage.getItem("rol");
+    console.log(rol)
+    return rol;
+  }
+
   getMenuLogin() {
     const rol = localStorage.getItem("rol");
     switch(rol) {
@@ -47,6 +53,9 @@ export class HeaderComponent implements OnInit {
     }
   }
   
+  scrollAlPrincipio() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
  crearTablas(){
    this.noticiaService.createTables().subscribe({

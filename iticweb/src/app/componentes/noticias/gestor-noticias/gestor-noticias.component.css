@@ -1,12 +1,59 @@
+/* Estilo para el componente <main> */
 main {
-    height: 100vh;
-    padding-top: 15vh;
+    height: 100vh; /* La altura será el 100% del viewport height */
+    padding-top: 15vh; /* Espaciado superior del 15% del viewport height */
+    display: flex; /* Para utilizar flexbox */
+    flex-direction: row; /* Columnas para alinear los elementos verticalmente */
+    justify-content: center; /* Alinear los elementos al principio del eje vertical */
+    background-image: linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)), url(/assets/fondos/fondo1.jpg);
 }
 
-th, td{
-    border: 1px solid black;
+/* Estilo para la tabla */
+.lista-noticia table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.583);
+    border-radius: 20px;
 }
 
-img {
-    height: 50px;
+.uno {
+    border-radius: 20px 0 0 0;
+}
+
+.dos {
+    border-radius: 0 20px 0 0;
+}
+
+
+
+.lista-noticia th, .lista-noticia td {
+    padding: 15px;
+    text-align: left;
+    
+}
+
+.lista-noticia th {
+    background-color: rgba(48 239 188);
+}
+
+/* Estilo para las imágenes */
+.lista-noticia img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Estilo para los enlaces de editar y eliminar */
+.lista-noticia a {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.lista-noticia a:hover {
+    background-color: #0056b3;
 }

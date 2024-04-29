@@ -34,8 +34,17 @@ export class ChatboxComponent implements OnInit {
         return;
     }
 
+    // Dividir la cadena en subcadenas cada 20 caracteres
+    // const chunks = query.match(/.{1,50}/g);
+
+    // // Verificar si la división es necesaria (la longitud de la cadena es mayor que 20)
+    // if (chunks && chunks.length > 1) {
+    //   // Unir las subcadenas con <br> para insertar saltos de línea cada 20 caracteres
+    //   query = chunks.join('<br>');
+    // }
     // Agregar la consulta a listaQuerys
     this.listaQuerys.push(query);
+    console.log(typeof query);
 
     // Enviar la consulta al backend
     this.chatService.enviarDatosAlBackend(query)

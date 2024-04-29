@@ -1,23 +1,28 @@
-
 <div class="noticia-container">
-    <div class="noticia-fijada">
-        <img src="../../../assets/imagenes/portas-obertes.png" alt="" >
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi possimus ad commodi molestiae eligendi, odio soluta nemo nulla illum, tempora aperiam quos reiciendis ipsa consectetur aspernatur cumque, nihil dolorum enim.
-        Nisi doloremque iste, similique eaque reprehenderit beatae ab itaque quam cupiditate asperiores a quas nostrum aliquam laboriosam id. Quasi delectus laboriosam commodi debitis officiis ipsam, mollitia eum nostrum possimus quis.</p>
+    <div class="card">
+        <div class="img">
+          <img src="../../../assets/img-noticias/fondoMain.png" >
+        </div>
+      
+        <div class="text">
+          <h2 class="h3">Esto es una prueba de noticia</h2>
+            <p class="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, placeat. Incidunt itaque totam dolor. Cumque perspiciatis deleniti laudantium mollitia quia non vel, aliquam vitae natus illo ad est debitis iure!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt perferendis praesentium animi commodi, maiores, fuga nostrum voluptate voluptatum aliquam recusandae dolor sapiente alias minus totam, possimus nobis placeat saepe exercitationem.
+            </p>
+        </div>
+    </div> 
+    
+    <div class="noticias">
+        <button class="arrow-button-left" (click)="anteriorNoticia()"></button>
+        <app-mini-noticia 
+        [id]="id"
+        [titulo]="titulo"
+        [parrafo1]="parrafo1"
+        [imagen]="imagen" 
+        ></app-mini-noticia>
+        <button class="arrow-button-right" (click)="siguienteNoticia()"></button>
     </div>
-
-<div>
-</div> 
-
-<div class="noticias" >
-    <button (click)="anteriorNoticia()">Anterior</button>
-    <app-mini-noticia 
-    [id]="id"
-    [titulo]="titulo"
-    [parrafo1]="parrafo1"
-    [imagen]="imagen" 
-    ></app-mini-noticia>
-    <button (click)="siguienteNoticia()">Siguiente</button>
 </div>
+
 
 

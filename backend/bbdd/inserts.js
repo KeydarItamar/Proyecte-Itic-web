@@ -92,6 +92,7 @@ function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPor
         if (err) throw err;
         console.log("Insertado noticia!")
     })
+    conn.end(); 
 }
 
 // Función para actualizar una noticia existente
@@ -119,6 +120,7 @@ function updateNoticia(id, titulo, subtitulo, parrafo1, parrafo2, parrafo3, foto
         if (err) throw err;
         console.log("Noticia actualizada!");
     })
+    conn.end(); 
 }
 
 
@@ -146,6 +148,7 @@ function deleteNoticia(id ) {
         if (err) throw err;
         console.log("Noticia borrada!")
     })
+    conn.end(); 
 }
 
 function selectNoticia(id,callback) {
@@ -220,5 +223,6 @@ module.exports = {
     createNoticia, 
     deleteNoticia,
     selectNoticia,
-    selectAllNoticias
+    selectAllNoticias,
+    updateNoticia
 }

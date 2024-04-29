@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     align-items:center ;
-    background-image:linear-gradient(rgba(193, 193, 193, 0.301), rgba(201, 201, 201, 0.979));  
+    background-image:linear-gradient(rgba(119, 119, 119, 0.469), rgba(23, 23, 23, 0.835));  
 
 }
 
@@ -19,21 +19,75 @@ img{
     width: 85%;
 }
 
-.noticia-fijada{
-    width: 50%;
+.card {
+    width: 38vw;
+    height: 70vh;
+    border-radius: 30px;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffffb2;
+    transition: 0.2s ease-in-out;
+    background-image:linear-gradient(rgba(206, 206, 206, 0.043), rgba(75, 75, 75, 0.629)),url(src/assets/fondos/ProyectonuevoN.jpg);
+    overflow: hidden;
+    margin-left: 5%;
+  }
+  
+  .img {
+    width: 100%;
+    height: 60%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: linear-gradient(#64a7e6, #0ac4e0);
     display: flex;
-    align-items: baseline;
-    justify-content: space-evenly;
+    justify-content: center;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  
+  .text {
+    margin: 20px;
+    display: flex;
     flex-direction: column;
-    align-items:center ;
-}
+    align-items: space-around;
+  }
+  
+  .text .h3 {
+    font-size: 35px;
+    font-weight: 600;
+    color: rgba(48 239 188);
+    background-color: rgba(0, 0, 0, 0.347);
+    padding: 10px;
+    border-radius: 20px;
+    border-bottom: 15px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .text .p {
+    color: #f5f5f5;
+    font-size: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 0px 10px 0px 10px
+    
+  }
+  
 
-.noticia-fijada>p {
-    padding-left: 7.5%;
-    padding-right: 7.5%;
-    padding-top: 20px;
-    text-align: justify;
-}
+  .card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(48 239 188);;
+  }
+  
+ 
+  
+  
 .noticias{
     width: 50%;
     display: flex;
@@ -42,3 +96,25 @@ img{
     flex-direction: row;
     align-items:center ;
 }
+
+.arrow-button-left {
+    background: transparent;
+    background-image: url('src/assets/iconos/flecha-correcta1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 30px; /* ajusta el padding según el tamaño de tu imagen */
+    border: none;
+    cursor: pointer;
+   
+}
+
+.arrow-button-right {
+    background: transparent;
+    background-image: url('src/assets/iconos/flecha-correcta.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 30px; /* ajusta el padding según el tamaño de tu imagen */
+    border: none;
+    cursor: pointer;
+}
+
