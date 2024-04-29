@@ -47,6 +47,9 @@ export class HeaderComponent implements OnInit {
     }
   }
   
+  scrollAlPrincipio() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
  crearTablas(){
    this.noticiaService.createTables().subscribe({

@@ -8,9 +8,9 @@
             <ul *ngFor="let query of listaQuerys let i= index " >
                 <li *ngIf=respuestas>
                     <h4>User promtp</h4>
-                    <p class="pregunta">{{listaQuerys[i]}}</p>
+                    <div class="pregunta">{{listaQuerys[i]}}</div><br>
                     
-                    <h4>Ia response</h4>
+                    <h4>IA response</h4>
                     <br>
                     <mat-progress-spinner *ngIf="!respuestas[i]"
                         class="example-margin"
@@ -23,12 +23,15 @@
                 </li>
             </ul>
         </div>
+        <div class="imput-container">
+            <textarea id="query" name="query" 
+                placeholder="Introduce algo..."
+                #queryInput
+                (keyup.enter)="iaChat(queryInput.value); queryInput.value = '' ">
+            </textarea>
+
+        </div>
         
-        <input  type="text" id="query" name="query" 
-        placeholder=" introduce algo.."
-        #queryInput
-        (keyup.enter)="iaChat(queryInput.value); queryInput.value = '' "
-        style="height: 3rem; width: 100%;">
     </div>
 </main>
 

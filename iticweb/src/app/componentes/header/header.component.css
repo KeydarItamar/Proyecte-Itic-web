@@ -71,7 +71,7 @@ ul {
     transition: background-color 0.2s ease; /* Transición suave para el cambio de color de fondo y el radio del borde */
     border-radius: 10px 10px 0 0;
     color: rgb(255, 255, 255);
-    box-shadow: 0 0 30px rgba(48 239 188);
+    
 
 }
 

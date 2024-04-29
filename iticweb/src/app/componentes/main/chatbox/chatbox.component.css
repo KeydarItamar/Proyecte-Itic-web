@@ -7,7 +7,7 @@
 
 
 main {
-    background-image: url('/assets/fondos/fondoMain.jpg'); 
+    background-image:linear-gradient(rgba(30, 185, 144, 0.412), rgba(0, 200, 255, 0.096)),url(src/assets/fondos/fondoMain.png);
     background-size: cover; 
     background-position: center;
     width: 100%;
@@ -29,6 +29,7 @@ main {
     display: flex;
     flex-direction: column; 
     flex: 1; 
+    overflow: hidden;
 }
 
 .response-container {
@@ -41,21 +42,28 @@ main {
     max-width: 100%;
     border-radius: 45px;
     padding: 40px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(48 239 188);
+}
+
+.imput-container {
+    width: 100%; /* Ancho máximo del contenedor */
+    padding-top: 10px;
+    
 }
 
 
 #query {
-    height: 3rem;
-    width: calc(100% - 40px); /* ajustar el ancho para dejar espacio para el icono */
-    padding-left: 45px; /* agregar espacio a la derecha del input para el icono */
+    padding: 22px 21px 0px 47px;
+    width: 100%;
     background-image: url('../../../../assets/iconos/lupa.png');
     background-repeat: no-repeat;
     background-position: 20px center; /* posicionar el icono en el centro a la derecha */
     background-size: 24px 24px; /* ajustar el tamaño del icono según sea necesario */
     border-radius: 45px;
-
+    background-color: rgba(251, 251, 251, 0.685);
+    border: none;
+    outline: none;
+    overflow: hidden;
+    
 }
 
 .response-container > ul{
@@ -63,19 +71,8 @@ main {
     list-style: none;
     padding-left: 20px;
     padding-top: 20px;
-    
 }
 
-input {
-    background-color: rgba(251, 251, 251, 0.685);
-    background-image: linear-gradient(to right transparent, rgba(255, 255, 255, 0.221));
-    border: 0px;
-    box-shadow: 0 0 10px rgba(48 239 188);
-}
-
-input:focus {
-    outline: none;
-}
 .example-margin {
     width: 10%;
     height: 5%;
@@ -84,4 +81,8 @@ input:focus {
 .pregunta {
     display: flex;
     flex-direction: row;
+    background: none;
+    overflow: auto;
+    color: white;
+    font-size: 21px;
 }
