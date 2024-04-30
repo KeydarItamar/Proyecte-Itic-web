@@ -27,8 +27,9 @@ table {
 }
 
 td {
-  width: 5%;
-  height: 30%;
+  max-width: 20rem;
+  width: 16rem;
+  height: 50%;
   margin: 0.25rem;
   border-radius: 0.2rem;
   padding: 1rem;
@@ -40,6 +41,15 @@ td {
   backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.calendari{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items:center ;
 }
 
 .card {
@@ -127,4 +137,25 @@ td {
   background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
   z-index: 99; /* Por debajo de la tarjeta */
   pointer-events: auto; /* Desactiva la interacción con el fondo oscuro */
+}
+
+.arrow-button-left {
+    background: transparent;
+    background-image: url('src/assets/iconos/flecha-correcta1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 30px; /* ajusta el padding según el tamaño de tu imagen */
+    border: none;
+    cursor: pointer;
+   
+}
+
+.arrow-button-right {
+    background: transparent;
+    background-image: url('src/assets/iconos/flecha-correcta.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 30px 30px; /* ajusta el padding según el tamaño de tu imagen */
+    border: none;
+    cursor: pointer;
 }

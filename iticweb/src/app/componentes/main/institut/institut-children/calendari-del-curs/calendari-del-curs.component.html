@@ -3,32 +3,37 @@
   <div *ngIf="selectedEvent" class="overlay" (click)="closeCard()"></div>
 
   <h2>{{ getMonthName(currentMonth) }}, {{ currentYear }}</h2>
-  <button (click)="previousMonth()">Anterior</button>
-  <button (click)="nextMonth()">Següent</button>
-  <table>
-    <thead>
-      <tr>
-        <th>Dl</th>
-        <th>Dt</th>
-        <th>Dc</th>
-        <th>Dj</th>
-        <th>Dv</th>
-        <th>Ds</th>
-        <th>Dg</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let week of weeks">
-        <ng-container *ngFor="let day of week">
-          <td>{{ day.day }}
-            <div *ngIf="day.eventTitle"> 
-              <p (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
-            </div>
-          </td>
-        </ng-container>
-      </tr>
-    </tbody>
-  </table>
+  
+  <div class="calendari">
+    <button class="arrow-button-left" (click)="previousMonth()"></button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Dl</th>
+          <th>Dt</th>
+          <th>Dc</th>
+          <th>Dj</th>
+          <th>Dv</th>
+          <th>Ds</th>
+          <th>Dg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of weeks">
+          <ng-container *ngFor="let day of week">
+            <td>{{ day.day }}
+              <div *ngIf="day.eventTitle"> 
+                <p (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
+              </div>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="arrow-button-right" (click)="nextMonth()"></button>
+  </div>
 
   <!-- Card para mostrar detalles del evento -->
   <div *ngIf="selectedEvent" class="card">
