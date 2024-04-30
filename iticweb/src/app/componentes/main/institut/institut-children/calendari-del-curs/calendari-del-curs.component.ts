@@ -28,6 +28,10 @@ export class CalendariDelCursComponent implements OnInit {
     this.getAllEventos();
   }
 
+  closeCard() {
+    this.selectedEvent = null;
+  }  
+
   currentDate: Date = new Date();
   currentMonth: number = this.currentDate.getMonth();
   currentYear: number = this.currentDate.getFullYear();
