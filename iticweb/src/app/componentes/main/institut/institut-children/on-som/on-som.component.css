@@ -1,20 +1,5 @@
-.main-container{
-    background-image:linear-gradient(rgba(142, 142, 142, 0.043), rgba(111, 111, 111, 0.8)),url(/assets/fondos/fondo1.jpg);
-    background-size: cover; 
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    color: rgb(0, 0, 0);
-    font-family: 'Outfit', sans-serif;
-}
-.mapa{
-    height: 60vh;border-radius: 60px;
 
-}
-
+/*
 .texto {
     background-color: rgba(247, 247, 247, 0.521);
     width: 20%;
@@ -27,7 +12,7 @@
 .separador {
     width: 80%;
     border-bottom: 3px solid rgba(48 239 188); /* Puedes ajustar el grosor y el color de la línea según tus necesidades */
-}
+/* }
 
 ul {
     padding-left: 20px;
@@ -41,4 +26,7 @@ ul {
 .titulo {
     color: rgba(48 239 188);
     text-align: center;
+} */ 
+img{
+    border-radius: 20px;
 }
