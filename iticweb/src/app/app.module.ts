@@ -45,6 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormCalendariComponent } from './componentes/main/institut/institut-children/calendari-del-curs/form-calendari/form-calendari.component';
 import { GestorNoticiasComponent } from './componentes/noticias/gestor-noticias/gestor-noticias.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { HomeComponent } from './componentes/main/home/home.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     FormNoticiaComponent,
     FormCalendariComponent,
     GestorNoticiasComponent,
+    HomeComponent,
   
   ],
   imports: [

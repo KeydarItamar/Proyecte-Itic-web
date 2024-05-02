@@ -36,10 +36,10 @@
   </div>
 
   <!-- Card para mostrar detalles del evento -->
-  <div *ngIf="selectedEvent" class="card">
-    <div class="card-body">
-      <div class="title">
-        <h1 class="card-title">{{ selectedEvent.Title }}</h1>
+  <div *ngIf="selectedEvent" class="card" >
+    <div class="card-body" >
+      <div class="title" >
+        <h1 class="card-title" >{{ selectedEvent.Title }}</h1>
       </div>
       <p class="card-text" *ngIf="selectedEvent.Hour"><img src="../../../../../../assets/iconos/calendario.png" alt="Calendario"> {{ selectedEvent.Date }} {{ selectedEvent.Hour }}</p>
       <p class="card-text" *ngIf="selectedEvent.Place"><img src="../../../../../../assets/iconos/ubicacion.png" alt="Ubicación"> {{ selectedEvent.Place }}</p>
