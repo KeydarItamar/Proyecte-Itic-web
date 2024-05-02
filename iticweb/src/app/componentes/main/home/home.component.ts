@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { NgModel } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 import { ChatService } from 'src/app/services/chat.service';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+
 @Component({
-  selector: 'app-chatbox',
-  templateUrl: './chatbox.component.html',
-  styleUrls: ['./chatbox.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class ChatboxComponent implements OnInit {
-  starter: boolean = true;
+export class HomeComponent implements OnInit {
+
   listaQuerys: string[]= []
   respuestas: string[]=[]
   resultado: string=''
@@ -34,16 +31,6 @@ export class ChatboxComponent implements OnInit {
         return;
     }
 
-    // Dividir la cadena en subcadenas cada 20 caracteres
-    // const chunks = query.match(/.{1,50}/g);
-
-    // // Verificar si la división es necesaria (la longitud de la cadena es mayor que 20)
-    // if (chunks && chunks.length > 1) {
-    //   // Unir las subcadenas con <br> para insertar saltos de línea cada 20 caracteres
-    //   query = chunks.join('<br>');
-    // }
-    // Agregar la consulta a listaQuerys
-    this.starter = false
     this.listaQuerys.push(query);
     console.log(typeof query);
 
@@ -70,7 +57,6 @@ export class ChatboxComponent implements OnInit {
     // Limpiar el campo de entrada
     query = '';
 }
-
 
 
 }

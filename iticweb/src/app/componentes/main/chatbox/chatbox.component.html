@@ -1,10 +1,16 @@
 
 <main>
-    <div class="icono-Itic" >
-        <img class="icono-Itic" src="../../../../assets/iconos/logo quadrat Institut TIC de Barcelona (Monocromo) 2.png" alt="">
-    </div>
     <div class="chatbox-container">
         <div class="response-container" id="response-container">
+            <div class="msgBinvenida" *ngIf="starter">
+                <h1>Hola benvingut,</h1><br>
+                <p>Sóc l'assistent de l'Institut ITIC de Barcelona <br>
+                    En què puc ajudar-te?
+                </p><br>
+                <img src="../../../../assets/iconos/logo horitzontal ITICBCN (Blanc) 1 (1).png" alt="">
+
+            </div>
+
             <ul *ngFor="let query of listaQuerys let i= index " >
                 <li *ngIf=respuestas>
                     <h4>User promtp</h4>

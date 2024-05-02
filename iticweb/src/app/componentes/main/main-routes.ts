@@ -24,12 +24,13 @@ import { FormNoticiaComponent } from './form-noticia/form-noticia.component';
 import { NoticiaDetalleComponent } from '../noticias/noticia-detalle/noticia-detalle.component';
 import { FormCalendariComponent } from './institut/institut-children/calendari-del-curs/form-calendari/form-calendari.component';
 import { GestorNoticiasComponent } from '../noticias/gestor-noticias/gestor-noticias.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
-    { path: 'home', component: ChatboxComponent},
+    { path: 'home', component: HomeComponent},
     { path: 'Institut', children: [
     { path: 'On som', component: OnSomComponent},
     { path: 'Història', component: HistoriaComponent }, 
@@ -54,6 +55,7 @@ const routes: Routes = [
         { path: 'ITICBCN Erasmus data sheet', component: IticBcnErasmusDataSheetComponent },
       ]},
         { path: 'Serveis', component: ServeisComponent },
+        { path: 'iaChat', component: ChatboxComponent},
         { path: 'Secretaria', component: SecretariaComponent },
         { path: 'insert_noticia', component: FormNoticiaComponent },
         { path: 'FormCalendario', component: FormCalendariComponent },
