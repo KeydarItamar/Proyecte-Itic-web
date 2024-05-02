@@ -24,7 +24,7 @@
           <ng-container *ngFor="let day of week">
             <td>{{ day.day }}
               <div *ngIf="day.eventTitle"> 
-                <p (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
+                <p class="eventTitle" (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
               </div>
             </td>
           </ng-container>
