@@ -66,6 +66,4 @@ export class SecretariaComponent implements OnInit {
     })
   }
 
-
-
 }
