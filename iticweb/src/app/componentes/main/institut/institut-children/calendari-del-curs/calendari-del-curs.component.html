@@ -1,54 +1,40 @@
 <main>
-  <!-- Contenedor para oscurecer el fondo -->
-  <div *ngIf="selectedEvent" class="overlay" (click)="closeCard()"></div>
-
   <h2>{{ getMonthName(currentMonth) }}, {{ currentYear }}</h2>
-  
-  <div class="calendari">
-    <button class="arrow-button-left" (click)="previousMonth()"></button>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Dl</th>
-          <th>Dt</th>
-          <th>Dc</th>
-          <th>Dj</th>
-          <th>Dv</th>
-          <th>Ds</th>
-          <th>Dg</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let week of weeks">
-          <ng-container *ngFor="let day of week">
-            <td>{{ day.day }}
-              <div *ngIf="day.eventTitle"> 
-                <p class="eventTitle" (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
-              </div>
-            </td>
-          </ng-container>
-        </tr>
-      </tbody>
-    </table>
-
-    <button class="arrow-button-right" (click)="nextMonth()"></button>
-  </div>
+  <button (click)="previousMonth()">Anterior</button>
+  <button (click)="nextMonth()">Següent</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Dl</th>
+        <th>Dt</th>
+        <th>Dc</th>
+        <th>Dj</th>
+        <th>Dv</th>
+        <th>Ds</th>
+        <th>Dg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of weeks">
+        <ng-container *ngFor="let day of week">
+          <td>{{ day.day }}
+            <div *ngIf="day.eventTitle"> 
+              <p (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
+            </div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
 
   <!-- Card para mostrar detalles del evento -->
-  <div *ngIf="selectedEvent" class="card" >
-    <div class="card-body" >
-      <div class="title" >
-        <h1 class="card-title" >{{ selectedEvent.Title }}</h1>
-      </div>
-      <p class="card-text" *ngIf="selectedEvent.Hour"><img src="../../../../../../assets/iconos/calendario.png" alt="Calendario"> {{ selectedEvent.Date }} {{ selectedEvent.Hour }}</p>
-      <p class="card-text" *ngIf="selectedEvent.Place"><img src="../../../../../../assets/iconos/ubicacion.png" alt="Ubicación"> {{ selectedEvent.Place }}</p>
-      <p class="card-text" *ngIf="selectedEvent.Description">{{ selectedEvent.Description }}</p>
-      
-      <br>
-      <button (click)="closeCard()" class="close-button">&times;</button> <!-- Botón para cerrar la tarjeta -->
-
+  <div *ngIf="selectedEvent" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ selectedEvent.Title }}</h5>
+      <p class="card-text">Fecha: {{ selectedEvent.Date }}</p>
+      <p class="card-text" *ngIf="selectedEvent.Hour">Hora: {{ selectedEvent.Hour }}</p>
+      <p class="card-text" *ngIf="selectedEvent.Description">Descripción: {{ selectedEvent.Description }}</p>
+      <p class="card-text" *ngIf="selectedEvent.Place">Ubicación: {{ selectedEvent.Place }}</p>
     </div>
   </div>
-
 </main>
