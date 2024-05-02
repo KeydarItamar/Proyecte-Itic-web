@@ -1,15 +1,16 @@
 <main>
     <div class="angry-grid">
         <div id="item-0">
+            <h1 *ngIf="noticiatitulo">{{noticiatitulo}}</h1><br>
+            <h2 *ngIf="noticiasubtitulo">{{noticiasubtitulo}}</h2><br>
+        </div>
+        <div id="item-1">
             <div class="img-div" *ngIf="noticiafotoPortada"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafotoPortada}}" alt=""></div>
         </div>
-            <div id="item-1">
-                <h1 *ngIf="noticiatitulo">{{noticiatitulo}}</h1>
-                <h2 *ngIf="noticiasubtitulo">{{noticiasubtitulo}}</h2>
-            </div>
         <div id="item-2">
-
-            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo1}}</p>
+            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo1}}</p><br>
+            <!-- <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo2}}</p><br>
+            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo3}}</p><br> -->
         </div>
     </div>
    <div class="img-div" *ngIf="noticiafoto1"><img class="img-div" src="../../../assets/img-noticias/{{noticiafoto1}}" alt=""></div>

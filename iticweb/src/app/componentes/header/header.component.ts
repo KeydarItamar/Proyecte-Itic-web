@@ -10,6 +10,7 @@ import { NoticiasService } from 'src/app/noticias.service';
 })
 export class HeaderComponent implements OnInit {
   Secretaria = 'Secretaria';
+  chat= 'iaChat'
   Formulario = 'Formulario';
   FormCalendario = 'FormCalendario';
 

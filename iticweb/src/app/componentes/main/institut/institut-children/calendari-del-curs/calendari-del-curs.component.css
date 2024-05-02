@@ -41,7 +41,6 @@ td {
   backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  overflow: hidden;
 }
 
 
@@ -111,6 +110,7 @@ td {
   font-family: "Lucida Sans" sans-serif;
   color: #999999;
   font-size: 13px;
+  
 }
 
 .title {
@@ -123,6 +123,11 @@ td {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
 }
 
 .eventTitle:hover {

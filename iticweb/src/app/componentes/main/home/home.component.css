@@ -1,0 +1,50 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+main {
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.571)),url(src/assets/fondos/fondoMain.png);
+    background-size: cover; 
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-container {
+    width: 30vw;
+    height: 65vh;
+    padding: 20px;
+    overflow: hidden;
+    margin-right: 40px;
+}
+
+
+.icono-Itic {
+    width: 100%;
+    height: auto;
+}
+
+.Bepro-container {
+    /* background-image:linear-gradient(rgba(30, 185, 144, 0.828), rgba(0, 0, 0, 0.809)); */
+    background-image: linear-gradient(to right, transparent, rgba(0, 103, 154, 0.689));
+    height: 60vh;
+    width: 45vw;
+    padding-top: 10%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.Bepro {
+    text-align: center;
+    width: 870px;
+    
+}
+
+
