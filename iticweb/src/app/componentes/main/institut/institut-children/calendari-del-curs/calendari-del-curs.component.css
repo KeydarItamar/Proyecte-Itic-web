@@ -11,7 +11,7 @@ main {
   background: radial-gradient(
     circle,
     rgb(35, 207, 237) 0%,
-    rgb(7, 98, 203) 100%
+    rgb(7, 164, 203) 100%
   );
 }
 
@@ -66,7 +66,7 @@ td:hover {
     transform: translate(-50%, -50%);
     z-index: 100;
     width: 37.5rem;
-    background: white;
+    background: rgba(138, 243, 210, 0.885);
     border-radius: 30px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -79,7 +79,7 @@ td:hover {
   margin-top: 20px;
   width: 30px;
   height: 30px;
-  background-color: #ef8330;
+  background-color: #f2ee04c2;
   border-radius: 10px;
   border: 0;
 }
@@ -129,7 +129,7 @@ td:hover {
 }
 
 .title {
-  background: linear-gradient(#3a31f4, #30efbc);
+  background: linear-gradient(#82d6fc, #30efbc);
   display: flex;
   justify-content: center;
   padding: 10px;
