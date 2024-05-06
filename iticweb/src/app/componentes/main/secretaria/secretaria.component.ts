@@ -21,6 +21,10 @@ export class SecretariaComponent implements OnInit {
     this.cargarContenido()
   }
 
+  getRol() {
+    return localStorage.getItem("rol")
+  }
+
   mostrarEditor() {
     this.editorVisible = true;
     document.body.style.overflow = 'hidden'; // Evitar el desplazamiento de la página

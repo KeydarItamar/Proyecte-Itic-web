@@ -68,6 +68,9 @@ td {
     word-wrap: break-word;
 }
 
+.close-button {
+}
+
 .img {
   width: 100%;
   height: 50%;
