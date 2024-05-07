@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800&display=swap");
 
 main {
+  font-family: 'Outfit', sans-serif;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,7 @@ main {
   background: radial-gradient(
     circle,
     rgb(35, 207, 237) 0%,
-    rgb(7, 98, 203) 100%
+    rgb(7, 164, 203) 100%
   );
 }
 
@@ -44,6 +45,11 @@ td {
   overflow: hidden;
 }
 
+td:hover {
+  cursor: pointer;
+  background-color: #05ae81a8;
+}
+
 
 .calendari{
     display: flex;
@@ -60,12 +66,27 @@ td {
     transform: translate(-50%, -50%);
     z-index: 100;
     width: 37.5rem;
-    height: 31.25rem;
-    background: white;
+    background: rgba(138, 243, 210, 0.885);
     border-radius: 30px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     word-wrap: break-word;
+}
+
+.close-button {
+  position: absolute;
+  margin-left: 90%;
+  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #f2ee04c2;
+  border-radius: 10px;
+  border: 0;
+}
+
+.close-button:hover {
+  background-color: #ec1a1a;
+  cursor: pointer;
 }
 
 .img {
@@ -97,39 +118,24 @@ td {
 }
 
 .card-text .h1 {
-  font-family: "Lucida Sans" sans-serif;
-  font-size: 5rem;
-  font-weight: 600;
   color: black;
   word-wrap: break-word;
+
 }
 
 .card-text .p {
-  font-family: "Lucida Sans" sans-serif;
   color: #999999;
   font-size: 13px;
 }
 
 .title {
-  width: 100%;
-  height: 5rem;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  background: linear-gradient(#3a31f4, #30efbc);
+  background: linear-gradient(#82d6fc, #30efbc);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
-}
-
-.eventTitle:hover {
-  font-weight: bold;
+  padding: 10px;
 }
 
 .card:hover {
-  cursor: pointer;
-
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
   transition: 0.2s ease-in-out;
 }
 
