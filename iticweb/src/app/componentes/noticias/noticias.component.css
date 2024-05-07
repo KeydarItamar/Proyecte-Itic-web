@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-around;
     align-items:center ;
-    background-image:linear-gradient(rgba(119, 119, 119, 0.469), rgba(23, 23, 23, 0.835));  
-
+    /* background-image:url('../../../assets/fondos/Proyectonuevo.jpg');   */
+    background-color: #f5f5f5;
 }
 
 img{
