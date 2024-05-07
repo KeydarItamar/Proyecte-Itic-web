@@ -119,6 +119,10 @@ ul {
     box-shadow: 0 0 10px rgba(48 239 188);
 }
 
+.icono-moodle{
+    height: 50px;
+    padding-right: 15px;
+}
 
 .icono-user{
     padding: 8px;

@@ -19,7 +19,7 @@ main {
 
 .icono-container {
     width: 30vw;
-    height: 65vh;
+    height: 70vh;
     padding: 20px;
     overflow: hidden;
     margin-right: 40px;
@@ -33,18 +33,17 @@ main {
 
 .Bepro-container {
     /* background-image:linear-gradient(rgba(30, 185, 144, 0.828), rgba(0, 0, 0, 0.809)); */
-    background-image: linear-gradient(to right, transparent, rgba(0, 103, 154, 0.689));
-    height: 60vh;
-    width: 45vw;
+    background-image: linear-gradient(to right, transparent, rgba(0, 154, 85, 0.517));
+    height: 65vh;
+    width: 50vw;
     padding-top: 10%;
     border-radius: 20px;
     overflow: hidden;
 }
 
 .Bepro {
-    text-align: center;
-    width: 870px;
-    
+    width: 98%;
+    height: auto;
 }
 
 
