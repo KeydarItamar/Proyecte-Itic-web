@@ -5,7 +5,7 @@ main {
   height: 90vh;
   display: flex;
   flex-direction: column;
-  padding-top: 5%;
+  padding-top: 9%;
   align-items: center;
   font-family: "Poppins", serif;
   background: radial-gradient(
@@ -117,6 +117,18 @@ td:hover {
   align-items: space-around;
 }
 
+.fecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-text .h1 {
   color: black;
   word-wrap: break-word;
@@ -126,6 +138,7 @@ td:hover {
 .card-text .p {
   color: #999999;
   font-size: 13px;
+  
 }
 
 .title {
