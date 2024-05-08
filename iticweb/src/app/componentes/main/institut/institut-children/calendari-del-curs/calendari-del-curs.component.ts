@@ -97,6 +97,17 @@ export class CalendariDelCursComponent implements OnInit {
     }
     this.weeks = this.getCalendar();
   }
+ opciones ={}
+ formatearFecha(fecha: string): string {
+    const fechaLocal = new Date(fecha);
+    this.opciones = {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        timeZone: "Europe/Madrid"
+    };
+    return fechaLocal.toLocaleDateString("es-ES", this.opciones);
+}
 
   getAllEventos() {
     this.calendar.getAllEventos().subscribe({
@@ -106,7 +117,7 @@ export class CalendariDelCursComponent implements OnInit {
           Month: new Date(evento.fecha).getMonth(),
           Year: new Date(evento.fecha).getFullYear(),
           Title: evento.titulo,
-          Date: evento.fecha,
+          Date: this.formatearFecha(evento.fecha),
           Hour: evento.hora,
           Description: evento.descripcion,
           Place: evento.ubicacion
