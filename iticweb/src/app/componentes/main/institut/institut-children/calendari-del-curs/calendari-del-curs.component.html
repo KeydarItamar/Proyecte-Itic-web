@@ -39,11 +39,11 @@
   <div *ngIf="selectedEvent" class="card">
     <div class="card-body">
       <div class="title">
-        <h1 class="card-title">{{ selectedEvent.Title }}</h1>
+        <h1 class="card-title" style="color: white; background-color: rgba(0, 0, 0, 0.407); border-radius: 20px; font-size: 35px; padding: 40px;">{{ selectedEvent.Title }}</h1>
         <button (click)="closeCard()" class="close-button">&times;</button> <!-- Botón para cerrar la tarjeta -->
       </div>
-      <p class="card-text" *ngIf="selectedEvent.Hour"><img src="../../../../../../assets/iconos/calendario.png" alt="Calendario" style="padding: 20px;"> {{ selectedEvent.Date }} {{ selectedEvent.Hour }}</p>
-      <p class="card-text" *ngIf="selectedEvent.Place"><img src="../../../../../../assets/iconos/ubicacion.png" alt="Ubicación" style="padding: 20px;"> {{ selectedEvent.Place }}</p>
+      <p class="card-text fecha" *ngIf="selectedEvent.Hour" ><img src="../../../../../../assets/iconos/calendario.png" alt="Calendario" style="padding: 20px;"> Fecha: {{ selectedEvent.Date }} a las {{ selectedEvent.Hour }}h</p>
+      <p class="card-text hora" *ngIf="selectedEvent.Place" ><img src="../../../../../../assets/iconos/ubicacion.png" alt="Ubicación" style="padding: 20px;"> {{ selectedEvent.Place }}</p>
       <p class="card-text" *ngIf="selectedEvent.Description" style="padding: 20px;">{{ selectedEvent.Description }}</p>
       
       <br>

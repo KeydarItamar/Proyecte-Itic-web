@@ -35,8 +35,7 @@ main {
     background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.669));
     border-radius: 15px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+
 }
 
 /* Estilos para etiquetas */
@@ -93,4 +92,55 @@ br {
     /* Altura adecuada para los campos de texto */
 }
 
+/* ********************Botones file input************** */
 
+.file-select {
+    height: 3rem;
+    width: calc(100% - 3rem);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .file-select::before {
+    background-color: #5678EF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Seleccionar'; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .file-select input[type="file"] {
+    opacity: 0;
+    width:100%;
+    height: 100%;
+    display: inline-block;
+ 
+  }
+  
+  .img-container{
+    width: 60%;
+    text-align: center;
+  }
+
+  .img-container img{
+    width: 100%;
+    border-radius: 15px;
+  }
+  .btn-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    align-items: center;
+    margin: 1rem;
+  }
+  img{
+    margin-top: 1rem;
+  }
