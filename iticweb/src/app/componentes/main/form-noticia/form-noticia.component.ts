@@ -142,6 +142,7 @@ export class FormNoticiaComponent implements OnInit {
       }
     });
   }
+  
   previewUrl: any;
   previewUrlPortada: any;
   previewUrlFoto1: any;
