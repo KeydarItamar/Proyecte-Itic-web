@@ -28,7 +28,6 @@ export class NoticiasComponent implements OnInit {
   currentIndex = 0;
   ngOnInit(): void {
     this.selectAllNoticias();
-    console.log(this.allNoticias);
     this.currentIndex = 0;
   }
 
@@ -43,28 +42,21 @@ export class NoticiasComponent implements OnInit {
     this.noticias = this.allNoticias;
     this.currentIndex = (this.currentIndex + 1) % this.noticias.length;
     this.miniNoticia = this.allNoticias[this.currentIndex];
-    console.log(this.miniNoticia);
-    if (this.miniNoticia.noticiaFijada) {
-      this.getNoticiaFijada();
-    } else {
-      this.imagen = this.miniNoticia.fotoPortada;
-      this.titulo = this.miniNoticia.titulo;
-      this.parrafo1 = this.miniNoticia.parrafo1;
-      this.id = this.allNoticias[this.currentIndex]["id"];
-    }
-
-    console.log(`id : ${this.id}`);
-    console.log(this.currentIndex);
+    if (this.miniNoticia.noticiaFijada) this.currentIndex++;
+    this.imagen = this.miniNoticia.fotoPortada;
+    this.titulo = this.miniNoticia.titulo;
+    this.parrafo1 = this.miniNoticia.parrafo1;
+    this.id = this.allNoticias[this.currentIndex]["id"];
   }
 
   anteriorNoticia() {
     this.currentIndex = (this.currentIndex - 1 + this.noticias.length) % this.noticias.length;
     this.miniNoticia = this.allNoticias[this.currentIndex];
+    if (this.miniNoticia.noticiaFijada) this.currentIndex--;
     this.imagen = this.miniNoticia.fotoPortada;
     this.titulo = this.miniNoticia.titulo;
     this.parrafo1 = this.miniNoticia.parrafo1;
-    console.log(this.currentIndex);
-
+    this.id = this.allNoticias[this.currentIndex]["id"];
   }
 
   selectAllNoticias() {
@@ -73,11 +65,11 @@ export class NoticiasComponent implements OnInit {
         this.allNoticias = response;
         console.log(this.allNoticias);
         this.allNoticias.forEach(noticia => {
-          console.log(noticia)
-          if (noticia['noticiaFijada']) {
+          if (noticia['noticiaFijada'] == 1) {
             this.noticiaFijada = noticia;
             this.getNoticiaFijada();
           }
+          this.currentIndex++;
         });
         this.siguienteNoticia();
         console.log(response);

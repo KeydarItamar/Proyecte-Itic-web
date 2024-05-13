@@ -2,10 +2,12 @@
 main {
     height: 100vh; /* La altura será el 100% del viewport height */
     padding-top: 15vh; /* Espaciado superior del 15% del viewport height */
+    padding-bottom: 15vh; /* Espaciado inferior del 15% del viewport height */
     display: flex; /* Para utilizar flexbox */
     flex-direction: row; /* Columnas para alinear los elementos verticalmente */
     justify-content: center; /* Alinear los elementos al principio del eje vertical */
     background-image: linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)), url(/assets/fondos/fondo1.jpg);
+    overflow: auto;
 }
 
 /* Estilo para la tabla */
