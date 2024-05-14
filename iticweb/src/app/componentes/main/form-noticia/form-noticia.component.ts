@@ -3,6 +3,7 @@ import { Noticia } from '../../noticias/noticia-detalle/noticia';
 import { NoticiasService } from 'src/app/noticias.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-form-noticia',
   templateUrl: './form-noticia.component.html',
@@ -136,12 +137,14 @@ export class FormNoticiaComponent implements OnInit {
     this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
       next: response => {
         console.log('Respuesta al actualizar la noticia:', response);
+
       },
       error: error => {
         console.error('Error al actualizar la noticia:', error);
       }
     });
   }
+  
   previewUrl: any;
   previewUrlPortada: any;
   previewUrlFoto1: any;
@@ -165,6 +168,4 @@ export class FormNoticiaComponent implements OnInit {
       reader.readAsDataURL(file); // Se lee como datos de URL
     }
   }
-
-
 }
