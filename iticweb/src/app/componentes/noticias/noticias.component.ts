@@ -42,6 +42,7 @@ export class NoticiasComponent implements OnInit {
     this.noticias = this.allNoticias;
     this.currentIndex = (this.currentIndex + 1) % this.noticias.length;
     this.miniNoticia = this.allNoticias[this.currentIndex];
+    if (this.miniNoticia.noticiaFijada) this.siguienteNoticia();
     this.imagen = this.miniNoticia.fotoPortada;
     this.titulo = this.miniNoticia.titulo;
     this.parrafo1 = this.miniNoticia.parrafo1;
@@ -51,6 +52,7 @@ export class NoticiasComponent implements OnInit {
   anteriorNoticia() {
     this.currentIndex = (this.currentIndex - 1 + this.noticias.length) % this.noticias.length;
     this.miniNoticia = this.allNoticias[this.currentIndex];
+    if (this.miniNoticia.noticiaFijada) this.anteriorNoticia();
     this.imagen = this.miniNoticia.fotoPortada;
     this.titulo = this.miniNoticia.titulo;
     this.parrafo1 = this.miniNoticia.parrafo1;
