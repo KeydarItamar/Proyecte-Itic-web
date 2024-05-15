@@ -7,7 +7,7 @@
 
 
 main {
-    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.571)),url(src/assets/fondos/fondoMain.png);
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
     background-size: cover; 
     background-position: center;
     width: 100%;
@@ -51,6 +51,7 @@ main {
     max-width: 100%;
     border-radius: 45px;
     padding: 40px;
+    overflow: hidden;
 }
 
 .imput-container {
@@ -59,8 +60,13 @@ main {
     
 }
 
+.imput-container textarea {
+    cursor: text; /* Cambiar el cursor a texto */
+}
+
+
 #query {
-    padding: 22px 21px 0px 47px;
+    padding: 30px 25px 11px 50px;
     width: 100%;
     background-image: url('../../../../assets/iconos/lupa.png');
     background-repeat: no-repeat;

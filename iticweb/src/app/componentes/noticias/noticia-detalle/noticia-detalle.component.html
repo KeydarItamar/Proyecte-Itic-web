@@ -7,29 +7,24 @@
         <div id="item-1">
             <div class="img-div" *ngIf="noticiafotoPortada"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafotoPortada}}" alt=""></div>
         </div>
-        <div id="item-2">
-            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo1}}</p><br>
-            <!-- <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo2}}</p><br>
-            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo3}}</p><br> -->
+        <div id="item-2" [ngClass]="{'hidden': !noticiaparrafo1}">
+            <p>{{ noticiaparrafo1 }}</p><br>
         </div>
 
-        <div id="item-1">
+        <div id="item-3">
             <div class="img-div" *ngIf="noticiafoto1"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafoto1}}" alt=""></div>
         </div>
-        <div id="item-2">
-            <p  *ngIf="noticiaparrafo2" >{{noticiaparrafo2}}</p><br>
-            <!-- <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo2}}</p><br>
-            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo3}}</p><br> -->
+        <div id="item-4" [ngClass]="{'hidden': !noticiaparrafo2}">
+            <p>{{ noticiaparrafo2 }}</p><br>
         </div>
 
-        <div id="item-1">
+        <div id="item-5">
             <div class="img-div" *ngIf="noticiafoto3"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafoto3}}" alt=""></div>
         </div>
-        <div id="item-2">
-            <p  *ngIf="noticiaparrafo3" >{{noticiaparrafo3}}</p><br>
-            <!-- <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo2}}</p><br>
-            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo3}}</p><br> -->
+        
+        <div id="item-6" [ngClass]="{'hidden': !noticiaparrafo3}">
+            <p>{{ noticiaparrafo3 }}</p><br>
         </div>
     </div>
-  
 </main>
+
