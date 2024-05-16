@@ -14,9 +14,12 @@
     
     <label for="parrafo3">Párrafo 3:</label><br>
     <textarea id="parrafo3" name="parrafo3"></textarea><br>
+
+    <div class="noticiaFijada">
+      <label for="noticiaFijada">Noticia fijada:</label><br>
+      <input type="checkbox" id="noticiaFijada" name="noticiaFijada"><br><br>
+    </div>
     
-    <label for="noticiaFijada">Noticia fijada:</label><br>
-    <input type="checkbox" id="noticiaFijada" name="noticiaFijada"><br><br>
     <span *ngIf="!editing">
     <button type="submit">Crear Noticia</button>
     </span> 
@@ -27,16 +30,40 @@
   </form>
 
   <div id="imagenes">
-    <label class="file-label" for="fotoPortada">Foto de Portada:</label><br>
-    <input type="file" id="fotoPortada" name="fotoPortada" accept="image/*" required><br>
-    
-    <label class="file-label" for="foto1">Foto 1:</label><br>
-    <input type="file" id="foto1" name="foto1" accept="image/*"><br>
-    
-    <label class="file-label" for="foto2">Foto 2:</label><br>
-    <input type="file" id="foto2" name="foto2" accept="image/*"><br>
-    
-    <label class="file-label" for="foto3">Foto 3:</label><br>
-    <input type="file" id="foto3" name="foto3" accept="image/*"><br>
+    <div class="btn-cont">
+      <label class="file-label" for="fotoPortada">Foto de Portada:</label><br>
+      <div class="file-select">
+        <input (change)="onFileChange($event, 0)" type="file" id="fotoPortada" name="fotoPortada" accept="image/*" required>
+      </div><br>
+      <div class="img-container" *ngIf="previewUrlPortada">
+        <img [src]="previewUrlPortada" alt="Preview" />
+      </div>
+  
+      <label class="file-label" for="foto1">Foto 1:</label><br>
+      <div class="file-select">
+        <input (change)="onFileChange($event, 1)"  class="input-file" type="file" id="foto1" name="foto1" accept="image/*">
+      </div><br>
+      <div class="img-container" *ngIf="previewUrlFoto1">
+        <img [src]="previewUrlFoto1" alt="Preview" />
+      </div>
+  
+      <label class="file-label" for="foto2">Foto 2:</label><br>
+      <div class="file-select">
+        <input (change)="onFileChange($event, 2)"  class="input-file" type="file" id="foto2" name="foto2" accept="image/*">
+      </div><br>
+      <div class="img-container" *ngIf="previewUrlFoto2">
+        <img [src]="previewUrlFoto2" alt="Preview" />
+      </div>
+
+  
+      <label class="file-label" for="foto3">Foto 3:</label><br>
+      <div class="file-select">
+        <input (change)="onFileChange($event, 3)"  class="input-file" type="file" id="foto3" name="foto3" accept="image/*">
+      </div><br>
+      <div class="img-container" *ngIf="previewUrlFoto3">
+        <img [src]="previewUrlFoto3" alt="Preview" />
+      </div>
+    </div>
   </div>
+  
 </main>

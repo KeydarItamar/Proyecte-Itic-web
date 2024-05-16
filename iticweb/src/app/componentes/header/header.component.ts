@@ -10,6 +10,7 @@ import { NoticiasService } from 'src/app/noticias.service';
 })
 export class HeaderComponent implements OnInit {
   Secretaria = 'Secretaria';
+  chat= 'iaChat'
   Formulario = 'Formulario';
   FormCalendario = 'FormCalendario';
 
@@ -35,7 +36,6 @@ export class HeaderComponent implements OnInit {
 
   getRol() {
     const rol = localStorage.getItem("rol");
-    console.log(rol)
     return rol;
   }
 

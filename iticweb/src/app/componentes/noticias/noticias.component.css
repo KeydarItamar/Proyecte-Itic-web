@@ -11,7 +11,8 @@
     display: flex;
     justify-content: space-around;
     align-items:center ;
-    background-image:linear-gradient(rgba(119, 119, 119, 0.469), rgba(23, 23, 23, 0.835));  
+    /* background-image:url('../../../assets/fondos/Proyectonuevo.jpg');   */
+    background-image:linear-gradient(rgba(0, 0, 0, 0.956),rgba(30, 185, 144, 0.647)),url(src/assets/fondos/fondoMain.png);
 
 }
 
@@ -23,12 +24,11 @@ img{
     width: 38vw;
     height: 70vh;
     border-radius: 30px;
-    box-shadow: 15px 15px 30px #bebebe,
-               -15px -15px 30px #ffffffb2;
     transition: 0.2s ease-in-out;
     background-image:linear-gradient(rgba(206, 206, 206, 0.043), rgba(75, 75, 75, 0.629)),url(src/assets/fondos/ProyectonuevoN.jpg);
     overflow: hidden;
     margin-left: 5%;
+    box-shadow: 0 0 35px rgb(154, 154, 154);
   }
   
   .img {
@@ -82,7 +82,7 @@ img{
 
   .card:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(48 239 188);;
+    box-shadow: 0 0 10px rgba(48 239 188);
   }
   
  

@@ -1,16 +1,30 @@
 <main>
     <div class="angry-grid">
         <div id="item-0">
+            <h1 *ngIf="noticiatitulo">{{noticiatitulo}}</h1><br>
+            <h2 *ngIf="noticiasubtitulo">{{noticiasubtitulo}}</h2><br>
+        </div>
+        <div id="item-1">
             <div class="img-div" *ngIf="noticiafotoPortada"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafotoPortada}}" alt=""></div>
         </div>
-            <div id="item-1">
-                <h1 *ngIf="noticiatitulo">{{noticiatitulo}}</h1>
-                <h2 *ngIf="noticiasubtitulo">{{noticiasubtitulo}}</h2>
-            </div>
-        <div id="item-2">
+        <div id="item-2" [ngClass]="{'hidden': !noticiaparrafo1}">
+            <p>{{ noticiaparrafo1 }}</p><br>
+        </div>
 
-            <p  *ngIf="noticiaparrafo1" >{{noticiaparrafo1}}</p>
+        <div id="item-3">
+            <div class="img-div" *ngIf="noticiafoto1"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafoto1}}" alt=""></div>
+        </div>
+        <div id="item-4" [ngClass]="{'hidden': !noticiaparrafo2}">
+            <p>{{ noticiaparrafo2 }}</p><br>
+        </div>
+
+        <div id="item-5">
+            <div class="img-div" *ngIf="noticiafoto3"><img class="img-div" src="../../../../assets/img-noticias/{{noticiafoto3}}" alt=""></div>
+        </div>
+        
+        <div id="item-6" [ngClass]="{'hidden': !noticiaparrafo3}">
+            <p>{{ noticiaparrafo3 }}</p><br>
         </div>
     </div>
-   <div class="img-div" *ngIf="noticiafoto1"><img class="img-div" src="../../../assets/img-noticias/{{noticiafoto1}}" alt=""></div>
 </main>
+

@@ -1,65 +1,91 @@
 main {
-    padding: 15vh 0 15vh 0 ;
-    background-image:linear-gradient(rgba(0, 255, 183, 0.141), rgba(2, 251, 222, 0.28)),url(/assets/fondos/fondoMain.jpg);  
-    background-size: cover; 
-    background-position: center;
-    background-color: #FFFFFF;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.img-div{
-    height: 100%;
+   background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
+   padding-top: 7%;
+   padding-bottom: 7%;
+   width: 100vw;
 }
 
 .angry-grid {
-    display: grid; 
- 
-
-
-
-
-    
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    
-    gap: 0px;
-    height: 85%;
-    width: 80%;
-    
- }
+   display: grid;
+   gap: 20px;
+   align-items: baseline;
+   justify-content: center;
+   justify-items: center;
    
- #item-0 {
- 
-    background-color: #7B55FE; 
-    grid-row-start: 1;
-    grid-column-start: 1;
- 
-    grid-row-end: 3;
-    grid-column-end: 3;
-    
- }
- #item-1 {
- 
-    background-color: #D8BFDE; 
-    grid-row-start: 1;
-    grid-column-start: 3;
- 
-    grid-row-end: 2;
-    grid-column-end: 5;
-    
- }
- #item-2 {
- 
-    background-color: #9A9B78; 
-    grid-row-start: 2;
-    grid-column-start: 3;
- 
-    grid-row-end: 3;
-    grid-column-end: 5;
-    
- }
+}
+
+.img-div img {
+    width: 85%; /* Ajustar la imagen al contenedor */
+    height: 70%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+#item-0 {
+   background-color: rgba(0, 0, 0, 0.252);
+   border-radius: 20px;
+   width: 50%;
+   text-align: center;
+   color: rgba(48 239 188);
+   padding: 15px;
+
+}
+
+#item-1 {
+   width: 60%;
+   text-align: center;
+  
+}
+
+#item-2 {
+   width: 50%;
+   padding: 20px;
+   background-color: rgba(216, 216, 216, 0.232);
+   font-size: 22px;
+   border-radius: 20px;
+   color: white;
+   overflow: hidden;
+}
+
+#item-3 {
+   width: 60%;
+   text-align: center;
+}
+
+#item-4 {
+   width: 50%;
+   padding: 20px;
+   background-color: rgba(216, 216, 216, 0.232);
+   font-size: 22px;
+   border-radius: 20px;
+   color: white;
+   overflow: hidden;
+}
+
+#item-5 {
+   width: 60%;
+   text-align: center;
+}
+
+#item-6 {
+   width: 50%;
+   padding: 20px;
+   background-color: rgba(216, 216, 216, 0.232);
+   font-size: 22px;
+   border-radius: 20px;
+   color: white;
+   overflow: hidden;
+}
+
+#item-6 p:empty {
+   display: none;
+}
+
+#item-6:empty {
+   display: none;
+}
+.hidden {
+   display: none;
+}
+

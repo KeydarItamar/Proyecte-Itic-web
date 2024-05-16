@@ -7,21 +7,15 @@
 
 
 main {
-    background-image:linear-gradient(rgba(30, 185, 144, 0.412), rgba(0, 200, 255, 0.096)),url(src/assets/fondos/fondoMain.png);
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
     background-size: cover; 
     background-position: center;
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-
-.icono-Itic {
-    height: 500px;
-    width: 500px;
-    margin-left: 5%;
-    margin-right: 15%;
+   
 }
 
 .chatbox-container {
@@ -30,9 +24,24 @@ main {
     flex-direction: column; 
     flex: 1; 
     overflow: hidden;
+    justify-content: center;
+}
+
+.msgBinvenida {
+    background-image:linear-gradient(rgba(30, 185, 144, 0.234), rgba(195, 195, 195, 0.434));
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    font-size: 18px;
+    color: white;
+}
+.msgBinvenida P{
+    font-size: 25PX;
 }
 
 .response-container {
+    width: 50vw;
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -42,17 +51,22 @@ main {
     max-width: 100%;
     border-radius: 45px;
     padding: 40px;
+    overflow: hidden;
 }
 
 .imput-container {
-    width: 100%; /* Ancho máximo del contenedor */
+    width: 50vw; /* Ancho máximo del contenedor */
     padding-top: 10px;
     
 }
 
+.imput-container textarea {
+    cursor: text; /* Cambiar el cursor a texto */
+}
+
 
 #query {
-    padding: 22px 21px 0px 47px;
+    padding: 30px 25px 11px 50px;
     width: 100%;
     background-image: url('../../../../assets/iconos/lupa.png');
     background-repeat: no-repeat;

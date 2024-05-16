@@ -3,6 +3,7 @@ import { Noticia } from '../../noticias/noticia-detalle/noticia';
 import { NoticiasService } from 'src/app/noticias.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-form-noticia',
   templateUrl: './form-noticia.component.html',
@@ -136,10 +137,35 @@ export class FormNoticiaComponent implements OnInit {
     this.noticiaService.updateNoticia(nuevaNoticia, id).subscribe({
       next: response => {
         console.log('Respuesta al actualizar la noticia:', response);
+
       },
       error: error => {
         console.error('Error al actualizar la noticia:', error);
       }
     });
+  }
+  
+  previewUrl: any;
+  previewUrlPortada: any;
+  previewUrlFoto1: any;
+  previewUrlFoto2: any;
+  previewUrlFoto3: any;
+
+   // Método para manejar el evento de cambio en el input de archivos
+   onFileChange(event: any, num: number) {
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      // Se lee el archivo y se obtiene una URL de datos
+      reader.onload = (e: any) => {
+        this.previewUrl = e.target.result;
+        if (num === 0) { this.previewUrlPortada = this.previewUrl; }
+        if (num === 1) { this.previewUrlFoto1 = this.previewUrl; }
+        if (num === 2) { this.previewUrlFoto2 = this.previewUrl; }
+        if (num === 3) { this.previewUrlFoto3 = this.previewUrl; }
+      };
+  
+      reader.readAsDataURL(file); // Se lee como datos de URL
+    }
   }
 }

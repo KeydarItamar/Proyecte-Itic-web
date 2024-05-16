@@ -15,8 +15,13 @@ export class NoticiaDetalleComponent implements OnInit {
   noticiatitulo: string = ""
   noticiasubtitulo: string = ""
   noticiaparrafo1: string = ""
+  noticiaparrafo2: string = ""
+  noticiaparrafo3: string = ""
   noticiafotoPortada: string = ""
   noticiafoto1: string  = ""
+  noticiafoto2: string  = ""
+  noticiafoto3: string  = ""
+  
 
   constructor( private noticiaService: NoticiasService, private route: ActivatedRoute) { }
 
@@ -36,8 +41,13 @@ export class NoticiaDetalleComponent implements OnInit {
         this.noticiatitulo= this.noticia.titulo
         this.noticiasubtitulo= this.noticia.subtitulo
         this.noticiaparrafo1= this.noticia.parrafo1
+        this.noticiaparrafo2= this.noticia.parrafo2
+        this.noticiaparrafo3= this.noticia.parrafo3
         this.noticiafotoPortada= this.noticia.fotoPortada
-
+        this.noticiafoto1= this.noticia.foto1
+        this.noticiafoto2= this.noticia.foto2
+        this.noticiafoto3= this.noticia.foto3
+        
         console.log( this.noticiatitulo,
           this.noticiasubtitulo,
           this.noticiaparrafo1,

@@ -5,12 +5,14 @@ main {
     display: flex; /* Para utilizar flexbox */
     flex-direction: row; /* Columnas para alinear los elementos verticalmente */
     justify-content: center; /* Alinear los elementos al principio del eje vertical */
-    background-image: linear-gradient(rgba(133, 132, 132, 0.21), rgba(139, 139, 139, 0.8)), url(/assets/fondos/fondo1.jpg);
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
+
+    overflow: auto;
 }
 
 /* Estilo para la tabla */
 .lista-noticia table {
-    width: 100%;
+    width: 80vw;
     border-collapse: collapse;
     background-color: rgba(255, 255, 255, 0.583);
     border-radius: 20px;

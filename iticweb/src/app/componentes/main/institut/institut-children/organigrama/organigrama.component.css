@@ -1,6 +1,6 @@
 main{
     padding-top: 6rem;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.043), rgba(0, 0, 0, 0.8)),url(/assets/fondos/fondo1.jpg);
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
     background-size: cover; 
     background-position: center;
     width: 100%;
