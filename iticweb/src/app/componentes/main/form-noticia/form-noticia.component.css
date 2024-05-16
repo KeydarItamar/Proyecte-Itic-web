@@ -63,17 +63,27 @@ button[type="submit"] {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #56e5db;
 }
 
 /* Estilos para el checkbox */
+.noticiaFijada {
+  display: flex;
+  margin-bottom: 20px;
+}
 input[type="checkbox"] {
-  margin-right: 5px;
+  margin-left: 10px;
+  width: 20px;
+}
+
+/* CSS personalizado para el checkbox */
+input[type="checkbox"]:checked {
+  background-color: blue; /* Cambia el color de fondo a azul */
 }
 
 /* Estilos para los espacios entre elementos */
@@ -99,6 +109,7 @@ br {
   width: calc(100% - 3rem);
   position: relative;
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 .file-select::before {
@@ -107,7 +118,7 @@ br {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3px;
+  border-radius: 20px;
   content: 'Seleccionar';
   position: absolute;
   left: 0;

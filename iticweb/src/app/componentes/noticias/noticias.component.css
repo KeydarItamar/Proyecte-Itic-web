@@ -28,7 +28,7 @@ img{
     background-image:linear-gradient(rgba(206, 206, 206, 0.043), rgba(75, 75, 75, 0.629)),url(src/assets/fondos/ProyectonuevoN.jpg);
     overflow: hidden;
     margin-left: 5%;
-    box-shadow: 0 0 35px rgb(154, 154, 154);;
+    box-shadow: 0 0 35px rgb(154, 154, 154);
   }
   
   .img {
