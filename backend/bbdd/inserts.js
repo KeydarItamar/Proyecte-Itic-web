@@ -61,7 +61,7 @@ function createUser(nombre, apellido, email, password) {
                 }
 
                 // Cerramos la conexión después de completar la consulta
-                conn.end();
+                
             });
         });
     });
@@ -92,7 +92,7 @@ function createNoticia(id, titulo, subtitulo,parrafo1,parrafo2,parrafo3, fotoPor
         if (err) throw err;
         console.log("Insertado noticia!")
     })
-    conn.end(); 
+     
 }
 
 // Función para actualizar una noticia existente
@@ -110,18 +110,29 @@ function updateNoticia(id, titulo, subtitulo, parrafo1, parrafo2, parrafo3, foto
     conn.connect(function (err) {
         if (err) throw err;
         console.log("Conectado a la Base de Datos!");
-    })
+
+        // Si noticiaFijada es true, desactivamos todas las otras noticias fijadas
+        if (noticiaFijada) {
+            var sql_desactivar_fijadas = `UPDATE noticias SET noticiaFijada = false WHERE id != ${id} AND noticiaFijada = true;`;
+            conn.query(sql_desactivar_fijadas, function (err, result) {
+                if (err) throw err;
+                console.log("Noticias fijadas desactivadas!");
+            });
+        }
+    });
 
     // Query para actualizar la noticia
-    var sql_update_noticia = `UPDATE noticias SET titulo = '${titulo}', subtitulo = '${subtitulo}', parrafo1 = '${parrafo1}', parrafo2 = '${parrafo2}', parrafo3 = '${parrafo3}', fotoPortada = '${fotoPortada}', foto1 = '${foto1}', foto2 = '${foto2}', foto3 = '${foto3}', noticiaFijada = ${noticiaFijada}, dataModificacion = CURRENT_TIMESTAMP WHERE id = ${id};`;
+    var sql_update_noticia = `UPDATE noticias SET titulo = '${titulo}', subtitulo = '${subtitulo}', parrafo1 = '${parrafo1}', parrafo2 = '${parrafo2}', parrafo3 = '${parrafo3}', fotoPortada = '${fotoPortada}', foto1 = '${foto1}', foto2 = '${foto2}', foto3 = '${foto3}', noticiaFijada = ${noticiaFijada ? 1 : 0}, dataModificacion = CURRENT_TIMESTAMP WHERE id = ${id};`;
 
     // Ejecutamos la query
     conn.query(sql_update_noticia, function (err, result) {
         if (err) throw err;
         console.log("Noticia actualizada!");
-    })
-    conn.end(); 
+    });
+    
+    
 }
+
 
 
 function deleteNoticia(id ) {
@@ -148,7 +159,7 @@ function deleteNoticia(id ) {
         if (err) throw err;
         console.log("Noticia borrada!")
     })
-    conn.end(); 
+     
 }
 
 function selectNoticia(id,callback) {
@@ -179,7 +190,7 @@ function selectNoticia(id,callback) {
                         callback(null, result);
                         console.log(result)
                     }
-                    conn.end(); 
+                     
                 });
             }
         });
@@ -214,7 +225,7 @@ function selectAllNoticias(callback) {
             callback(null, result);
         }
     });
-    conn.end(); 
+     
     
 }
 

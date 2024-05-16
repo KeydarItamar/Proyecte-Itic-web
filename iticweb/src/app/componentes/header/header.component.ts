@@ -36,7 +36,6 @@ export class HeaderComponent implements OnInit {
 
   getRol() {
     const rol = localStorage.getItem("rol");
-    console.log(rol)
     return rol;
   }
 

@@ -4,5 +4,7 @@
     padding: 5%;
     display: flex;
     flex-direction: column;
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
+
 
 }

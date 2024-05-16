@@ -22,9 +22,9 @@
       <tbody>
         <tr *ngFor="let week of weeks">
           <ng-container *ngFor="let day of week">
-            <td>{{ day.day }}
+            <td style="color: white;">{{ day.day }}
               <div *ngIf="day.eventTitle"> 
-                <p class="eventTitle" (click)="showEventDetails(day.eventTitle)">{{ day.eventTitle }}</p>
+                <p class="eventTitle" (click)="showEventDetails(day.eventTitle)" style="color: white;">{{ day.eventTitle }}</p>
               </div>
             </td>
           </ng-container>

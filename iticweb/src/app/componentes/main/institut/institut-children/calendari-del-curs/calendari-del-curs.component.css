@@ -8,11 +8,8 @@ main {
   padding-top: 9%;
   align-items: center;
   font-family: "Poppins", serif;
-  background: radial-gradient(
-    circle,
-    rgb(35, 207, 237) 0%,
-    rgb(7, 164, 203) 100%
-  );
+  background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
+
 }
 
 h2 {
@@ -37,7 +34,7 @@ td {
   font-weight: 300;
   font-size: 0.8rem;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.25);
+  background: #05ae81a8;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   border-radius: 10px;
@@ -47,7 +44,7 @@ td {
 
 td:hover {
   cursor: pointer;
-  background-color: #05ae81a8;
+  background-color: #0559ae66;
 }
 
 

@@ -6,7 +6,7 @@
 }
 
 main {
-    background-image:linear-gradient(rgba(0, 255, 183, 0.141), rgba(2, 251, 222, 0.28)),url(/assets/fondos/fondoMain.jpg);  
+    background-image:linear-gradient(rgba(30, 185, 144, 0.647), rgba(0, 0, 0, 0.953)),url(src/assets/fondos/fondoMain.png);
     background-size: cover; 
     background-position: center;
     background-color: #FFFFFF;
