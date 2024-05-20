@@ -1,25 +1,25 @@
 <main>
     <div class="ciclos">
         <ul class="llista">
-            <li class="smx hov" (mouseover)="showDescription('smx')" >
+            <li class="smx hov li-hov" (mouseover)="showDescription('smx')" [ngClass]="{ 'li-hov': hoveredItem === 'smx' }">
                 CFGM Sistemes Microinformàtics i Xarxes (SMX) (IC10)
             </li>
-            <li class="asix hov" (mouseover)="showDescription('asix')">
+            <li class="asix hov" (mouseover)="showDescription('asix')" [ngClass]="{ 'li-hov': hoveredItem === 'asix' }">
                 CFGS Administració de Sistemes Informàtics en Xarxa (ASIX) (ICA0)
             </li>
-            <li class="dam hov" (mouseover)="showDescription('dam')" >
+            <li class="dam hov" (mouseover)="showDescription('dam')" [ngClass]="{ 'li-hov': hoveredItem === 'dam' }">
                 CFGS Desenvolupament d’Aplicacions Multiplataforma (DAM) (ICB0)
             </li>
-            <li class="daw hov" (mouseover)="showDescription('daw')" >
+            <li class="daw hov" (mouseover)="showDescription('daw')" [ngClass]="{ 'li-hov': hoveredItem === 'daw' }">
                 CFGS Desenvolupament d’Aplicacions Web (DAW) (ICC0)
             </li>
-            <li class="data hov" (mouseover)="showDescription('data')" >
+            <li class="data hov" (mouseover)="showDescription('data')" [ngClass]="{ 'li-hov': hoveredItem === 'data' }">
                CE en Intel·ligència Artificial i Big Data
             </li>
-            <li class="pfi hov" (mouseover)="showDescription('pfi')" >
+            <li class="pfi hov" (mouseover)="showDescription('pfi')" [ngClass]="{ 'li-hov': hoveredItem === 'pfi' }">
                 PFI Auxiliar de muntatge i manteniment d’equips informàtics
             </li>
-            <li class="incs hov" (mouseover)="showDescription('incs')">
+            <li class="incs hov" (mouseover)="showDescription('incs')" [ngClass]="{ 'li-hov': hoveredItem === 'incs' }">
                 Informació per les inscripcions a cada curs
             </li>
         </ul>

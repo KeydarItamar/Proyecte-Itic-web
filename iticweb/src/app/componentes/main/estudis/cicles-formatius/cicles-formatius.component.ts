@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CiclesFormatiusComponent implements OnInit {
   showingDescription: string = 'smx';
+  hoveredItem: string = '';
   
   constructor() { }
 
@@ -16,9 +17,12 @@ export class CiclesFormatiusComponent implements OnInit {
 
   showDescription(ciclo: string) {
     this.showingDescription = ciclo;
+    this.hoveredItem = ciclo;
   }
 
   hideDescription() {
     this.showingDescription = '';
+    this.hoveredItem = '';
   }
+
 }
