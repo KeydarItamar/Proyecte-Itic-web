@@ -33,12 +33,27 @@ export class FormNoticiaComponent implements OnInit {
 
   setupFormFields(noticia: any): void {
     const form = document.getElementById("noticiaForm") as HTMLFormElement;
+    console.log(noticia)
     form['titulo'].value = noticia[0].titulo;
     form['subtitulo'].value = noticia[0].subtitulo;
     form['parrafo1'].value = noticia[0].parrafo1;
     form['parrafo2'].value = noticia[0].parrafo2;
     form['parrafo3'].value = noticia[0].parrafo3;
     form['noticiaFijada'].checked = noticia[0].noticiaFijada;
+  
+    // Mostrar las imágenes existentes
+    if (noticia[0].fotoPortada) {
+      this.previewUrlPortada = `../../../assets/img-noticias/${noticia[0].fotoPortada}`;
+    }
+    if (noticia[0].foto1) {
+      this.previewUrlFoto1 = `../../../assets/img-noticias/${noticia[0].foto1}`;
+    }
+    if (noticia[0].foto2) {
+      this.previewUrlFoto2 = `../../../assets/img-noticias/${noticia[0].foto2}`;
+    }
+    if (noticia[0].foto3) {
+      this.previewUrlFoto3 = `../../../assets/img-noticias/${noticia[0].foto3}`;
+    }
   }
 
 
@@ -96,17 +111,18 @@ export class FormNoticiaComponent implements OnInit {
         foto3: foto3Nombre,
         noticiaFijada: (formData.get("noticiaFijada") === "on")
       };
-  
-      // Aquí puedes hacer lo que necesites con la nueva noticia
+      
+      console.log(nuevaNoticia)
+
+
+      this.subirFoto(formDataFoto)
 
       if(this.editing){
-        console.log(this.id)
         this.updateNoticia(nuevaNoticia, this.id)
-        alert("Noticia creada correctamente.")
+        alert("Noticia editada correctamente.")
       }else{
-        this.subirFoto(formDataFoto)
         this.insertForm(nuevaNoticia)
-        alert("Has creado una noticia correctamente.")
+        alert("Noticia creada correctamente.")
       }
     });
   }
@@ -159,6 +175,7 @@ export class FormNoticiaComponent implements OnInit {
       // Se lee el archivo y se obtiene una URL de datos
       reader.onload = (e: any) => {
         this.previewUrl = e.target.result;
+        console.log(this.previewUrl)
         if (num === 0) { this.previewUrlPortada = this.previewUrl; }
         if (num === 1) { this.previewUrlFoto1 = this.previewUrl; }
         if (num === 2) { this.previewUrlFoto2 = this.previewUrl; }
