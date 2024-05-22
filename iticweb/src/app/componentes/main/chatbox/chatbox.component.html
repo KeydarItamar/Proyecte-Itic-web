@@ -14,8 +14,8 @@
             <ul *ngFor="let query of listaQuerys let i= index " >
                 <li *ngIf=respuestas>
                     <h4>User promtp</h4>
+                    <br>
                     <div class="pregunta">{{listaQuerys[i]}}</div><br>
-                    
                     <h4>IA response</h4>
                     <br>
                     <mat-progress-spinner *ngIf="!respuestas[i]"

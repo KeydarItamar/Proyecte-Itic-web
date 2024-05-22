@@ -4,36 +4,30 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_cohere import ChatCohere
-from langchain_community.document_loaders import DirectoryLoader
+from langchain.document_loaders import DirectoryLoader
 from langchain_community.document_loaders import UnstructuredWordDocumentLoader
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
 import json
 import sys
 import os
-from langchain_cohere import CohereEmbeddings
-
-# COHERE_API_KEY = 'COfYE3KMmcNujbFwBkMNW5Eq9DOg03yE2Ay831lW'
-# os.environ["COHERE_API_KEY"] = COHERE_API_KEY
 
 OPENAI_API_KEY = 'sk-proj-LlYwSlLXbxzl4YyxENyfT3BlbkFJSTVNPBZPkNxFOdhafNbH'
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
-
 
 texto = sys.argv[1]
 datos = json.loads(texto)
 query = datos['query']
 
-loaders = DirectoryLoader(".",glob="*.docx", loader_cls=UnstructuredWordDocumentLoader)
+dir = "."
+loaders = DirectoryLoader(dir,glob="**/*.docx", loader_cls=UnstructuredWordDocumentLoader)
 content = loaders.load()
 
 #Separamos en trozos los documentos 
 text_splitter= RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 chunking = text_splitter.split_documents(content)
 
-#Defenimos el modelo del lenguaje y el sistema de embeddings
-#embeddings = CohereEmbeddings()
+
 embeddings = OpenAIEmbeddings()
 
 #Generamos el vector embedido con los documentos
