@@ -15,8 +15,6 @@ import { MainRoutingModule } from './componentes/main/main-routes';
 import { OnSomComponent } from './componentes/main/institut/institut-children/on-som/on-som.component';
 import { GestioDadesComponent } from './componentes/main/proyecte-educatiu/gestio-dades/gestio-dades.component';
 import { CiclesFormatiusComponent } from './componentes/main/estudis/cicles-formatius/cicles-formatius.component';
-import { CiclesFormatiusGrauMitjaComponent } from './componentes/main/estudis/cicles-formatius-grau-mitja/cicles-formatius-grau-mitja.component';
-import { CiclesFormatiusGrauSuperiorComponent } from './componentes/main/estudis/cicles-formatius-grau-superior/cicles-formatius-grau-superior.component';
 import { ErasmusPolicyComponent } from './componentes/main/ServeiErasmus/erasmus-policy/erasmus-policy.component';
 import { MobilitatAlumnatComponent } from './componentes/main/ServeiErasmus/mobilitat-alumnat/mobilitat-alumnat.component';
 import { MobilitatProfessoratComponent } from './componentes/main/ServeiErasmus/mobilitat-professorat/mobilitat-professorat.component';
@@ -61,8 +59,6 @@ import { HomeComponent } from './componentes/main/home/home.component';
     OnSomComponent,
     GestioDadesComponent,
     CiclesFormatiusComponent,
-    CiclesFormatiusGrauMitjaComponent,
-    CiclesFormatiusGrauSuperiorComponent,
     ErasmusPolicyComponent,
     MobilitatAlumnatComponent,
     MobilitatProfessoratComponent,

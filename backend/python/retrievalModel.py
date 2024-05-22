@@ -4,26 +4,28 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.chat_models import ChatCohere
+from langchain_cohere import ChatCohere
 from langchain_community.document_loaders import DirectoryLoader
 from langchain_community.document_loaders import UnstructuredWordDocumentLoader
-
+from langchain_openai import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
 import json
 import sys
 import os
-from langchain_community.embeddings import CohereEmbeddings
+from langchain_cohere import CohereEmbeddings
 
-COHERE_API_KEY = '0Luj5pPG0qr5smcMdNravruypYYGwjs45LvQmJCo'
-os.environ["COHERE_API_KEY"] = COHERE_API_KEY
+# COHERE_API_KEY = 'COfYE3KMmcNujbFwBkMNW5Eq9DOg03yE2Ay831lW'
+# os.environ["COHERE_API_KEY"] = COHERE_API_KEY
+
+OPENAI_API_KEY = 'sk-proj-LlYwSlLXbxzl4YyxENyfT3BlbkFJSTVNPBZPkNxFOdhafNbH'
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 
 texto = sys.argv[1]
 datos = json.loads(texto)
 query = datos['query']
 
-
-#Cargamos los documentos del directorio  word or Pdf
-loaders = UnstructuredWordDocumentLoader(".")
+loaders = DirectoryLoader(".",glob="*.docx", loader_cls=UnstructuredWordDocumentLoader)
 content = loaders.load()
 
 #Separamos en trozos los documentos 
@@ -31,7 +33,8 @@ text_splitter= RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100
 chunking = text_splitter.split_documents(content)
 
 #Defenimos el modelo del lenguaje y el sistema de embeddings
-embeddings = CohereEmbeddings()
+#embeddings = CohereEmbeddings()
+embeddings = OpenAIEmbeddings()
 
 #Generamos el vector embedido con los documentos
 db = DocArrayInMemorySearch.from_documents(
@@ -57,7 +60,8 @@ Respon a la pregunta basant-te únicament en el context següent:
 Pregunta: {question}
 """
 prompt = ChatPromptTemplate.from_template(template)
-model = ChatCohere(temperature= 0)
+#model = ChatCohere(temperature= 0)
+model = ChatOpenAI(model='gpt-4-turbo', temperature= 0.11)
 output_parser = StrOutputParser()
 
 setup_and_retrieval = RunnableParallel(

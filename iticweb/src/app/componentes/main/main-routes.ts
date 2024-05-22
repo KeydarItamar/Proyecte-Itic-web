@@ -9,8 +9,6 @@ import { PerfilDelcontractanComponent } from './institut/institut-children/perfi
 import { OnSomComponent } from './institut/institut-children/on-som/on-som.component';
 import { GestioDadesComponent } from './proyecte-educatiu/gestio-dades/gestio-dades.component';
 import { CiclesFormatiusComponent } from './estudis/cicles-formatius/cicles-formatius.component';
-import { CiclesFormatiusGrauMitjaComponent } from './estudis/cicles-formatius-grau-mitja/cicles-formatius-grau-mitja.component';
-import { CiclesFormatiusGrauSuperiorComponent } from './estudis/cicles-formatius-grau-superior/cicles-formatius-grau-superior.component';
 import { ErasmusPolicyComponent } from './ServeiErasmus/erasmus-policy/erasmus-policy.component';
 import { MobilitatAlumnatComponent } from './ServeiErasmus/mobilitat-alumnat/mobilitat-alumnat.component';
 import { MobilitatProfessoratComponent } from './ServeiErasmus/mobilitat-professorat/mobilitat-professorat.component';
@@ -43,8 +41,6 @@ const routes: Routes = [
     ]},
   {path: 'Estudis', children: [
       { path: 'Cicles Formatius (CF)', component: CiclesFormatiusComponent },
-      { path: 'Cicles Formatius de Grau Mitjà (CFGM)', component: CiclesFormatiusGrauMitjaComponent },
-      { path: 'Cicles Formatius de Grau Superior (CFGS)', component: CiclesFormatiusGrauSuperiorComponent },
     ]},
     {
       path: 'ServeisErasmus+',

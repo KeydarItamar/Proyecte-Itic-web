@@ -77,7 +77,7 @@ main {
     border: none;
     outline: none;
     overflow: hidden;
-    
+    resize: none;
 }
 
 .response-container > ul{
