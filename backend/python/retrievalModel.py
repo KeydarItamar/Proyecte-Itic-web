@@ -11,9 +11,8 @@ from langchain_openai import OpenAIEmbeddings
 import json
 import sys
 import os
-
-OPENAI_API_KEY = 'sk-proj-LlYwSlLXbxzl4YyxENyfT3BlbkFJSTVNPBZPkNxFOdhafNbH'
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+# OPENAI_API_KEY = xxxxxxxxxxxxxxxxxxxxxxxxxxx
+# os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 texto = sys.argv[1]
 datos = json.loads(texto)
